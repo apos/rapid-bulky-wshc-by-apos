@@ -57,9 +57,15 @@ Prices:
 - Breakout board: 5 €
 - OLED. 5-8€
 - Cables: 5 € or Crimpset 30 €
-- Battery Pack: nothing, what you have (Powerbank small, big, 12V jack ...) or a little powerpack 5-10 €
+- Battery Pack: nothing, what you have (your existing 5V powerbank, 12V jack ...) or buy a little powerpack 5-10 €. The SHC does not need much power (2500 mA suffice).
+ 
+=> 15 € if you are in a hurry (Amazon/Ebay) and well suited otherwise (battery, cables) 
+=> more, if you start from scatch. 
+=> If you have time and will save a lot of costs you can get everything from China for under 10 €. This is intersting, if you have a class and want to buuild this
 
-Togeter: 15 € if you are in a hurry (Amazon/Ebay) and well suited otherwise (battery, cables) - more, if you start from scatch. If you have time and will save costs you can get everything from China for under 10 €.
+Build Time
+
+- Print: 
 
 **BE AWARE:** 
 THERE ARE DIFFERENCES IN HARDWARE SPECS. 
@@ -100,3 +106,9 @@ The model is bulky, because of the use of standard breakout boards and shields.
 
 Printer:    Prusa MK3S
 Material:   PLA (in the moment) - trying to go with PC and PETG, but this has to be tested
+Infill:     20% is enough
+Support:    no
+Duration:   4 hours (everything will fit on the plate of a Prusa
+
+<img src="https://user-images.githubusercontent.com/456034/234710138-a3641563-41aa-410a-b03a-9f7795b4e3d8.png" width=600)>
+
