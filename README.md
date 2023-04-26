@@ -63,7 +63,7 @@ The model is bulky, because of the use of standard breakout boards and shields. 
 - ESP32 30pin 5-7 €
 - Breakout board: 5 €
 - OLED 5-8€
-- PLA Filament: 2,50 €
+- PLA Filament: 2-3 €
 - Good, but standard dupont cables 10 to 15 cm long (female to female): 5 € or Crimpset 30 €
 - Battery Pack: nothing, what you have (your existing 5V powerbank, 12V jack ...) or buy a little powerpack 5-10 €. The SHC does not need much power (2500 mA suffice).
  
@@ -136,7 +136,7 @@ The model is bulky, because of the use of standard breakout boards and shields.
 - Material:   PLA (in the moment) - trying to go with PC and PETG, but this has to be tested
 - Infill:     20% is enough
 - Support:    no (all parts should print without problems with PLA)
-- Duration:   4 hours (everything will fit on the plate of a Prusa
+- Duration:   5 hours (everything will fit on the plate of a Prusa
 
-<img src="https://user-images.githubusercontent.com/456034/234710138-a3641563-41aa-410a-b03a-9f7795b4e3d8.png" width=600)>
+<img src=https://user-images.githubusercontent.com/456034/234721043-23e05c6f-3493-4108-bc2a-34353505e4ae.png" width=600)>
 
