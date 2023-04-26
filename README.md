@@ -36,7 +36,7 @@ Please be patient and first read:
 
 ## Source code
 
-Dealing with the source code is not easy 
+Dealing with the source code is not easy, especially if you are new to OnStep, to ESP32 development, or to 
 
 1. You need to read carefully the main SHC instructions [howto install the software on the OnStep site](https://onstep.groups.io/g/main/wiki/7152).
 2. At time of writing you have to use the [main tree of the SHC software code](https://github.com/hjd1964/SmartHandController/tree/main) to get things running as stated in the [instructions](https://onstep.groups.io/g/main/wiki/7152). This and only this branch contains the necessary code to get things running 
@@ -45,6 +45,14 @@ Dealing with the source code is not easy
 - Again: probably it is wise to have a look into the starter [thread on OnStep chat](https://onstep.groups.io/g/main/message/51440) like mentioned above.
 
 This is work in progress, here and in the OnStep SHC source code (tree main). Until now it is limited to special hardware.
+
+### Platform.io
+
+I use the Visual Studio code plugin for [platform.io](https://platform.io). If you do this you need:
+
+- special platformio.ini (see platfomr.io dir)
+- remame SmartHandController.ino to SmartHandController.cpp
+- know how to use platform.io (I can and will not give support on this)
 
 
 ## 3D-printer models
