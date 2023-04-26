@@ -27,8 +27,8 @@ Everything started with an OnStep chat topic: [wSHC (wireless Smart Hand Control
 Be able to rapidly build a wireless Smart Hand Controller with common standard parts and a oystick shield: 
 
 - Build a **wireles** SHC - no ST4 or cable
-- **Fast** (standard comonents)
-- **Cheap** (standard compnents)
+- Build it **fast** (simply put things together)
+- Build it **cheap** (standard compnents)
 - In the first place you should get every component within days in your country (no China-imports necessary just get started) 
 - **No welding** required (dupont connector, probably using a crimp tool if you like special cable length)
 - **No PCB** necessary
@@ -48,20 +48,15 @@ The model is bulky, because of the use of standard breakout boards and shields. 
 ## What you need - BOM
 
 1. Access to a 3D printer with PLA (or other materials which can be fine printed)
-2. [ESP32 30 pim](pics/ESP32_30pin_left_layout_comparison.jpg) (just the baseplate) best with USB-C jack
-3. [Arduino form factor breakout board for the ESP32](pics/ESP32-30pin-BO1-ESP32_compact_breakout_and%20ESP32.jpg) (Dupont variant) with USB-C (V) and a standard 5/2.1 mm jack (4.5 to 16V) - other breakout boards might fit. But these are very common. 
-4. [Arduino form factor Joystick shield](hpics/ITEAD_Joystickshield_DS.pdf)
-5. OLED 1,3 inch (I use a white one and put a red foil on it for the night)
-6. 15 cm long Dupont cables (female 2 female) OR a crimp toolset and cables to make your own length (which is better)
-7. A standard USB-C battery pack or, for the breakout board 6,5 to 14V DC input (standard 5/2.1 mm jack)- until now there is not space for the battery  
-8. A working OnStep (no simulation mode possible!)
-9. Knowing how to configer SHC code and upload (next section)
-
-## Instructions
-
-Basically  orient yourself on the pinmap of the SHC code for ESP32 and you read the look at the wirering plan in the pics directory for the ITEAD joystick shield.
-
-<img src="pics/ITEAD_Shield_pinmap_ESP32_01.png" width=600>
+2. [A standard ESP32 with 30 pim](pics/ESP32_30pin_left_layout_comparison.jpg) (just the baseplate) best with USB-C jack
+3. [An Arduino form factor breakout board for the ESP32](pics/ESP32-30pin-BO1-ESP32_compact_breakout_and%20ESP32.jpg) (Dupont variant) with USB-C (V) and a standard 5/2.1 mm jack (4.5 to 16V) - other breakout boards might fit. But these are very common. 
+4. [A special Arduino form factor Joystick shield](hpics/ITEAD_Joystickshield_DS.pdf). The one I use here is very small
+5. An OLED 1,3 inch screen (I use a white colored one and put a red foil on it for the night)
+6. 15 cm long Dupont cables (female 2 female) OR use a crimp toolset and cables to make your own length (which is better). You can save a lot of time, if you buy preconfigured dupont cables (2,4,5 bundled). These hold better than single cables.
+8. A standard USB-C battery pack or, for the breakout board 6,5 to 14V DC input (standard 5/2.1 mm jack)- until now there is not space for the battery  
+9. A USB-C cable for programming and loading the ESP32 / Board
+10. A working OnStep (a simulation mode possible - you will not get over the start screen)
+11. Knowing how to configure the SHC code and upload and program it (next sections).
 
 ### Costs 
 
@@ -81,15 +76,30 @@ Basically  orient yourself on the pinmap of the SHC code for ESP32 and you read 
 - 4 hour pint (Prusa MKS3 Draft 0.3mm, 20% infill)
 - You can save a lot of time, when you use preconfigured cables with already have preconfigured dupont connectors (2 / 4 / 5 in a row)
 
-**BE AWARE:** 
-- THERE ARE DIFFERENCES IN HARDWARE SPECS. 
+## Classroom project
+
+If you already implemented an OnStep controller with peoplo of you astronomy club, it is very easy now to get everything running with a wireless SHC. You will be surprised how much more intuitive this is, than using the handy app.
+
+If you are well prepared (get cables ready, print parts) you will make this in a 3 hour workshop. Inkluded a pause, 30min intro and 30 minutes for asking questions. 
+
+You can save really a lot of money if you order the parts in China (takes usually 2 weeks shipping).
+
+
+## Instructions
+
+Basically  orient yourself on the pinmap of the SHC code for ESP32 and you read the look at the wirering plan in the pics directory for the ITEAD joystick shield.
+
+<img src="pics/ITEAD_Shield_pinmap_ESP32_01.png" width=600>
+
+### BE AWARE
+- THERE ARE DIFFERENCES IN HARDWARE SPECs for all of these parts out there.
 - THIS IS FORE ESP32 (30pin), an ARDUINO FORM FACTOR BREAKOUT BOARD AND an AREDUINO FORMFACTOR JOYSTICK SHIELD.
 - PLEASE LOOK AT THE PICTURES DIRECTORY for the hardware, that is used.
 
 Everything will be reusable for a other projects and can be put apart totally. Nothing is soldered. 
 
 
-## Source code
+### Source code
 
 Dealing with the source code is not easy, especially if you are new to OnStep, to ESP32 development, or to 
 
@@ -101,19 +111,23 @@ Dealing with the source code is not easy, especially if you are new to OnStep, t
 
 This is work in progress, here and in the OnStep SHC source code (tree main). Until now it is limited to special hardware.
 
-### Platform.io
+### Program ESP32 - Platform.io
+I use the Visual Studio code plugin for [platform.io](https://platform.io). Arduino IDE is enough though (and the new 2.0 version works perfectly)
 
-I use the Visual Studio code plugin for [platform.io](https://platform.io). If you do this you need:
+If you do this you need:
 
 - special platformio.ini (see platfomrio dir)
 - remame SmartHandController.ino to SmartHandController.cpp
 - know how to use platform.io (I can and will not give support on this)
 
+BE AWARE: sometimes you have to press the "Donwload" button on the ESP32 to upload the code and you need the correct driver. Normally the USB-C variants are newer and have no problems.
 
-## 3D-printer models
+
+## 3D-printer model
 
 You find all 3d files including Fusion360 and 3MF/STL in the **directory "3d" in this repository**. These are work in progress. I design with Fusion360 and will update the files after every major milestone.
-The parts are very tight. I like to use as less as possible screws (if possible no). Some parts have to be glueed together. 
+
+The parts are very tight (no gap design). I like to use as less as possible screws (if possible no). Some parts have to be glueed together. 
 
 The model is bulky, because of the use of standard breakout boards and shields.
 
@@ -121,7 +135,7 @@ The model is bulky, because of the use of standard breakout boards and shields.
 - Printer:    Prusa MK3S
 - Material:   PLA (in the moment) - trying to go with PC and PETG, but this has to be tested
 - Infill:     20% is enough
-- Support:    no
+- Support:    no (all parts should print without problems with PLA)
 - Duration:   4 hours (everything will fit on the plate of a Prusa
 
 <img src="https://user-images.githubusercontent.com/456034/234710138-a3641563-41aa-410a-b03a-9f7795b4e3d8.png" width=600)>
