@@ -13,6 +13,10 @@ This is for building a wireless [Smart Hand Controller (wSHC)](https://onstep.gr
 - ESP32 (30 pin, see pics) | standard, no battery port
 - Breakout board (ESP32 30 pin, see pics) | dupont
 - Joystick shield (ITEAD, see pics) | very slim, Arduino form factor 
+ 
+## Basic informations
+
+Everything started with an OnStep chat topic: [wSHC (wireless Smart Hand Controller) with standard ESP32-Board and standard joystick shield (anyone?)](https://onstep.groups.io/g/main/message/51440). It lead to this design.
 
 ## Why?
 
@@ -32,12 +36,6 @@ The intended usage is prototyping, testing. But it also should meet the requirem
 - More versions to come (OLED sizes, breakount boards, 30/38 pin layout of ESP32, battery pack,).
 
 **For now there does not exist a detailed HowTo.** Please be patient. 
-
-## Basic informations
-
-Please be patient and first read:
-
-- OnStep chat topic: [wSHC (wireless Smart Hand Controller) with standard ESP32-Board and standard joystick shield (anyone?)](https://onstep.groups.io/g/main/message/51440)
 
 ## Source code
 
