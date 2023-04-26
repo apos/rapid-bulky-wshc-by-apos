@@ -104,11 +104,11 @@ The parts are very tight. I like to use as less as possible screws (if possible 
 The model is bulky, because of the use of standard breakout boards and shields.
 
 
-Printer:    Prusa MK3S
-Material:   PLA (in the moment) - trying to go with PC and PETG, but this has to be tested
-Infill:     20% is enough
-Support:    no
-Duration:   4 hours (everything will fit on the plate of a Prusa
+- Printer:    Prusa MK3S
+- Material:   PLA (in the moment) - trying to go with PC and PETG, but this has to be tested
+- Infill:     20% is enough
+- Support:    no
+- Duration:   4 hours (everything will fit on the plate of a Prusa
 
 <img src="https://user-images.githubusercontent.com/456034/234710138-a3641563-41aa-410a-b03a-9f7795b4e3d8.png" width=600)>
 
