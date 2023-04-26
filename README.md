@@ -1,10 +1,10 @@
 # Rapid bulky wSHC by apos
 
 
-rapid bulky wSHC by apos (Rapid_Bulky_wSHC_V13_01 / very early version) </br>
+Rapid_Bulky_wSHC_V13_01 / very early version </br>
 <img src="pics/ESP32-30pin-BO1-Rapid_Bulky_wSHC_V13_01.jpg" width="600"> 
 
-rapid bulky wSHC by apos (Rapid_Bulky_wSHC_V32_01 / near ready) </br>
+Rapid_Bulky_wSHC_V32_01 / near final version </br>
 <img src="https://user-images.githubusercontent.com/456034/234690175-c3403506-e03c-4041-9ca3-3b637d9a90ad.png" width="300"> <img src="https://user-images.githubusercontent.com/456034/234690468-60de81e5-2e7a-4b52-806b-2a95a310739b.png" width="300">
 
 ## Preface
