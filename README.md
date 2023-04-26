@@ -1,6 +1,6 @@
 # Rapid bulky wSHC by apos
 
-![Inline image](pics/ESP32-30pin-BO1-Rapid_Bulky_wSHC_V13_01.jpg)
+<img src=”pics/ESP32-30pin-BO1-Rapid_Bulky_wSHC_V13_01.jpg” width=”600">
 
 ## Preface
 This is for building a wireless [Smart Hand Controller (wSHC)](https://onstep.groups.io/g/main/wiki/7152) for the [OnStep telescope controller](https://onstep.groups.io/g/main/wiki/Home) with
