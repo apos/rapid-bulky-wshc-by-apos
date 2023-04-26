@@ -50,7 +50,7 @@ This is work in progress, here and in the OnStep SHC source code (tree main). Un
 
 I use the Visual Studio code plugin for [platform.io](https://platform.io). If you do this you need:
 
-- special platformio.ini (see platfomr.io dir)
+- special platformio.ini (see platfomrio dir)
 - remame SmartHandController.ino to SmartHandController.cpp
 - know how to use platform.io (I can and will not give support on this)
 
