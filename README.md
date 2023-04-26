@@ -24,7 +24,7 @@ Everything started with an OnStep chat topic: [wSHC (wireless Smart Hand Control
 
 ## Purpose of this design
 
-Letting you get started with the wireless Smart Hand Controller. 
+Be able to rapidly builld a wireless Smart Hand Controller with common standard parts and a oystick shield: 
 
 - Build a **wireles** SHC - no ST4 or cable
 - **Fast** (standard comonents)
@@ -34,9 +34,9 @@ Letting you get started with the wireless Smart Hand Controller.
 - **No PCB** necessary
 - Battery (for no) not included - use with a small, external battery pack
 
-The intended usage is prototyping, testing. But it also should meet the requirements to use it in the field as a full featured and robust wSHC.
+The intended usage is prototyping, testing. But it also meets the requirements to use it in the field as a full featured and robust wSHC.
 
-The model is bulky, because of the use of standard breakout boards and shields. There exist others which use PCBs. Have  
+The model is bulky, because of the use of standard breakout boards and shields. There exist others which use PCBs. This project gives you the time to do a more suffisticated wSHC without having one in the meantime :-)
 
 ## More to come
 
@@ -59,14 +59,15 @@ The model is bulky, because of the use of standard breakout boards and shields. 
 
 ## Instructions
 
-Basically you orient yourself on the pinmap on the SHC code for the ESP32 and you read the look at the wirering plan in the pics directory for the ITEAD joystick shield.
+Basically  orient yourself on the pinmap of the SHC code for ESP32 and you read the look at the wirering plan in the pics directory for the ITEAD joystick shield.
 
 <img src="pics/ITEAD_Shield_pinmap_ESP32_01.png" width=600>
 
 ### Costs 
+
 - ESP32 30pin 5-7 €
 - Breakout board: 5 €
-- OLED. 5-8€
+- OLED 5-8€
 - PLA Filament: 2,50 €
 - Good, but standard dupont cables 10 to 15 cm long (female to female): 5 € or Crimpset 30 €
 - Battery Pack: nothing, what you have (your existing 5V powerbank, 12V jack ...) or buy a little powerpack 5-10 €. The SHC does not need much power (2500 mA suffice).
@@ -78,14 +79,14 @@ Basically you orient yourself on the pinmap on the SHC code for the ESP32 and yo
 ### Build Time
 
 - 4 hour pint (Prusa MKS3 Draft 0.3mm, 20% infill)
-- You can save a lot of time, when 
+- You can save a lot of time, when you use preconfigured cables with already have preconfigured dupont connectors (2 / 4 / 5 in a row)
 
 **BE AWARE:** 
-THERE ARE DIFFERENCES IN HARDWARE SPECS. 
-THIS IS FORE ESP32 (30pin) | ARDUINO FORM FACTOR BREAKOUT BOARD AND JOYSTICK SHIELD.
-PLEASE LOOK AT THE PICTUES DIRECTORY.
+- THERE ARE DIFFERENCES IN HARDWARE SPECS. 
+- THIS IS FORE ESP32 (30pin), an ARDUINO FORM FACTOR BREAKOUT BOARD AND an AREDUINO FORMFACTOR JOYSTICK SHIELD.
+- PLEASE LOOK AT THE PICTURES DIRECTORY for the hardware, that is used.
 
-Everything will  reusable for a other 
+Everything will be reusable for a other projects and can be put apart totally. Nothing is soldered. 
 
 
 ## Source code
