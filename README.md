@@ -138,5 +138,5 @@ The model is bulky, because of the use of standard breakout boards and shields.
 - Support:    no (all parts should print without problems with PLA)
 - Duration:   5 hours (everything will fit on the plate of a Prusa
 
-<img src=https://user-images.githubusercontent.com/456034/234721043-23e05c6f-3493-4108-bc2a-34353505e4ae.png" width=600)>
+<img src="https://user-images.githubusercontent.com/456034/234721043-23e05c6f-3493-4108-bc2a-34353505e4ae.png" width=600)>
 
