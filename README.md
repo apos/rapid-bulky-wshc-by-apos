@@ -24,7 +24,7 @@ Everything started with an OnStep chat topic: [wSHC (wireless Smart Hand Control
 
 ## Purpose of this design
 
-Be able to rapidly builld a wireless Smart Hand Controller with common standard parts and a oystick shield: 
+Be able to rapidly build a wireless Smart Hand Controller with common standard parts and a oystick shield: 
 
 - Build a **wireles** SHC - no ST4 or cable
 - **Fast** (standard comonents)
