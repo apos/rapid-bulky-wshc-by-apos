@@ -13,6 +13,10 @@ This is for building a wireless [Smart Hand Controller (wSHC)](https://onstep.gr
 - ESP32 (30 pin, see pics) | standard, no battery port
 - Breakout board (ESP32 30 pin, see pics) | dupont
 - Joystick shield (ITEAD, see pics) | very slim, Arduino form factor 
+
+Many thanks to Howard Dutton which is the founder and lead developer of the [OnStep telescope controller](https://onstep.groups.io/g/main/wiki/Home), which did the main work on altering the source code so that things are working with the joystick shield (which they did not in the first place).
+
+CS Axel
  
 ## Basic informations
 
@@ -43,29 +47,38 @@ The model is bulky, because of the use of standard breakout boards and shields. 
 
 ## What you need - BOM
 
-1. [ESP32 30 pim](pics/ESP32_30pin_left_layout_comparison.jpg) (just the baseplate) best with USB-C jack
-2. [Arduino form factor breakout board for the ESP32](pics/ESP32-30pin-BO1-ESP32_compact_breakout_and%20ESP32.jpg) (Dupont variant) with USB-C (V) and a standard 5/2.1 mm jack (4.5 to 16V) - other breakout boards might fit. But these are very common. 
-3. [Arduino form factor Joystick shield](hpics/ITEAD_Joystickshield_DS.pdf)
-4. OLED 1,3 inch (I use a white one and put a red foil on it for the night)
-5. Dupont cables (female 2 female) OR (which is better) a crimp toolset and cables to make your own length
-6. A standard USB-C battery pack or, for the breakout board 6,5 to 14V DC input (standard 5/2.1 mm jack)- until now there is not space for the battery  
-7. A working OnStep (no simulation mode possible!)
-8. Knowing how to configer SHC code and upload (next section)
+1. Access to a 3D printer with PLA (or other materials which can be fine printed)
+2. [ESP32 30 pim](pics/ESP32_30pin_left_layout_comparison.jpg) (just the baseplate) best with USB-C jack
+3. [Arduino form factor breakout board for the ESP32](pics/ESP32-30pin-BO1-ESP32_compact_breakout_and%20ESP32.jpg) (Dupont variant) with USB-C (V) and a standard 5/2.1 mm jack (4.5 to 16V) - other breakout boards might fit. But these are very common. 
+4. [Arduino form factor Joystick shield](hpics/ITEAD_Joystickshield_DS.pdf)
+5. OLED 1,3 inch (I use a white one and put a red foil on it for the night)
+6. 15 cm long Dupont cables (female 2 female) OR a crimp toolset and cables to make your own length (which is better)
+7. A standard USB-C battery pack or, for the breakout board 6,5 to 14V DC input (standard 5/2.1 mm jack)- until now there is not space for the battery  
+8. A working OnStep (no simulation mode possible!)
+9. Knowing how to configer SHC code and upload (next section)
 
-Prices: 
+## Instructions
+
+Basically you orient yourself on the pinmap on the SHC code for the ESP32 and you read the look at the wirering plan in the pics directory for the ITEAD joystick shield.
+
+<img src="pics/ITEAD_Shield_pinmap_ESP32_01.png" width=600>
+
+### Costs 
 - ESP32 30pin 5-7 €
 - Breakout board: 5 €
 - OLED. 5-8€
-- Cables: 5 € or Crimpset 30 €
+- PLA Filament: 2,50 €
+- Good, but standard dupont cables 10 to 15 cm long (female to female): 5 € or Crimpset 30 €
 - Battery Pack: nothing, what you have (your existing 5V powerbank, 12V jack ...) or buy a little powerpack 5-10 €. The SHC does not need much power (2500 mA suffice).
  
-=> 15 € if you are in a hurry (Amazon/Ebay) and well suited otherwise (battery, cables) 
-=> more, if you start from scatch. 
+=> 15-20 € if you are in a hurry (Amazon/Ebay) and well suited otherwise (battery, cables) 
+=> More, if you start from scatch and need cables, battery pack, crimp tool
 => If you have time and will save a lot of costs you can get everything from China for under 10 €. This is intersting, if you have a class and want to buuild this
 
-Build Time
+### Build Time
 
-- Print: 
+- 4 hour pint (Prusa MKS3 Draft 0.3mm, 20% infill)
+- You can save a lot of time, when 
 
 **BE AWARE:** 
 THERE ARE DIFFERENCES IN HARDWARE SPECS. 
