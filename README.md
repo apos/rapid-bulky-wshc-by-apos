@@ -61,5 +61,7 @@ These are work in progress. I design with Fusion360 and will update the files af
 
 The parts are very tight. I like to use as less as possible screws (if possible no). The model is bulky, because of the use of standard breakout boards and shields.
 
+You find all 3d files including Fusion360 and 3MF/STL in the directory "3d" in this repository. 
+
 Printer:    Prusa MK3S
 Material:   PLA (in the moment) - trying to go with PC and PETG, but this has to be tested
