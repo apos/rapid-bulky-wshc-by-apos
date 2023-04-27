@@ -1,7 +1,7 @@
 # Rapid bulky wSHC by apos
 
 Rapid_Bulky_wSHC_V13_01 / very early version </br>
-<img src="pics/V01/ESP32-30pin-BO1-Rapid_Bulky_wSHC_V13_01.jpg" width="600"> 
+<img src="media/V01/ESP32-30pin-BO1-Rapid_Bulky_wSHC_V13_01.jpg" width="600"> 
 
 Rapid_Bulky_wSHC_V33_M1 / near final version of V01 </br>
 <img src="3d/V01/v33_M1_01.png" width="300"> <img src="https://user-images.githubusercontent.com/456034/234690468-60de81e5-2e7a-4b52-806b-2a95a310739b.png" width="300">
@@ -9,9 +9,9 @@ Rapid_Bulky_wSHC_V33_M1 / near final version of V01 </br>
 ## Preface
 This is for building a wireless [Smart Hand Controller (wSHC)](https://onstep.groups.io/g/main/wiki/7152) for the [OnStep telescope controller](https://onstep.groups.io/g/main/wiki/Home) with
 
-- ESP32 (30 pin, see pics) | standard, no battery port - DO NOT USE A ARDUINO FORM FACTOR ESP32 BOARS. PINs DO NOT MATCH
-- Breakout board (ESP32 30 pin, see pics) | dupont - also Arduino form factor (size)
-- Joystick shield (ITEAD, see pics) | very slim, Arduino form factor 
+- ESP32 (30 pin, see media) | standard, no battery port - DO NOT USE A ARDUINO FORM FACTOR ESP32 BOARS. PINs DO NOT MATCH
+- Breakout board (ESP32 30 pin, see media) | dupont - also Arduino form factor (size)
+- Joystick shield (ITEAD, see media) | very slim, Arduino form factor 
 
 Many thanks to Howard Dutton which is the founder and lead developer of the [OnStep telescope controller](https://onstep.groups.io/g/main/wiki/Home), which did the main work on altering the source code so that things are working with the joystick shield (which they did not in the first place).
 
@@ -42,9 +42,9 @@ The model is bulky, because of the use of standard breakout boards and shields. 
 First it depends on the version. 
 
 1. Access to a 3D printer with PLA (or other materials which can be fine printed)
-2. [A standard ESP32 with 30 pim](pics/ESP32_30pin_left_layout_comparison.jpg) (just the baseplate) best with USB-C jack
-3. [An Arduino form factor breakout board for the ESP32](pics/ESP32-30pin-BO1-ESP32_compact_breakout_and%20ESP32.jpg) (Dupont variant) with USB-C (V) and a standard 5/2.1 mm jack (4.5 to 16V) - other breakout boards might fit. But these are very common. 
-4. [A Joystick shield](hpics/ITEAD_Joystickshield_DS.pdf). The one I use here is very small. Reference Design V01 uses this one.
+2. [A standard ESP32 with 30 pim](media/ESP32_30pin_left_layout_comparison.jpg) (just the baseplate) best with USB-C jack
+3. [An Arduino form factor breakout board for the ESP32](media/ESP32-30pin-BO1-ESP32_compact_breakout_and%20ESP32.jpg) (Dupont variant) with USB-C (V) and a standard 5/2.1 mm jack (4.5 to 16V) - other breakout boards might fit. But these are very common. 
+4. [A Joystick shield](hmedia/ITEAD_Joystickshield_DS.pdf). The one I use here is very small. Reference Design V01 uses this one.
 5. An OLED 1,3 inch screen (I use a white colored one and put a red foil on it for the night)
 6. 15 cm long Dupont cables (female 2 female) OR use a crimp toolset and cables to make your own length (which is better). You can save a lot of time, if you buy preconfigured dupont cables (2,4,5 bundled). These hold better than single cables.
 8. A standard USB-C battery pack or, for the breakout board 6,5 to 14V DC input (standard 5/2.1 mm jack)- until now there is not space for the battery  
@@ -96,8 +96,8 @@ Within the folder structure in this repository you will find the different versi
 
 ![grafik](https://user-images.githubusercontent.com/456034/234828495-9fc7945a-443b-43dd-a11a-569b4a9bc3a1.png)
 
-<img src="pics/V01/ITEAD_Shield_pinmap_ESP32_01.png" width=300> <img src="https://user-images.githubusercontent.com/456034/234848548-31534d51-8aed-4dec-b4e7-3f7b9aa3a3b2.png" width=300>
-<img src="pics/V01/rapid_bulky_wSHC_V01_BOM_a_ESP32_stacked_on_Board.jpg" width=300> 
+<img src="media/V01/ITEAD_Shield_pinmap_ESP32_01.png" width=300> <img src="https://user-images.githubusercontent.com/456034/234848548-31534d51-8aed-4dec-b4e7-3f7b9aa3a3b2.png" width=300>
+<img src="media/V01/rapid_bulky_wSHC_V01_BOM_a_ESP32_stacked_on_Board.jpg" width=300> 
 
 This is the most compact combination I could find out there:
 
@@ -111,7 +111,7 @@ Please contribute at the tread [wSHC (wireless Smart Hand Controller) with stand
 
 ## Instructions
 
-Basically  orient yourself on the pinmap of the SHC code for ESP32 and you read the look at the wirering plan in the pics directory for the ITEAD joystick shield.
+Basically  orient yourself on the pinmap of the SHC code for ESP32 and you read the look at the wirering plan in the media directory for the ITEAD joystick shield.
 
 ### Dragons ahead
 
