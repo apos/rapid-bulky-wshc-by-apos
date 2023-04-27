@@ -111,7 +111,7 @@ Within the folder structure in this repository you will find the different versi
 ## V01
 ### Featue list
 
-- [ ] #2 
+- [ ] 3D Model [finalize 3d model for V01]([https://github.com/apos/rapid-bulky-wshc-by-apos/issues/2](https://github.com/apos/rapid-bulky-wshc-by-apos/issues/1))
 - [x] Configure.h tested: main branch (https://github.com/hjd1964/SmartHandController/commits/main)
 - [x] OLED 1,3 inch
 
