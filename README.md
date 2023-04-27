@@ -104,7 +104,7 @@ Within the folder structure in this repository you will find the different versi
 
 ### V01a with 1,3 OLED
 
-<img src=https://user-images.githubusercontent.com/456034/234855272-b8b3f6c1-4e9e-45da-81e8-0ee3521e33b8.png" width=300>
+<img src="https://user-images.githubusercontent.com/456034/234855272-b8b3f6c1-4e9e-45da-81e8-0ee3521e33b8.png" width=300>
 
 
 
