@@ -29,7 +29,8 @@ Be able to rapidly build a wireless Smart Hand Controller with common standard p
 - Build a **wireles** SHC - no ST4 or cable
 - Build it **fast** (simply put things together)
 - Build it **cheap** (standard compnents)
-- In the first place you should get every component within days in your country (no China-imports necessary just get started) 
+- In the first place use standard components. You should get every part within days in your country or your local hardware store
+- No long waiting China-imports necessary in the first place just to get started
 - **No welding** required (dupont connector, probably using a crimp tool if you like special cable length)
 - **No PCB** necessary
 - Battery (for no) not included - use with a small, external battery pack
