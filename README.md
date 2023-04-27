@@ -38,22 +38,9 @@ The intended usage is prototyping, testing. But it also meets the requirements t
 
 The model is bulky, because of the use of standard breakout boards and shields. There exist others which use PCBs. This project gives you the time to do a more suffisticated wSHC without having one in the meantime :-)
 
-## More to come
-
-- Detailed instructions, video 
-- More versions to come (OLED sizes, breakount boards, 30/38 pin layout of ESP32, battery pack,).
-
-**For now there does not exist a detailed HowTo.** Please be patient. 
-
-## What you need - BOM
-
-Mainly:   
-
-- [ESP32 30pin](https://de.aliexpress.com/item/1005004702430375.html)
-- [Breakout board](https://de.aliexpress.com/item/1005004786802668.html) - very slim, pins on top (which is what you want). You can use others, probably there will be other 3D models in the future. This has an Arduino form factor and simly is the best I could found. 
-- I did not find the little ITEAD joystick shields anymore, (bought them on eBay last year). The 3D model actually does not fit in the moment, it is designed for the ITEAD shield
-
-But any joystick board should. For real world usage, there should be no bulky things on the top of the board! Pins you can get rid of, but not extra headers. I found this: https://de.aliexpress.com/item/32780304126.html (Keystudio Joystick shield). But it is bigger, I have to alter the design.
+## What you need
+ 
+First it depends on the version. 
 
 1. Access to a 3D printer with PLA (or other materials which can be fine printed)
 2. [A standard ESP32 with 30 pim](pics/ESP32_30pin_left_layout_comparison.jpg) (just the baseplate) best with USB-C jack
@@ -84,13 +71,41 @@ But any joystick board should. For real world usage, there should be no bulky th
 - 4 hour pint (Prusa MKS3 Draft 0.3mm, 20% infill)
 - You can save a lot of time, when you use preconfigured cables with already have preconfigured dupont connectors (2 / 4 / 5 in a row)
 
-## Classroom project
+### Classroom project
 
 If you already implemented an OnStep controller with peoplo of you astronomy club, it is very easy now to get everything running with a wireless SHC. You will be surprised how much more intuitive this is, than using the handy app.
 
 If you are well prepared (get cables ready, print parts) you will make this in a 3 hour workshop. Inkluded a pause, 30min intro and 30 minutes for asking questions. 
 
 You can save really a lot of money if you order the parts in China (takes usually 2 weeks shipping).
+
+
+### More to come
+
+- Detailed instructions, video 
+- More versions to come (OLED sizes, breakount boards, 30/38 pin layout of ESP32, battery pack,).
+
+**For now there does not exist a detailed HowTo.** Please be patient. 
+
+# Versions to build
+
+Any ESP32 and joystick board should work. For real world usage, there should be no bulky things on the top of the board! Pins you can get rid of, but not extra headers. I found this: https://de.aliexpress.com/item/32780304126.html (Keystudio Joystick shield). But it is bigger, I have to alter the design.
+
+Within the folder structure in this repository you will find the different versions (hardware, configuration and 3d model).
+
+## V01
+
+![grafik](https://user-images.githubusercontent.com/456034/234828495-9fc7945a-443b-43dd-a11a-569b4a9bc3a1.png)
+
+- [ESP32 30pin](https://de.aliexpress.com/item/1005004702430375.html)
+- [Breakout board](https://de.aliexpress.com/item/1005004786802668.html) - very slim, pins on top (which is what you want). You can use others, probably there will be other 3D models in the future. This has an Arduino form factor and simly is the best I could found. 
+- ITEAD joystick shields (bought them on eBay last year). 
+
+## More to come 
+
+Please contribute at the tread [wSHC (wireless Smart Hand Controller) with standard ESP32-Board and standard joystick shield (anyone?)](https://onstep.groups.io/g/main/message/51440) .
+
+
 
 
 ## Instructions
