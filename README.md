@@ -156,11 +156,12 @@ The parts are very tight (no gap design). I like to use as less as possible scre
 
 The model is bulky, because of the use of standard breakout boards and shields.
 
-- Printer:    Prusa MK3S
+- Printer:    I use a Prusa MK3S
+- Quality:    Tested with 0.3mm in Dragft mode
 - Material:   PLA (in the moment) - trying to go with PC and PETG, but this has to be tested
 - Infill:     20% is enough
-- Support:    no (all parts should print without problems with PLA)
-- Duration:   5 hours (everything will fit on the plate of a Prusa
+- Support:    not needed for PLA (all parts should print without problems). This might be not the case for other materials (not tested yet)
+- Duration:   5 hours (everything will fit on the plate of a Prusa Printer
 
 <img src="https://user-images.githubusercontent.com/456034/234721043-23e05c6f-3493-4108-bc2a-34353505e4ae.png" width=600)>
 
