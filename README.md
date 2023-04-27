@@ -96,6 +96,8 @@ Within the folder structure in this repository you will find the different versi
 
 ![grafik](https://user-images.githubusercontent.com/456034/234828495-9fc7945a-443b-43dd-a11a-569b4a9bc3a1.png)
 
+<img src="pics/V01/ITEAD_Shield_pinmap_ESP32_01.png" width=600>
+
 - [ESP32 30pin](https://de.aliexpress.com/item/1005004702430375.html)
 - [Breakout board](https://de.aliexpress.com/item/1005004786802668.html) - very slim, pins on top (which is what you want). You can use others, probably there will be other 3D models in the future. This has an Arduino form factor and simly is the best I could found. 
 - ITEAD joystick shields (bought them on eBay last year). 
@@ -107,8 +109,6 @@ Please contribute at the tread [wSHC (wireless Smart Hand Controller) with stand
 ## Instructions
 
 Basically  orient yourself on the pinmap of the SHC code for ESP32 and you read the look at the wirering plan in the pics directory for the ITEAD joystick shield.
-
-<img src="pics/V01/ITEAD_Shield_pinmap_ESP32_01.png" width=600>
 
 ### BE AWARE
 - THERE ARE DIFFERENCES IN HARDWARE SPECs for all of these parts out there.
