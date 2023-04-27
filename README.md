@@ -25,6 +25,7 @@ Everything started with an OnStep chat topic: [wSHC (wireless Smart Hand Control
 
 Be able to rapidly build a wireless Smart Hand Controller with common standard parts and a oystick shield: 
 
+- Build to use with **button / joystick shield**
 - Build a **wireles** SHC - no ST4 or cable
 - Build it **fast** (simply put things together)
 - Build it **cheap** (standard compnents)
@@ -94,7 +95,12 @@ Any ESP32 and joystick board should work. For real world usage, there should be 
 Within the folder structure in this repository you will find the different versions (hardware, configuration and 3d model).
 
 ## V01
+### Featue list
+- 3d model: yes
+- Configure.h tested: main branch (https://github.com/hjd1964/SmartHandController/commits/main)
+- OLED 1,3 inch
 
+### Description
 This is the most compact combination of hardware I could find out there:
 
 - [ESP32 30pin](https://de.aliexpress.com/item/1005004702430375.html)
@@ -102,6 +108,7 @@ This is the most compact combination of hardware I could find out there:
 - ITEAD joystick shields (bought them on eBay last year). 
 - OLED 1,3''
 
+### Media
 ![grafik](https://user-images.githubusercontent.com/456034/234828495-9fc7945a-443b-43dd-a11a-569b4a9bc3a1.png)
 
 <img src="media/V01/ITEAD_Shield_pinmap_ESP32_01.png" width=300> <img src="https://user-images.githubusercontent.com/456034/234848548-31534d51-8aed-4dec-b4e7-3f7b9aa3a3b2.png" width=300>
