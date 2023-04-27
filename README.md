@@ -50,7 +50,7 @@ The model is bulky, because of the use of standard breakout boards and shields. 
 Mainly:   
 
 - [ESP32 30pin](https://de.aliexpress.com/item/1005004702430375.html)
-- [Breakout board](https://de.aliexpress.com/item/1005004786802668.html) - very slim, pins on top (which is what you want)
+- [Breakout board](https://de.aliexpress.com/item/1005004786802668.html) - very slim, pins on top (which is what you want). You can use others, probably there will be other 3D models in the future. This has an Arduino form factor and simly is the best I could found. 
 - I did not find the little ITEAD joystick shields anymore, (bought them on eBay last year). The 3D model actually does not fit in the moment, it is designed for the ITEAD shield
 
 But any joystick board should. For real world usage, there should be no bulky things on the top of the board! Pins you can get rid of, but not extra headers. I found this: https://de.aliexpress.com/item/32780304126.html (Keystudio Joystick shield). But it is bigger, I have to alter the design.
