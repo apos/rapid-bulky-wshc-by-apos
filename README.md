@@ -180,7 +180,7 @@ BE AWARE: sometimes you have to press the "Donwload" button on the ESP32 to uplo
 
 You find all 3d files including Fusion360 and 3MF/STL in the **directory "3d" in this repository**. Each one is for a certain Version. These are work in progress. I design with Fusion360 and will update the files after every major milestone.
 
-The parts are very tight (no gap design). I like to use as less as possible screws (if possible no). Some parts have to be glueed together. 
+The parts are very tight (no gap design). I like to use as less as possible screws (if possible no). Some parts have to be glued together. 
 
 The model is bulky, because of the use of standard breakout boards and shields.
 
@@ -189,7 +189,9 @@ The model is bulky, because of the use of standard breakout boards and shields.
 - Material:   PLA (in the moment) 1.75 mm - trying to go with PC and PETG, but this has to be tested
 - Infill:     20% is enough
 - Support:    not needed for PLA (all parts should print without problems). This might be not the case for other materials (not tested yet)
-- Duration:   5 hours with Prusa MK3S in 0.3mm draft mode (everything will fit on the plate of a Prusa Printer)
+- Duration:   5,0 hours with Prusa MK3S in 0.3mm draft mode (everything will fit on the plate of a Prusa Printer). 
 
-<img src="https://user-images.githubusercontent.com/456034/234721043-23e05c6f-3493-4108-bc2a-34353505e4ae.png" width=600)>
+Important: Print the little half round part of the joystick cap and the back of the OLED housing separately. They will be glued together with fast glue.
+
+<img src="https://user-images.githubusercontent.com/456034/234966333-5215f90b-3230-4f71-a7d2-aae2300fcb59.png" width=600)>
 
