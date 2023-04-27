@@ -1,6 +1,5 @@
 # Rapid bulky wSHC by apos
 
-
 Rapid_Bulky_wSHC_V13_01 / very early version </br>
 <img src="pics/V01/ESP32-30pin-BO1-Rapid_Bulky_wSHC_V13_01.jpg" width="600"> 
 
@@ -105,14 +104,11 @@ Within the folder structure in this repository you will find the different versi
 
 Please contribute at the tread [wSHC (wireless Smart Hand Controller) with standard ESP32-Board and standard joystick shield (anyone?)](https://onstep.groups.io/g/main/message/51440) .
 
-
-
-
 ## Instructions
 
 Basically  orient yourself on the pinmap of the SHC code for ESP32 and you read the look at the wirering plan in the pics directory for the ITEAD joystick shield.
 
-<img src="pics/ITEAD_Shield_pinmap_ESP32_01.png" width=600>
+<img src="pics/V01/ITEAD_Shield_pinmap_ESP32_01.png" width=600>
 
 ### BE AWARE
 - THERE ARE DIFFERENCES IN HARDWARE SPECs for all of these parts out there.
