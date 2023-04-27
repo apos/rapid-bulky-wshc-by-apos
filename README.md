@@ -44,7 +44,7 @@ First it depends on the version.
 1. Access to a 3D printer with PLA (or other materials which can be fine printed)
 2. [A standard ESP32 with 30 pim](pics/ESP32_30pin_left_layout_comparison.jpg) (just the baseplate) best with USB-C jack
 3. [An Arduino form factor breakout board for the ESP32](pics/ESP32-30pin-BO1-ESP32_compact_breakout_and%20ESP32.jpg) (Dupont variant) with USB-C (V) and a standard 5/2.1 mm jack (4.5 to 16V) - other breakout boards might fit. But these are very common. 
-4. [A special Arduino form factor Joystick shield](hpics/ITEAD_Joystickshield_DS.pdf). The one I use here is very small
+4. [A Joystick shield](hpics/ITEAD_Joystickshield_DS.pdf). The one I use here is very small. Reference Design V01 uses this one.
 5. An OLED 1,3 inch screen (I use a white colored one and put a red foil on it for the night)
 6. 15 cm long Dupont cables (female 2 female) OR use a crimp toolset and cables to make your own length (which is better). You can save a lot of time, if you buy preconfigured dupont cables (2,4,5 bundled). These hold better than single cables.
 8. A standard USB-C battery pack or, for the breakout board 6,5 to 14V DC input (standard 5/2.1 mm jack)- until now there is not space for the battery  
@@ -147,14 +147,13 @@ If you do this you need:
 BE AWARE: sometimes you have to press the "Donwload" button on the ESP32 to upload the code and you need the correct driver. Normally the USB-C variants are newer and have no problems.
 
 
-## 3D-printer model
+# 3D-printer model
 
-You find all 3d files including Fusion360 and 3MF/STL in the **directory "3d" in this repository**. These are work in progress. I design with Fusion360 and will update the files after every major milestone.
+You find all 3d files including Fusion360 and 3MF/STL in the **directory "3d" in this repository**. Each one is for a certain Version. These are work in progress. I design with Fusion360 and will update the files after every major milestone.
 
 The parts are very tight (no gap design). I like to use as less as possible screws (if possible no). Some parts have to be glueed together. 
 
 The model is bulky, because of the use of standard breakout boards and shields.
-
 
 - Printer:    Prusa MK3S
 - Material:   PLA (in the moment) - trying to go with PC and PETG, but this has to be tested
