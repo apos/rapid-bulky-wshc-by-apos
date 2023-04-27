@@ -62,7 +62,9 @@ First it depends on the version.
 - Battery Pack: nothing, what you have (your existing 5V powerbank, 12V jack ...) or buy a little powerpack 5-10 €. The SHC does not need much power (2500 mA suffice).
  
 => 15-20 € if you are in a hurry (Amazon/Ebay) and well suited otherwise (battery, cables) 
+
 => More, if you start from scatch and need cables, battery pack, crimp tool
+
 => If you have time and will save a lot of costs you can get everything from China for under 10 €. This is intersting, if you have a class and want to buuild this
 
 ### Build Time
