@@ -100,6 +100,8 @@ Within the folder structure in this repository you will find the different versi
 
 <img src="media/V01/ITEAD_Shield_pinmap_ESP32_01.png" width=300> <img src="https://user-images.githubusercontent.com/456034/234848548-31534d51-8aed-4dec-b4e7-3f7b9aa3a3b2.png" width=300>
 <img src="media/V01/rapid_bulky_wSHC_V01_BOM_a_ESP32_stacked_on_Board.jpg" width=300> 
+<img src="https://user-images.githubusercontent.com/456034/234854773-a403c2c1-1c93-4562-a9b2-2cd4e6275e17.png width=600>
+
 
 This is the most compact combination I could find out there:
 
