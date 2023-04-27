@@ -3,8 +3,8 @@
 Rapid_Bulky_wSHC_V13_01 / very early version </br>
 <img src="media/V01/ESP32-30pin-BO1-Rapid_Bulky_wSHC_V13_01.jpg" width="600"> 
 
-Rapid_Bulky_wSHC_V33_M1 / near final version of V01 </br>
-<img src="3d/V01/v33_M1_01.png" width="300"> <img src="https://user-images.githubusercontent.com/456034/234690468-60de81e5-2e7a-4b52-806b-2a95a310739b.png" width="300">
+Rapid_Bulky_wSHC_V39_M1 / near final version of V01 </br>
+<img src="3d/V01/v39_M1_01.png" width="300"> <img src="3d/V01/v39_M1_02.png" width="300">
 
 ## Preface
 This is for building a wireless [Smart Hand Controller (wSHC)](https://onstep.groups.io/g/main/wiki/7152) for the [OnStep telescope controller](https://onstep.groups.io/g/main/wiki/Home) with
