@@ -15,7 +15,7 @@ This is for building a wireless [Smart Hand Controller (wSHC)](https://onstep.gr
 
 Many thanks to Howard Dutton which is the founder and lead developer of the [OnStep telescope controller](https://onstep.groups.io/g/main/wiki/Home), which did the main work on altering the source code so that things are working with the joystick shield (which they did not in the first place).
 
-CS Axel
+CS [Axel](https://avvp.de/portfolio-view/axel-pospischil)
  
 ## Basic informations
 
