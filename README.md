@@ -123,6 +123,7 @@ This is the most compact combination of hardware I could find out there:
 - [Breakout board](https://de.aliexpress.com/item/1005004786802668.html) - very slim, pins on top (which is what you want). You can use others, probably there will be other 3D models in the future. This has an Arduino form factor and simly is the best I could found. 
 - ITEAD joystick shields (bought them on eBay last year). 
 - OLED 1,3''
+- Optional: two M3 23mm length (not necessary, bevause parts should snap together
 
 ### Media
 ![grafik](https://user-images.githubusercontent.com/456034/234828495-9fc7945a-443b-43dd-a11a-569b4a9bc3a1.png)
