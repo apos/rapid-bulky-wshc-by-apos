@@ -190,10 +190,14 @@ The model is bulky, because of the use of standard breakout boards and shields.
 - Quality:    Tested with 0.3mm in draft mode
 - Material:   PLA (in the moment) 1.75 mm - trying to go with PC and PETG, but this has to be tested
 - Infill:     20% is enough
-- Support:    not needed for PLA (all parts should print without problems). This might be not the case for other materials (not tested yet)
+- Support:    not needed for most parts printed with PLA. Only for the OLED back. This might be not the case for other materials (not tested yet)
 - Duration:   5,0 hours with Prusa MK3S in 0.3mm draft mode (everything will fit on the plate of a Prusa Printer). 
 
-Important: Print the little half round part of the joystick cap and the back of the OLED housing separately. They will be glued together with fast glue.
+Important: 
 
-<img src="https://user-images.githubusercontent.com/456034/234966333-5215f90b-3230-4f71-a7d2-aae2300fcb59.png" width=600)>
+- **Special orientation** on printer bed needed for some parts (see picture)
+- Print the OLED housing separately **with support**
+- Joystick "ring" and OLED housing back will be glued to it's corresonding parts with fast glue.
+
+<img src="https://user-images.githubusercontent.com/456034/234975028-fe71fdb7-16ea-4a19-9813-e5c6a074db13.png" width=600)>
 
