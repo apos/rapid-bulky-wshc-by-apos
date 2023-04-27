@@ -66,12 +66,12 @@ First it depends on the version.
 | Filament | V01 | PLA | 2-3 € |
 | Cables | V01 | 10 to 15 cm long (female to female) | Cents |
 
-#### All Versions
+#### All Versions (needed)
 | Part | Version | Notes | Cost |
 | ------------- | -------- | ------------- | ----------- |
-| Cables | All | Good, but standard dupont cables 10 to 15 cm long, use preconfigured 2,3,4,5 pin ones | Cents |
-| Cables | All | Crimpset, this is a good investment for many projects | 30-50 € |
-| Battery Pack | All | power supply, 5V powerbank (USB-C/Micro-USB), 5mm/2.1mm jack (6 to 14,5 V) | depends |
+| Cables | All | Use only **good quality, standard dupont cables** 10 to 15 cm long or use preconfigured 2,3,4,5 pin ones. It is wise to use cable headers. Single connections could be troublesome. | Cents |
+| Cables | All | **Crimpset**, this is a good investment for many projects | 30-50 € |
+| Battery Pack | All | Power supply, 5V powerbank (USB-C/Micro-USB), 5mm/2.1mm jack (6 to 14,5 V) | depends |
 
 #### Total costs
 
@@ -84,8 +84,8 @@ First it depends on the version.
 
 ### Build Time
 
-- 4 hour pint (Prusa MKS3 Draft 0.3mm, 20% infill)
-- You can save a lot of time, when you use preconfigured cables with already have preconfigured dupont connectors (2 / 4 / 5 in a row)
+- 4 hour 3d print (Prusa MKS3 Draft 0.3mm, 20% infill)
+- You can save a lot of time, when you use preconfigured cables with already have preconfigured dupont connectors (2 / 4 / 5 in a row). E.g. crimping takes the most of time.
 
 ### Classroom project
 
