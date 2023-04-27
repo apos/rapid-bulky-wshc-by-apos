@@ -158,7 +158,7 @@ The model is bulky, because of the use of standard breakout boards and shields.
 
 - Printer:    I use a Prusa MK3S
 - Quality:    Tested with 0.3mm in draft mode
-- Material:   PLA (in the moment) - trying to go with PC and PETG, but this has to be tested
+- Material:   PLA (in the moment) 1.75 mm - trying to go with PC and PETG, but this has to be tested
 - Infill:     20% is enough
 - Support:    not needed for PLA (all parts should print without problems). This might be not the case for other materials (not tested yet)
 - Duration:   5 hours with Prusa MK3S in 0.3mm draft mode (everything will fit on the plate of a Prusa Printer)
