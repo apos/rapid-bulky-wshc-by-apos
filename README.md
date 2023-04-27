@@ -47,6 +47,14 @@ The model is bulky, because of the use of standard breakout boards and shields. 
 
 ## What you need - BOM
 
+Mainly:   
+
+- [ESP32 30pin](https://de.aliexpress.com/item/1005004702430375.html)
+- [Breakout board](https://de.aliexpress.com/item/1005004786802668.html) - very slim, pins on top (which is what you want)
+- I did not find the little ITEAD joystick shields anymore, (bought them on eBay last year). The 3D model actually does not fit in the moment, it is designed for the ITEAD shield
+
+But any joystick board should. For real world usage, there should be no bulky things on the top of the board! Pins you can get rid of, but not extra headers. I found this: https://de.aliexpress.com/item/32780304126.html (Keystudio Joystick shield). But it is bigger, I have to alter the design.
+
 1. Access to a 3D printer with PLA (or other materials which can be fine printed)
 2. [A standard ESP32 with 30 pim](pics/ESP32_30pin_left_layout_comparison.jpg) (just the baseplate) best with USB-C jack
 3. [An Arduino form factor breakout board for the ESP32](pics/ESP32-30pin-BO1-ESP32_compact_breakout_and%20ESP32.jpg) (Dupont variant) with USB-C (V) and a standard 5/2.1 mm jack (4.5 to 16V) - other breakout boards might fit. But these are very common. 
