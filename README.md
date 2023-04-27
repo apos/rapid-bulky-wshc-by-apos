@@ -110,9 +110,10 @@ Within the folder structure in this repository you will find the different versi
 
 ## V01
 ### Featue list
-- 3d model: yes
-- Configure.h tested: main branch (https://github.com/hjd1964/SmartHandController/commits/main)
-- OLED 1,3 inch
+
+- [ ] #2 
+- [x] Configure.h tested: main branch (https://github.com/hjd1964/SmartHandController/commits/main)
+- [x] OLED 1,3 inch
 
 ### Description
 This is the most compact combination of hardware I could find out there:
