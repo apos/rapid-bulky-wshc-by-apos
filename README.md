@@ -200,7 +200,7 @@ Important:
 - Joystick "ring" and OLED housing back will be **glued** to it's corresonding parts with fast glue.
 
 <img src="https://user-images.githubusercontent.com/456034/235000976-03d781d8-cdc6-410e-abe0-69a46fe85c04.png" width=600)>
-<img src="https://user-images.githubusercontent.com/456034/235001307-6b321cf3-6a68-4a5c-97c5-93fdf2542fe8.png" width=200)>
+<img src="https://user-images.githubusercontent.com/456034/235008404-893c6de9-f5e3-4c84-9352-76d742ef82ed.png" width=200)>
 
 
 
