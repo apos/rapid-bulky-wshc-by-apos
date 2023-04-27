@@ -65,7 +65,7 @@ First it depends on the version.
 
 => More, if you start from scatch and need cables, battery pack, crimp tool
 
-=> If you have time and will save a lot of costs you can get everything from China for under 10 €. This is intersting, if you have a class and want to buuild this
+=> Under 10 €: if you have time and will save a lot of costs you can get everything from China sellers. This is intersting, if you have a class, order more than one parts and want to build this for a group of people.
 
 ### Build Time
 
