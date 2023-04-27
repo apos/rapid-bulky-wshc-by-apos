@@ -200,7 +200,9 @@ Important:
 - Print the OLED housing separately **with support**
 - Joystick "ring" and OLED housing back will be **glued** to it's corresonding parts with fast glue.
 
-<img src="https://user-images.githubusercontent.com/456034/234975028-fe71fdb7-16ea-4a19-9813-e5c6a074db13.png" width=600)>
+<img src="https://user-images.githubusercontent.com/456034/235000976-03d781d8-cdc6-410e-abe0-69a46fe85c04.png" width=600)>
+<img src="https://user-images.githubusercontent.com/456034/235001307-6b321cf3-6a68-4a5c-97c5-93fdf2542fe8.png" width=200)>
+
 
 
 
