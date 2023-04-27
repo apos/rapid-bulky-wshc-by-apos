@@ -55,7 +55,23 @@ First it depends on the version.
 11. Knowing how to configure the SHC code and upload and program it (next sections).
 
 ### Costs 
-#### Version 01
+#### Total costs
+
+| Total per unit | Version | Notes |
+| ------------- | -------- | ------------- | 
+| 15-20 € | V01 | if you are in a hurry (Amazon/Ebay) and well suited otherwise (battery, cables) |
+| under 10 € | V01 | if you have time and will save a lot of costs you can get everything from China sellers. This is intersting, if you have a class, order more than one parts and want to build this for a group of people.  |
+| 30+ € | All | More, if you start from scatch and need cables, battery pack, crimp tool |
+
+#### All Versions (parts needed)
+
+| Part | Version | Notes | Cost |
+| ------------- | -------- | ------------- | ----------- |
+| Cables | All | Use only **good quality, standard dupont cables** 10 to 15 cm long or use preconfigured 2,3,4,5 pin ones. It is wise to use cable headers. Single connections could be troublesome. | Cents |
+| Cables | All | **Crimpset**, this is a good investment for many projects | 30-50 € |
+| Battery Pack | All | Power supply, 5V powerbank (USB-C/Micro-USB), 5mm/2.1mm jack (6 to 14,5 V) | depends if you have to buy or can reuse  |
+
+**Version 01**
 
 | Part | Version | Notes | Cost |
 | ------------- | -------- | ------------- | ----------- |
@@ -65,21 +81,6 @@ First it depends on the version.
 | OLED | V01 | 1,3 inch  | 5 € |
 | Filament | V01 | PLA | 2-3 € |
 | Cables | V01 | 10 to 15 cm long (female to female) | Cents |
-
-#### All Versions (needed)
-| Part | Version | Notes | Cost |
-| ------------- | -------- | ------------- | ----------- |
-| Cables | All | Use only **good quality, standard dupont cables** 10 to 15 cm long or use preconfigured 2,3,4,5 pin ones. It is wise to use cable headers. Single connections could be troublesome. | Cents |
-| Cables | All | **Crimpset**, this is a good investment for many projects | 30-50 € |
-| Battery Pack | All | Power supply, 5V powerbank (USB-C/Micro-USB), 5mm/2.1mm jack (6 to 14,5 V) | depends |
-
-#### Total costs
-
-| Total per unit | Version | Notes |
-| ------------- | -------- | ------------- | 
-| 15-20 € | V01 | if you are in a hurry (Amazon/Ebay) and well suited otherwise (battery, cables) |
-| under 10 € | V01 | if you have time and will save a lot of costs you can get everything from China sellers. This is intersting, if you have a class, order more than one parts and want to build this for a group of people.  |
-| 30+ € | All | More, if you start from scatch and need cables, battery pack, crimp tool |
 
 
 ### Build Time
