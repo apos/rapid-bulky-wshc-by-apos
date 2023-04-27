@@ -21,7 +21,7 @@ CS [Axel](https://avvp.de/portfolio-view/axel-pospischil)
 
 Everything started with an OnStep chat topic: [wSHC (wireless Smart Hand Controller) with standard ESP32-Board and standard joystick shield (anyone?)](https://onstep.groups.io/g/main/message/51440). It lead to this design.
 
-## Purpose of this design
+## Purpose
 
 Be able to rapidly build a wireless Smart Hand Controller with common standard parts and a oystick shield: 
 
@@ -37,7 +37,7 @@ The intended usage is prototyping, testing. But it also meets the requirements t
 
 The model is bulky, because of the use of standard breakout boards and shields. There exist others which use PCBs. This project gives you the time to do a more suffisticated wSHC without having one in the meantime :-)
 
-## What you need
+### What you need
  
 First it depends on the version. 
 
