@@ -55,19 +55,32 @@ First it depends on the version.
 11. Knowing how to configure the SHC code and upload and program it (next sections).
 
 ### Costs 
+#### Version 01
 
-- ESP32 30pin 5-7 €
-- Breakout board: 5 €
-- OLED 5-8€
-- PLA Filament: 2-3 €
-- Good, but standard dupont cables 10 to 15 cm long (female to female): 5 € or Crimpset 30 €
-- Battery Pack: nothing, what you have (your existing 5V powerbank, 12V jack ...) or buy a little powerpack 5-10 €. The SHC does not need much power (2500 mA suffice).
- 
-=> 15-20 € if you are in a hurry (Amazon/Ebay) and well suited otherwise (battery, cables) 
+| Part | Version | Notes | Cost |
+| ------------- | -------- | ------------- | ----------- |
+| ESP32  | V01 | 30pin  | 5-7 € |
+| Breakout board  | V01 | for ESP32/30pin Arduino form factor  | 5 € |
+| Joystick shield  | V01 | ITEAD (seems to be not avaiable very easy). Very slim design. Arduino form factor  | 5 € |
+| OLED | V01 | 1,3 inch  | 5 € |
+| Filament | V01 | PLA | 2-3 € |
+| Cables | V01 | 10 to 15 cm long (female to female) | Cents |
 
-=> More, if you start from scatch and need cables, battery pack, crimp tool
+#### All Versions
+| Part | Version | Notes | Cost |
+| ------------- | -------- | ------------- | ----------- |
+| Cables | All | Good, but standard dupont cables 10 to 15 cm long, use preconfigured 2,3,4,5 pin ones | Cents |
+| Cables | All | Crimpset, this is a good investment for many projects | 30-50 € |
+| Battery Pack | All | power supply, 5V powerbank (USB-C/Micro-USB), 5mm/2.1mm jack (6 to 14,5 V) | depends |
 
-=> Under 10 €: if you have time and will save a lot of costs you can get everything from China sellers. This is intersting, if you have a class, order more than one parts and want to build this for a group of people.
+#### Total costs
+
+| Total per unit | Version | Notes |
+| ------------- | -------- | ------------- | 
+| 15-20 € | V01 | if you are in a hurry (Amazon/Ebay) and well suited otherwise (battery, cables) |
+| under 10 € | V01 | if you have time and will save a lot of costs you can get everything from China sellers. This is intersting, if you have a class, order more than one parts and want to build this for a group of people.  |
+| 30+ € | All | More, if you start from scatch and need cables, battery pack, crimp tool |
+
 
 ### Build Time
 
