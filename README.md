@@ -86,7 +86,6 @@ You can save really a lot of money if you order the parts in China (takes usuall
 - Detailed instructions, video 
 - More versions to come (OLED sizes, breakount boards, 30/38 pin layout of ESP32, battery pack,).
 
-**For now there does not exist a detailed HowTo.** Please be patient. 
 
 # Versions to build
 
@@ -113,7 +112,7 @@ This is the most compact combination of hardware I could find out there:
 
 <img src="https://user-images.githubusercontent.com/456034/234855272-b8b3f6c1-4e9e-45da-81e8-0ee3521e33b8.png" width=300>
 
-## More to come 
+## More versions to come
 
 Please contribute at the tread [wSHC (wireless Smart Hand Controller) with standard ESP32-Board and standard joystick shield (anyone?)](https://onstep.groups.io/g/main/message/51440) .
 
