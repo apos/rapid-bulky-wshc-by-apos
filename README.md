@@ -96,6 +96,13 @@ Within the folder structure in this repository you will find the different versi
 
 ## V01
 
+This is the most compact combination of hardware I could find out there:
+
+- [ESP32 30pin](https://de.aliexpress.com/item/1005004702430375.html)
+- [Breakout board](https://de.aliexpress.com/item/1005004786802668.html) - very slim, pins on top (which is what you want). You can use others, probably there will be other 3D models in the future. This has an Arduino form factor and simly is the best I could found. 
+- ITEAD joystick shields (bought them on eBay last year). 
+- OLED 1,3''
+
 ![grafik](https://user-images.githubusercontent.com/456034/234828495-9fc7945a-443b-43dd-a11a-569b4a9bc3a1.png)
 
 <img src="media/V01/ITEAD_Shield_pinmap_ESP32_01.png" width=300> <img src="https://user-images.githubusercontent.com/456034/234848548-31534d51-8aed-4dec-b4e7-3f7b9aa3a3b2.png" width=300>
@@ -105,14 +112,6 @@ Within the folder structure in this repository you will find the different versi
 ### V01a with 1,3 OLED
 
 <img src="https://user-images.githubusercontent.com/456034/234855272-b8b3f6c1-4e9e-45da-81e8-0ee3521e33b8.png" width=300>
-
-
-
-This is the most compact combination I could find out there:
-
-- [ESP32 30pin](https://de.aliexpress.com/item/1005004702430375.html)
-- [Breakout board](https://de.aliexpress.com/item/1005004786802668.html) - very slim, pins on top (which is what you want). You can use others, probably there will be other 3D models in the future. This has an Arduino form factor and simly is the best I could found. 
-- ITEAD joystick shields (bought them on eBay last year). 
 
 ## More to come 
 
