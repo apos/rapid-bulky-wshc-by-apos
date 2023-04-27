@@ -195,9 +195,11 @@ The model is bulky, because of the use of standard breakout boards and shields.
 
 Important: 
 
-- **Special orientation** on printer bed needed for some parts (see picture)
+- **Special orientation** on printer bed needed for some parts (see picture and red rectangles)
 - Print the OLED housing separately **with support**
-- Joystick "ring" and OLED housing back will be glued to it's corresonding parts with fast glue.
+- Joystick "ring" and OLED housing back will be **glued** to it's corresonding parts with fast glue.
 
 <img src="https://user-images.githubusercontent.com/456034/234975028-fe71fdb7-16ea-4a19-9813-e5c6a074db13.png" width=600)>
+
+
 
