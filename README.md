@@ -132,9 +132,7 @@ This is the most compact combination of hardware I could find out there:
 <img src="media/V01/rapid_bulky_wSHC_V01_BOM_a_ESP32_stacked_on_Board.jpg" width=300> 
 <img src="3d/V01/v39_M1_01.png" width="300"> <img src="3d/V01/v39_M1_02.png" width="300">
 
-
-### V01a with 1,3 OLED
-
+#### V01a with 1,3 inch OLED
 <img src="https://user-images.githubusercontent.com/456034/234855272-b8b3f6c1-4e9e-45da-81e8-0ee3521e33b8.png" width=300>
 
 ## More versions to come
