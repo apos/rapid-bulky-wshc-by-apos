@@ -85,10 +85,17 @@ First it depends on the version.
 
 ### Build Time
 
-- 4 hour 3d print (Prusa MKS3 Draft 0.3mm, 20% infill)
-- You can save a lot of time, when you use preconfigured cables with already have preconfigured dupont connectors (2 / 4 / 5 in a row). E.g. crimping takes the most of time.
+#### Preparation
 
-### Classroom project
+3d parts
+- 4 hour 3d print (Prusa MKS3 Draft 0.3mm, 20% infill, no support) + 30 minutes for caps
+- 7 hour 3d print (Prusa MKS3 Quality 0.2mm, 15% infill, no support)+ 45 minutes for caps
+
+Cables
+- You can save a lot of time, when you use preconfigured cables with already have preconfigured dupont connectors (2 / 4 / 5 in a row). E.g. crimping takes the most of time.
+- Crimping is way more better than welding
+
+#### Classroom project
 
 If you already implemented an OnStep controller with peoplo of you astronomy club, it is very easy now to get everything running with a wireless SHC. You will be surprised how much more intuitive this is, than using the handy app.
 
