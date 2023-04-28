@@ -22,9 +22,9 @@ Many thanks to [Howard Dutton](http://www.stellarjourney.com/) which is the foun
 
 CS [Axel](https://avvp.de/portfolio-view/axel-pospischil)
  
-## Basic informations
+## History
 
-Everything started with an OnStep chat topic: [wSHC (wireless Smart Hand Controller) with standard ESP32-Board and standard joystick shield (anyone?)](https://onstep.groups.io/g/main/message/51440). It lead to this design.
+Everything started with an OnStep chat topic: [wSHC (wireless Smart Hand Controller) with standard ESP32-Board and standard joystick shield (anyone?)](https://onstep.groups.io/g/main/message/51440). I had laying around some ESP32 and a Joystick board with buttons. When I found out, that the SHC is simply that, I liked the idea for prototyping or even more. It lead to this design and project. 
 
 ## Purpose
 
