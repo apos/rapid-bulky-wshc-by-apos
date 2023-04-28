@@ -75,7 +75,7 @@ To do this you need:
 | Cables | All | **Crimpset**, this is a good investment for many projects | 30-50 € |
 | Battery Pack | All | Power supply, 5V powerbank (USB-C/Micro-USB), 5mm/2.1mm jack (6 to 14,5 V) | depends if you have to buy or can reuse  |
 
-**Version 01**
+**Reference design 01 (V01)**
 
 | Part | Version | Notes | Cost |
 | ------------- | -------- | ------------- | ----------- |
