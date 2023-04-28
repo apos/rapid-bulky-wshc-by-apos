@@ -194,9 +194,9 @@ The parts are very tight (no gap design). I like to use as less as possible scre
 The model is bulky, because of the use of standard breakout boards and shields.
 
 - Printer:    I use a Prusa MK3S
-- Quality:    Tested with 0.3mm in draft mode
+- Quality:    Tested with 0.3mm in draft mode. For a nice fit use 0.2mm quality mode . Do not use speed modes because of overhangs (stringing)
 - Material:   PLA (in the moment) 1.75 mm - trying to go with PC and PETG, but this has to be tested
-- Infill:     20% is enough
+- Infill:     15-20% is enough
 - Support:    not needed for most parts printed with PLA. Only for the OLED back. This might be not the case for other materials (not tested yet)
 - Duration:   5,0 hours with Prusa MK3S in 0.3mm draft mode (everything will fit on the plate of a Prusa Printer). 
 
