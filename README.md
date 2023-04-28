@@ -24,7 +24,7 @@ CS [Axel](https://avvp.de/portfolio-view/axel-pospischil)
  
 ## History
 
-Everything started with an OnStep chat topic: [wSHC (wireless Smart Hand Controller) with standard ESP32-Board and standard joystick shield (anyone?)](https://onstep.groups.io/g/main/message/51440). I had laying around some ESP32 and a Joystick board with buttons. When I found out, that the SHC is simply that, I liked the idea for prototyping or even more. It lead to this design and project. 
+Everything started with an OnStep chat topic: [wSHC (wireless Smart Hand Controller) with standard ESP32-Board and standard joystick shield (anyone?)](https://onstep.groups.io/g/main/message/51440). I had laying around some ESP32 and a Joystick board with buttons. When I found out, that the SHC is simply that, I liked the idea for prototyping or even more. I did not order a PCB, extra parts or doing welding at the weekend just to get started with an wSHC when the list of components seem to be so simple. This lead to this project. 
 
 ## Purpose
 
