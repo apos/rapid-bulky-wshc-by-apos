@@ -40,10 +40,10 @@ The intended usage is prototyping, testing. But it also meets the requirements t
 The model is bulky, because of the use of standard breakout boards and shields. There exist others which use PCBs. This project gives you the time to do a more suffisticated wSHC without having one in the meantime :-)
 
 ### What you need
-First things first:  
+First things first - this is not the documentation for the SHC! Only for a reference design amoung many others for it concerning hardware and a 3d model to print. 
 
-1. A working [OnStep](https://onstep.groups.io/g/main/wiki) (a simulation mode possible - you will not get over the start screen)
-2. Knowing how to configure the [Smart Hand Controller](https://onstep.groups.io/g/main/wiki/Smart-Hand-Controller) code and upload and program it (next sections).
+1. A working [OnStep with wireless functionality](https://onstep.groups.io/g/main/wiki) (no simulation mode possible - you will not get over the start screen in SHC)
+2. Knowing how to configure the [Smart Hand Controller](https://onstep.groups.io/g/main/wiki/Smart-Hand-Controller) code and ability to program and upload it.
 
 Then it depends on the reference design (version) of the "bulky wSHC" you like to build.
 
