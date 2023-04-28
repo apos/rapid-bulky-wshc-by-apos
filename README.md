@@ -15,6 +15,11 @@ This is for building a wireless [Smart Hand Controller (wSHC)](https://onstep.gr
 
 Many thanks to [Howard Dutton](http://www.stellarjourney.com/) which is the founder and lead developer of the [OnStep telescope controller](https://onstep.groups.io/g/main/wiki/Home). He did the main work on altering the source code so that things are working with the joystick shield (which they did not in the first place).
 
+*Annotation*: **this is not the documentation for an SHC implementation**. This proect only gives you reference designs amoung many others concerning hardware and a 3d model to print. You need in any case:
+
+1. A working [OnStep with wireless functionality](https://onstep.groups.io/g/main/wiki) (no simulation mode possible - you will not get over the start screen in SHC)
+2. Knowing how to configure the [Smart Hand Controller](https://onstep.groups.io/g/main/wiki/Smart-Hand-Controller) and the ability to program the ESP32 and upload it (Arduino IDE, Platform.io).
+
 CS [Axel](https://avvp.de/portfolio-view/axel-pospischil)
  
 ## Basic informations
@@ -40,12 +45,7 @@ The intended usage is prototyping, testing. But it also meets the requirements t
 The model is bulky, because of the use of standard breakout boards and shields. There exist others which use PCBs. This project gives you the time to do a more suffisticated wSHC without having one in the meantime :-)
 
 ### What you need
-First things first - **this is not the documentation for an SHC implementation**. This only gives you a reference design amoung many others concerning hardware and a 3d model to print. 
-
-1. A working [OnStep with wireless functionality](https://onstep.groups.io/g/main/wiki) (no simulation mode possible - you will not get over the start screen in SHC)
-2. Knowing how to configure the [Smart Hand Controller](https://onstep.groups.io/g/main/wiki/Smart-Hand-Controller) and the ability to program the ESP32 and upload it (Arduino IDE, Platform.io).
-
-Then it depends on the reference design (version) of the "bulky wSHC" you like to build.
+It depends on the reference design (version) of the "bulky wSHC" you like to build.
 
 To do this you need:
 
