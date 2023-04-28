@@ -125,7 +125,7 @@ Within the folder structure in this repository you will find the different versi
 
 - 3D Model [finalize 3d model for V01]([https://github.com/apos/rapid-bulky-wshc-by-apos/issues/2](https://github.com/apos/rapid-bulky-wshc-by-apos/issues/1))
 - Configure.h tested: main branch (https://github.com/hjd1964/SmartHandController/commits/main)
-- OLED 1,3 inch
+- 128x64 OLED 1,3 inch (OLED 2,42 inch to come when code is implemented)
 - External battery pack or power needed (USB-C / DC 5/2.1mm jack) 
 
 ### Components
