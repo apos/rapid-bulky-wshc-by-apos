@@ -4,7 +4,7 @@ Rapid_Bulky_wSHC_V13_01 / very early version </br>
 <img src="media/V01/ESP32-30pin-BO1-Rapid_Bulky_wSHC_V13_01.jpg" width="600"> 
 
 Rapid_Bulky_wSHC_V39_M1 / near final version of V01 </br>
-<img src="3d/V01/v39_M1_01.png" width="300"> <img src="3d/V01/v39_M1_02.png" width="300">
+<img src="3d/V01/V01_M1_01.png" width="300"> <img src="3d/V01/V01_M1_02.png" width="300">
 
 ## Preface
 This is for building a wireless [Smart Hand Controller (wSHC)](https://onstep.groups.io/g/main/wiki/7152) for the [OnStep telescope controller](https://onstep.groups.io/g/main/wiki/Home) with
@@ -130,7 +130,7 @@ This is the most compact combination of hardware I could find out there:
 
 <img src="media/V01/ITEAD_Shield_pinmap_ESP32_01.png" width=300> <img src="https://user-images.githubusercontent.com/456034/234848548-31534d51-8aed-4dec-b4e7-3f7b9aa3a3b2.png" width=300>
 <img src="media/V01/rapid_bulky_wSHC_V01_BOM_a_ESP32_stacked_on_Board.jpg" width=300> 
-<img src="3d/V01/v39_M1_01.png" width="300"> <img src="3d/V01/v39_M1_02.png" width="300">
+<img src="3d/V01/V01_M1_01.png" width="300"> <img src="3d/V01/V01_M1_02.png" width="300">
 
 #### V01a with 1,3 inch OLED
 <img src="https://user-images.githubusercontent.com/456034/234855272-b8b3f6c1-4e9e-45da-81e8-0ee3521e33b8.png" width=300>
