@@ -121,13 +121,14 @@ Any ESP32 and joystick board should work. For real world usage, there should be 
 Within the folder structure in this repository you will find the different versions (hardware, configuration and 3d model).
 
 ## V01 (reference design V01)
-### Featue list
+### Feature list
 
-- [ ] 3D Model [finalize 3d model for V01]([https://github.com/apos/rapid-bulky-wshc-by-apos/issues/2](https://github.com/apos/rapid-bulky-wshc-by-apos/issues/1))
-- [x] Configure.h tested: main branch (https://github.com/hjd1964/SmartHandController/commits/main)
-- [x] OLED 1,3 inch
+- 3D Model [finalize 3d model for V01]([https://github.com/apos/rapid-bulky-wshc-by-apos/issues/2](https://github.com/apos/rapid-bulky-wshc-by-apos/issues/1))
+- Configure.h tested: main branch (https://github.com/hjd1964/SmartHandController/commits/main)
+- OLED 1,3 inch
+- External battery pack or power needed (USB-C / DC 5/2.1mm jack) 
 
-### Description
+### Components
 This is the most compact combination of hardware I could find out there:
 
 - [ESP32 30pin](https://de.aliexpress.com/item/1005004702430375.html)
