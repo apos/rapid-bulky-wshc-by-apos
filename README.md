@@ -3,7 +3,7 @@
 A very early prototype :-) </br>
 <img src="media/V01/ESP32-30pin-BO1-Rapid_Bulky_wSHC_V13_01.jpg" width="600"> 
 
-Rapid_Bulky_wSHC_V39_M1 / Near final version of reference design V01 </br>
+jRapid_Bulky_wSHC_V39_M1 / Near final version of reference design V01 </br>
 <img src="3d/V01/V01_M1_01.png" width="300"> <img src="3d/V01/V01_M1_03.png" width="300">  <img src="3d/V01/V01_M1_02.png" width="300"> 
 
 ## Note on git checkout
