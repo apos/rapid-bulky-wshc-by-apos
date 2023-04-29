@@ -212,7 +212,8 @@ Important:
 - Print the OLED housing and the front cap for the base **separately with support only on printer bed standing right up on the side** Otherwise you could get trouble (parts could go off the print bed, supports might not get off)
 - Joystick "ring" and OLED housing back will be **glued** to it's corresonding parts with fast glue.
 
-<img src="https://user-images.githubusercontent.com/456034/235000976-03d781d8-cdc6-410e-abe0-69a46fe85c04.png" width=600)>
+<img src="https://user-images.githubusercontent.com/456034/235313742-7612246b-d6f1-4d65-85ea-54cbd08101e5.png" width=600)>
+<img src="https://user-images.githubusercontent.com/456034/235313683-2c1f889e-322b-4c5f-954b-10d8d4716f2d.png" width=600)>
 <img src="https://user-images.githubusercontent.com/456034/235010482-c96bba09-c7de-494f-bbff-ae79dee9d333.png" width=400)>
 
 
