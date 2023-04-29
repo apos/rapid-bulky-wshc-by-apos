@@ -8,6 +8,9 @@ Rapid_Bulky_wSHC_V39_M1 / Near final version of reference design V01 </br>
 
 ## Note on git checkout
 This repository contains a lot of binary files in it's history. Please only checkout the branch "latest" to reduce download size. 
+
+<img src="https://user-images.githubusercontent.com/456034/235279891-f09abd70-69a6-4d5d-901d-9b8bd1f60407.png" width="600"> 
+
 ## Preface
 This is for building a wireless [Smart Hand Controller (wSHC)](https://onstep.groups.io/g/main/wiki/7152) for the [OnStep telescope controller](https://onstep.groups.io/g/main/wiki/Home) with
 
