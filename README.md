@@ -248,7 +248,7 @@ Important:
 
 ## Universal hold
 
-<img src="https://user-images.githubusercontent.com/456034/235374162-c17552ee-3c6d-4e89-8cd4-15bb31e66315.png" width=300)> <img src="(https://user-images.githubusercontent.com/456034/235374536-68dae3de-8cd0-46fc-97bb-448ac7e999ce.png" width=300)>
+<img src="https://user-images.githubusercontent.com/456034/235374162-c17552ee-3c6d-4e89-8cd4-15bb31e66315.png" width=300)> <img src="https://user-images.githubusercontent.com/456034/235374536-68dae3de-8cd0-46fc-97bb-448ac7e999ce.png" width=300)>
 
 ## Straps
 Put a stron nylon cable (washing line) into the two holes at the back of the base. You can simply break through the holes with a screw driver. 
