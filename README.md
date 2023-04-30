@@ -251,7 +251,7 @@ Important:
 <img src="https://user-images.githubusercontent.com/456034/235374162-c17552ee-3c6d-4e89-8cd4-15bb31e66315.png" width=300)> <img src="https://user-images.githubusercontent.com/456034/235374536-68dae3de-8cd0-46fc-97bb-448ac7e999ce.png" width=300)>
 
 ## Straps
-Put a stron nylon cable (washing line) into the two holes at the back of the base. You can simply break through the holes with a screw driver. 
+Put a strong nylon cable into the two holes at the back of the base. You can simply break through the holes with a screw driver. 4mm diameter is default, but you can easily make the bore narrower or bigger.
 
 <img src="https://user-images.githubusercontent.com/456034/235374283-9e5f7264-5594-44c1-a8f3-87ec31bd8614.png" width=300)>
 
