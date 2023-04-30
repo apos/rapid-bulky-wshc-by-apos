@@ -157,11 +157,14 @@ This is the most compact combination of hardware I could find out there:
 - Optional: two M3 23mm length (not necessary, bevause parts should snap together
 
 ### Media
+For the breakout board for the 30pin ESP form factor:
 ![grafik](https://user-images.githubusercontent.com/456034/234828495-9fc7945a-443b-43dd-a11a-569b4a9bc3a1.png)
+<img src="media/V01/rapid_bulky_wSHC_V01_BOM_a_ESP32_stacked_on_Board.jpg" width=300> 
+
+For the 38pin version you can use the breakout board with clamps.
+<img src="3d/V01/Breakout_board_2_with_clambs_and_38pin.jpg" width="300">
 
 <img src="media/V01/ITEAD_Shield_pinmap_ESP32_01.png" width=300> <img src="https://user-images.githubusercontent.com/456034/234848548-31534d51-8aed-4dec-b4e7-3f7b9aa3a3b2.png" width=300>
-
-<img src="media/V01/rapid_bulky_wSHC_V01_BOM_a_ESP32_stacked_on_Board.jpg" width=300> <img src="3d/V01/Breakout_board_2_with_clambs_and_38pin.jpg" width="300">
 
 <img src="3d/V01/Reference_layout_V01a.jpg" width="300"> <img src="3d/V01/V01_M1_03.png" width="300"> <img src="3d/V01/V01_M1_02.png" width="300">
  
