@@ -12,10 +12,9 @@ Rapid_Bulky_wSHC_V39_M1 / Near final version of reference design V01 </br>
 ## Youtube video
 In a hurry?: Watch. 
 
-But be aware to read this Readme carefully afterwards and understand what you order and what you are doing here :-)
+But please afterwards read the informations carefully on this side to be able to understand what to order and what to expect :-)
 
-Gives all informations needed from Adam to Eve, also includes an exlanation of ESP32 form factors.
-Please use the timestamps to possible switch between video parts:
+The video gives all informations needed from Adam to Eve, also includes an exlanation of ESP32 form factors. But it is not on programming the ESP32 with ARduino or Platform.IO IDE - only for assembling the parts. Please use the timestamps to possible switch between video parts:
 
 - https://www.youtube.com/watch?v=VndzQj0gUMc 
 
