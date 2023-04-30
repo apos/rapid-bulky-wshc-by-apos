@@ -125,6 +125,12 @@ Any ESP32 and joystick board should work. For real world usage, there should be 
 
 Within the folder structure in this repository you will find the different versions (hardware, configuration and 3d model).
 
+## Youtube video (50 minutes)
+
+Gives all informations needed, also includes ESP32 form factors and others!
+
+- https://www.youtube.com/watch?v=VndzQj0gUMc 
+
 ## V01 (reference design V01)
 ### Feature list
 
