@@ -215,9 +215,9 @@ If you do this you need:
 BE AWARE: sometimes you have to press the "Donwload" button on the ESP32 to upload the code and you need the correct driver. Normally the USB-C variants are newer and have no problems.
 
 
-# 3D-printer model
+# 3D-printer model and parts
 
-You find all 3d files including Fusion360 and 3MF/STL in the **directory "3d" in this repository**. Each one is for a certain Version. These are work in progress. I design with Fusion360 and will update the files after every major milestone.
+You find all 3d files for Fusion360 and the 3MF/STL in the **directory "3d" in this repository**. Each one is for a certain version. These files are work in progress. I design with Fusion360 and will update the files after every major milestone.
 
 The parts are very tight (no gap design). I like to use as less as possible screws (if possible no). Some parts have to be glued together. 
 
