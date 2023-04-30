@@ -18,7 +18,9 @@ This is for building a wireless [Smart Hand Controller (wSHC)](https://onstep.gr
 
 Many thanks to [Howard Dutton](http://www.stellarjourney.com/) which is the founder and lead developer of the [OnStep telescope controller](https://onstep.groups.io/g/main/wiki/Home). He did the main work on altering the source code so that things are working with the joystick shield (which they did not in the first place).
 
-*Annotation*: **this is not the documentation for an SHC implementation**. This proect only gives you reference designs amoung many others and a combination of hardware that is tested and works, a 3d model to print and some hints about getting things donw. **You need in any case:**
+*Annotation*: **this is not the documentation for an SHC implementation**. This proect only gives you reference designs amoung many others and a combination of hardware that is tested and works, a 3d model to print and some hints about getting things done. 
+
+**You need in any case:**
 
 1. A working [OnStep with wireless functionality](https://onstep.groups.io/g/main/wiki) (no simulation mode possible - you will not get over the start screen in SHC)
 2. Knowing how to configure the [Smart Hand Controller](https://onstep.groups.io/g/main/wiki/Smart-Hand-Controller) and the ability to program the ESP32 and upload it (Arduino IDE, Platform.io).
