@@ -171,7 +171,7 @@ This is the most compact combination of hardware I could find out there:
 
 
 #### V01b with 2,4 inch OLED (NOT READY YET. Needs code change on SHC)
-<img src="https://user-images.githubusercontent.com/456034/235221460-2df23ae3-cc37-4036-960e-92521f07b0b4.png" width="300">
+<img src="https://user-images.githubusercontent.com/456034/235375646-2a392b96-23dd-4ae4-afb2-1ef1a50baf26.png" width=300> <img src="https://user-images.githubusercontent.com/456034/235221460-2df23ae3-cc37-4036-960e-92521f07b0b4.png" width="300">
 
 ## More versions to come
 
