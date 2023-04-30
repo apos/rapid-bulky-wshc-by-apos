@@ -154,7 +154,7 @@ This is the most compact combination of hardware I could find out there:
 - [Breakout board 1](https://de.aliexpress.com/item/1005004786802668.html) - very slim, pins on top (which is what you want). You can use others, probably there will be other 3D models in the future. This has an Arduino form factor and simly is the best I could found. 
 - Breakout board 2 has clamps and is for 38pin ESP32.
 - ITEAD joystick shields (bought them on eBay last year). 
-- OLED 1,3''
+- OLED 1,3'' (2,42'' to come, but need software fix from OnStep project)
 - Optional: two M3 23mm length (not necessary, bevause parts should snap together
 
 ### Media
@@ -168,6 +168,9 @@ This is the most compact combination of hardware I could find out there:
  
 #### V01a with 1,3 inch OLED
 <img src="https://user-images.githubusercontent.com/456034/234855272-b8b3f6c1-4e9e-45da-81e8-0ee3521e33b8.png" width=300>
+
+#### V01b with 2,4 inch OLED
+NOT READY YET. Needs code change on SHC.
 
 ## More versions to come
 
@@ -236,6 +239,24 @@ Important:
 <img src="https://user-images.githubusercontent.com/456034/235313742-7612246b-d6f1-4d65-85ea-54cbd08101e5.png" width=600)>
 <img src="https://user-images.githubusercontent.com/456034/235313683-2c1f889e-322b-4c5f-954b-10d8d4716f2d.png" width=600)>
 <img src="https://user-images.githubusercontent.com/456034/235010482-c96bba09-c7de-494f-bbff-ae79dee9d333.png" width=400)>
+
+## Optional print parts
+
+### Pin inlets for different breakout boards
+
+<img src="https://user-images.githubusercontent.com/456034/235374068-1c4095e5-8a76-4a6b-936f-ebfbac6e5727.png" width=300)> <img src="https://user-images.githubusercontent.com/456034/235374104-3a3f60e3-cac8-4a01-b0a7-2a11efa4b041.png" width=300)>
+
+## Universal hold
+
+<img src="https://user-images.githubusercontent.com/456034/235374162-c17552ee-3c6d-4e89-8cd4-15bb31e66315.png" width=300)> <img src="https://user-images.githubusercontent.com/456034/235374162-c17552ee-3c6d-4e89-8cd4-15bb31e66315.png" width=300)>
+
+## Straps
+Put a stron nylon cable (washing line) into the two holes at the back of the base. You can simply break through the holes with a screw driver. 
+
+<img src="https://user-images.githubusercontent.com/456034/235374283-9e5f7264-5594-44c1-a8f3-87ec31bd8614.png" width=300)>
+
+
+
 
 
 
