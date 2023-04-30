@@ -167,12 +167,10 @@ This is the most compact combination of hardware I could find out there:
 <img src="3d/V01/Reference_layout_V01a.jpg" width="300"> <img src="3d/V01/V01_M1_03.png" width="300"> <img src="3d/V01/V01_M1_02.png" width="300">
  
 #### V01a with 1,3 inch OLED
-<img src="https://user-images.githubusercontent.com/456034/234855272-b8b3f6c1-4e9e-45da-81e8-0ee3521e33b8.png" width=300>
-<img src="3d/V01/V01_M1_01.png" width="300"> 
+<img src="https://user-images.githubusercontent.com/456034/234855272-b8b3f6c1-4e9e-45da-81e8-0ee3521e33b8.png" width=300> <img src="3d/V01/V01_M1_01.png" width="300"> 
 
 
-#### V01b with 2,4 inch OLED
-NOT READY YET. Needs code change on SHC.
+#### V01b with 2,4 inch OLED (NOT READY YET. Needs code change on SHC)
 <img src="https://user-images.githubusercontent.com/456034/235221460-2df23ae3-cc37-4036-960e-92521f07b0b4.png" width="300">
 
 ## More versions to come
