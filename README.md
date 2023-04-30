@@ -3,6 +3,9 @@
 A very early prototype :-) </br>
 <img src="media/V01/ESP32-30pin-BO1-Rapid_Bulky_wSHC_V13_01.jpg" width="600"> 
 
+Reference_layout_V01a.jpg </br>
+<img src="3d/V01/Reference_layout_V01a.jpg" width="600">
+
 jRapid_Bulky_wSHC_V39_M1 / Near final version of reference design V01 </br>
 <img src="3d/V01/V01_M1_01.png" width="300"> <img src="3d/V01/V01_M1_03.png" width="300">  <img src="3d/V01/V01_M1_02.png" width="300"> 
 
@@ -132,7 +135,8 @@ Within the folder structure in this repository you will find the different versi
 This is the most compact combination of hardware I could find out there:
 
 - [ESP32 30pin](https://de.aliexpress.com/item/1005004702430375.html)
-- [Breakout board](https://de.aliexpress.com/item/1005004786802668.html) - very slim, pins on top (which is what you want). You can use others, probably there will be other 3D models in the future. This has an Arduino form factor and simly is the best I could found. 
+- [Breakout board 1](https://de.aliexpress.com/item/1005004786802668.html) - very slim, pins on top (which is what you want). You can use others, probably there will be other 3D models in the future. This has an Arduino form factor and simly is the best I could found. 
+- Breakout board 2 has clamps and is for 38pin ESP32.
 - ITEAD joystick shields (bought them on eBay last year). 
 - OLED 1,3''
 - Optional: two M3 23mm length (not necessary, bevause parts should snap together
@@ -141,10 +145,11 @@ This is the most compact combination of hardware I could find out there:
 ![grafik](https://user-images.githubusercontent.com/456034/234828495-9fc7945a-443b-43dd-a11a-569b4a9bc3a1.png)
 
 <img src="media/V01/ITEAD_Shield_pinmap_ESP32_01.png" width=300> <img src="https://user-images.githubusercontent.com/456034/234848548-31534d51-8aed-4dec-b4e7-3f7b9aa3a3b2.png" width=300>
-<img src="media/V01/rapid_bulky_wSHC_V01_BOM_a_ESP32_stacked_on_Board.jpg" width=300> 
+<img src="media/V01/rapid_bulky_wSHC_V01_BOM_a_ESP32_stacked_on_Board.jpg" width=300>
+<img src="3d/V01/Reference_layout_V01a.jpg" width="300">
 <img src="3d/V01/V01_M1_01.png" width="300"> <img src="https://user-images.githubusercontent.com/456034/235221460-2df23ae3-cc37-4036-960e-92521f07b0b4.png" width="300">
  <img src="3d/V01/V01_M1_03.png" width="300"> <img src="3d/V01/V01_M1_02.png" width="300">
-
+ 
 #### V01a with 1,3 inch OLED
 <img src="https://user-images.githubusercontent.com/456034/234855272-b8b3f6c1-4e9e-45da-81e8-0ee3521e33b8.png" width=300>
 
