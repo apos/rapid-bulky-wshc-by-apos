@@ -56,7 +56,7 @@ Be able to rapidly build a wireless Smart Hand Controller with common standard p
 - No long waiting China-imports necessary in the first place just to get started
 - **No welding** required (dupont connector, probably using a crimp tool if you like special cable length)
 - **No PCB** necessary
-- Battery (for no) not included - use with a small, external battery pack
+- Battery (for now) not included - use with a small, external battery pack
 
 The intended usage is prototyping, testing. But it also meets the requirements to use it in the field as a full featured and robust wSHC.
 
