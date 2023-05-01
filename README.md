@@ -165,7 +165,7 @@ For the 38pin version you can use the breakout board with clamps:</br>
 <img src="3d/V01/Breakout_board_2_with_clambs_and_38pin.jpg" width="300"> <img src="media/V01/ESP32_ITEAD_01" width="300"> 
 
 The uses joystick shield and pinmapping - PDF manual in the the media/V01 folder </br>
- <img src="https://user-images.githubusercontent.com/456034/234848548-31534d51-8aed-4dec-b4e7-3f7b9aa3a3b2.png" width=300> <img src="media/V01/ITEAD_Shield_pinmap_ESP32_01.pg" width=300>
+ <img src="https://user-images.githubusercontent.com/456034/234848548-31534d51-8aed-4dec-b4e7-3f7b9aa3a3b2.png" width=300> <img src="media/V01/ESP32_ITEAD_01.jpg" width=300>
 
 It look like so</br>
 <img src="3d/V01/Reference_layout_V01a.jpg" width="300"> <img src="3d/V01/V01_M1_03.png" width="300"> <img src="3d/V01/V01_M1_02.png" width="300">
