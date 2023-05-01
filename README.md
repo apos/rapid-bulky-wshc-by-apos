@@ -198,8 +198,9 @@ Use the correct 3d model  (2,4) for the OLD housing.</br>
 ## V02 (reference design V02) - longer, but more actual Joystick board
 This is work in progress (see issues). Have to wait until hardware arrives.
 
-<img src="https://user-images.githubusercontent.com/456034/235509540-501aeed6-e818-4940-9b7d-6174cb2bc91f.png" width=400></br>
-<img src="https://user-images.githubusercontent.com/456034/235507702-e9caf042-37f5-4a0d-b1dc-3c391b947a72.png" width=300> <img src="https://user-images.githubusercontent.com/456034/235507799-ee5bc953-b546-453b-89fb-c334ee9c8903.png" width=300>
+<img src="https://user-images.githubusercontent.com/456034/235507702-e9caf042-37f5-4a0d-b1dc-3c391b947a72.png" width=300> <img src="https://user-images.githubusercontent.com/456034/235507799-ee5bc953-b546-453b-89fb-c334ee9c8903.png" width=300></br>
+
+<img src="https://user-images.githubusercontent.com/456034/235509540-501aeed6-e818-4940-9b7d-6174cb2bc91f.png" width=300> <img src="https://user-images.githubusercontent.com/456034/235510275-84a1a18c-374a-4f09-a9df-a84ffa4dace0.png" width=300>
 
 
 ## More versions to come
