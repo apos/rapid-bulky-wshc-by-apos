@@ -260,7 +260,7 @@ Important:
 
 <img src="https://user-images.githubusercontent.com/456034/235313742-7612246b-d6f1-4d65-85ea-54cbd08101e5.png" width=600)>
 <img src="https://user-images.githubusercontent.com/456034/235313683-2c1f889e-322b-4c5f-954b-10d8d4716f2d.png" width=600)>
-<img src="https://user-images.githubusercontent.com/456034/235010482-c96bba09-c7de-494f-bbff-ae79dee9d333.png" width=400)>
+<img src="https://user-images.githubusercontent.com/456034/235454776-822d352d-f794-409d-a437-9fbf59f90613.png" width=400)>
 
 ## Optional print parts
 
