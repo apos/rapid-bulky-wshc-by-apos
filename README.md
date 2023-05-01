@@ -165,20 +165,20 @@ For the 38pin version you can use the breakout board with clamps:</br>
 <img src="3d/V01/Breakout_board_2_with_clambs_and_38pin.jpg" width="300"> <img src="media/V01/ESP32_ITEAD_01" width="300"> 
 
 The uses joystick shield and pinmapping - PDF manual in the the media/V01 folder </br>
- <img src="https://user-images.githubusercontent.com/456034/234848548-31534d51-8aed-4dec-b4e7-3f7b9aa3a3b2.png" width=300> <img src="media/V01/ITEAD_Shield_pinmap_ESP32_01.png" width=300>
+ <img src="https://user-images.githubusercontent.com/456034/234848548-31534d51-8aed-4dec-b4e7-3f7b9aa3a3b2.png" width=300> <img src="media/V01/ITEAD_Shield_pinmap_ESP32_01.pg" width=300>
 
 It look like so</br>
 <img src="3d/V01/Reference_layout_V01a.jpg" width="300"> <img src="3d/V01/V01_M1_03.png" width="300"> <img src="3d/V01/V01_M1_02.png" width="300">
  
 #### V01a with 1,3 inch OLED
 Please consider using right angled pins (4pin header) which could give you more space e. g. later on for a battery pack. 
-Use the correct 3d model  (1,3) for the OLD housing.
+Use the correct 3d model  (1,3) for the OLD housing.</br>
 <img src="https://user-images.githubusercontent.com/456034/234855272-b8b3f6c1-4e9e-45da-81e8-0ee3521e33b8.png" width=300> <img src="3d/V01/V01_M1_01.png" width="300"> 
 
 
 #### V01b with 2,4 inch OLED (NOT READY YET. Needs code change on SHC)
 Please consider using right angled pins (7pin header) which could give you more space e. g. later on for a battery pack.
-Use the correct 3d model  (2,4) for the OLD housing.
+Use the correct 3d model  (2,4) for the OLD housing.</br>
 <img src="https://user-images.githubusercontent.com/456034/235375646-2a392b96-23dd-4ae4-afb2-1ef1a50baf26.png" width=300> <img src="https://user-images.githubusercontent.com/456034/235221460-2df23ae3-cc37-4036-960e-92521f07b0b4.png" width="300">
 
 ## More versions to come
