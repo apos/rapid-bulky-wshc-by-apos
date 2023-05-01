@@ -158,7 +158,7 @@ This is the most compact combination of hardware I could find out there:
 
 #### Breakout board with DC converter and the 30pin ESP32 (recommended version)
 This board has many advantages:
-- good USB-C jack located at the bottom
+- USB-C jack located at the left (and also a Micro-USB Jack in the middle, if you might need one)
 - separate round 5/2.1mm DC jack (6.5 to 16 V)
 - small form factor
 - separate 3,3V and 5V voltage pins
