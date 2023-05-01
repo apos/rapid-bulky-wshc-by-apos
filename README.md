@@ -10,7 +10,7 @@ Rapid_Bulky_wSHC_V39_M1 / Near final version of reference design V01 </br>
 <img src="3d/V01/V01_M1_01.png" width="300"> <img src="3d/V01/V01_M1_03.png" width="300">  <img src="3d/V01/V01_M1_02.png" width="300"> 
 
 ## Youtube video
-In a hurry? This is 50minutes long. You can skip different chapters (see timeline in video). But be warned: you might skip important informations. 
+In a hurry? This video is 50minutes long. But you can skip some chapters if you are only interested in some things (see timeline in video). But be warned: you might miss important informations especially if you are new to the subject ;-) 
 
 But please afterwards read the informations carefully on this side to be able to understand what to order and what to expect :-)
 
