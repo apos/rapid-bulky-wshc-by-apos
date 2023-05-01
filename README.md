@@ -156,14 +156,27 @@ This is the most compact combination of hardware I could find out there:
 - OLED 1,3'' (2,42'' to come, but need software fix from OnStep project)
 - Optional: two M3 23mm length (not necessary, bevause parts should snap together
 
-### Media
-For the breakout board for the 30pin ESP form factor:</br>
+#### Breakout board with DC for the 30pin ESP form factor (recommended)
+This board has many advantages:
+- good USB-C jack located at the bottom
+- separate round 5/2.1mm DC jack (6.5 to 16 V)
+- small form factor
+- seperate 3,3V and 5V voltage pins
+- easy to reach Dupont jacks on the top
+ 
 ![grafik](https://user-images.githubusercontent.com/456034/234828495-9fc7945a-443b-43dd-a11a-569b4a9bc3a1.png)</br>
 <img src="media/V01/rapid_bulky_wSHC_V01_BOM_a_ESP32_stacked_on_Board.jpg" width=300> 
 
-For the 38pin version you can use the breakout board with clamps:</br>
+#### Breakout board with clamps for ESP32 38pin version
+You can use this for prototyping or for getting these 38(plus)-pin ESP32 to run. You can also add a simple battery loading circuit.
+This board is simmly different
+- is a little bigger
+- has clamps instead of dupont jacks (might be also an advantage)
+- has no voltage surgary - so you have so use directly the ESP32 USB jack (I do not recommend this for production usage)
+
 <img src="3d/V01/Breakout_board_2_with_clambs_and_38pin.jpg" width="300"> <img src="media/V01/ESP32_ITEAD_01.jpg" width="300"> 
 
+#### Joystick shield
 This design uses an ITEAD joystick shield and pinmapping - see [ITEAD PDF manual](media/V01/ITEAD_Joystickshield_DS.pdf) in the the media/V01 folder. Unfortunately these oystick boards seem not to be produced any more. V02 will use another shield. </br>
  <img src="https://user-images.githubusercontent.com/456034/234848548-31534d51-8aed-4dec-b4e7-3f7b9aa3a3b2.png" width=300> <img src="media/V01/ITEAD_Shield_pinmap_ESP32_01.png" width="300"> 
  
