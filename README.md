@@ -90,7 +90,7 @@ To do this you need:
 | Part | Version | Notes | Cost |
 | ------------- | -------- | ------------- | ----------- |
 | Cables | All | Use only **good quality, standard dupont cables** 10 to 15 cm long or use preconfigured 2,3,4,5 pin ones. It is wise to use cable headers. Single connections could be troublesome. | Cents |
-| Cables | All | **Crimpset**, this is a good investment for many projects | 30-50 € |
+| Cables | All (opt.) | **Crimpset**, this is a good investment for many projects | 30-50 € |
 | Battery Pack | All | Power supply, 5V powerbank (USB-C/Micro-USB), 5mm/2.1mm jack (6 to 14,5 V) | depends if you have to buy or can reuse  |
 
 **Reference design 01 (V01)**
