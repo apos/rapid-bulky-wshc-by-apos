@@ -9,7 +9,7 @@ A very early prototype :-) </br>
 Rapid_Bulky_wSHC_V39_M1 / Near final version of reference design V01 </br>
 <img src="3d/V01/V01_M1_01.png" width="300"> <img src="3d/V01/V01_M1_03.png" width="300">  <img src="3d/V01/V01_M1_02.png" width="300"> 
 
-## Youtube video
+## YouTube video
 In a hurry? This video is 50minutes long. But you can skip some chapters if you are only interested in certain aspects (see timeline in video). But be warned: you might miss important informations, especially if you are new to the subject ;-) 
 
 But please afterwards read the informations carefully on this side to be able to understand what to order and what to expect :-)
@@ -30,7 +30,7 @@ This is for building a wireless [Smart Hand Controller (wSHC)](https://onstep.gr
 
 Many thanks to [Howard Dutton](http://www.stellarjourney.com/) which is the founder and lead developer of the [OnStep telescope controller](https://onstep.groups.io/g/main/wiki/Home). He did the main work on altering the source code so that things are working with the joystick shield (which they did not in the first place).
 
-*Annotation*: **this is not the documentation for an SHC implementation**. This proect only gives you reference designs amoung many others and a combination of hardware that is tested and works, a 3d model to print and some hints about getting things done. 
+*Annotation*: **this is not the documentation for an SHC implementation**. This project only gives you reference designs among many others and a combination of hardware that is tested and works, a 3d model to print and some hints about getting things done. 
 
 
 **You need in any case:**
@@ -60,7 +60,7 @@ Be able to rapidly build a wireless Smart Hand Controller with common standard p
 
 The intended usage is prototyping, testing. But it also meets the requirements to use it in the field as a full featured and robust wSHC.
 
-The model is bulky, because of the use of standard breakout boards and shields. There exist others which use PCBs. This project gives you the time to do a more suffisticated wSHC without having one in the meantime :-)
+The model is bulky, because of the use of standard breakout boards and shields. There exist others which use PCB's. This project gives you the time to do a more suffisticated wSHC without having one in the meantime :-)
 
 ### What you need
 It depends on the reference design (version) of the "bulky wSHC" you like to build.
@@ -114,7 +114,7 @@ To do this you need:
 - 7 hour 3d print (Prusa MKS3 Quality 0.2mm, 15% infill, no support)+ 45 minutes for caps
 
 Cables
-- You can save a lot of time, when you use preconfigured cables with already have preconfigured dupont connectors (2 / 4 / 5 in a row). E.g. crimping takes the most of time.
+- You can save a lot of time, when you use preconfigured cables with Dupont connectors (2 / 4 / 5 in a row). E.g. crimping takes the most of time.
 - Crimping is way more better than welding
 
 #### Classroom project
@@ -129,7 +129,7 @@ You can save really a lot of money if you order the parts in China (takes usuall
 ### More to come
 
 - Detailed instructions, video 
-- More versions to come (OLED sizes, breakount boards, 30/38 pin layout of ESP32, battery pack,).
+- More versions to come (OLED sizes, breakout boards, 30/38 pin layout of ESP32, battery pack,).
 
 
 # Reference designs (versions)
@@ -161,7 +161,7 @@ This board has many advantages:
 - good USB-C jack located at the bottom
 - separate round 5/2.1mm DC jack (6.5 to 16 V)
 - small form factor
-- seperate 3,3V and 5V voltage pins
+- separate 3,3V and 5V voltage pins
 - easy to reach Dupont jacks on the top
  
 ![grafik](https://user-images.githubusercontent.com/456034/234828495-9fc7945a-443b-43dd-a11a-569b4a9bc3a1.png)</br>
@@ -169,15 +169,15 @@ This board has many advantages:
 
 #### Breakout board with clamps for ESP32 38pin version
 You can use this for prototyping or for getting these 38(plus)-pin ESP32 to run. You can also add a simple battery loading circuit.
-This board is simmly different
+This board is simply different
 - is a little bigger
-- has clamps instead of dupont jacks (might be also an advantage)
-- has no voltage surgary - so you have so use directly the ESP32 USB jack (I do not recommend this for production usage)
+- has clamps instead of Dupont jacks (might be also an advantage)
+- has no voltage surgery - so you have so use directly the ESP32 USB jack (I do not recommend this for production usage)
 
 <img src="3d/V01/Breakout_board_2_with_clambs_and_38pin.jpg" width="300"> <img src="media/V01/ESP32_ITEAD_01.jpg" width="300"> 
 
 #### Joystick shield
-This design uses an ITEAD joystick shield and pinmapping - see [ITEAD PDF manual](media/V01/ITEAD_Joystickshield_DS.pdf) in the the media/V01 folder. Unfortunately these oystick boards seem not to be produced any more. V02 will use another shield. </br>
+This design uses an ITEAD joystick shield and pinmapping - see [ITEAD PDF manual](media/V01/ITEAD_Joystickshield_DS.pdf) in the the media/V01 folder. Unfortunately these Joystick boards seem not to be produced any more. V02 will use another shield. </br>
  <img src="https://user-images.githubusercontent.com/456034/234848548-31534d51-8aed-4dec-b4e7-3f7b9aa3a3b2.png" width=300> <img src="media/V01/ITEAD_Shield_pinmap_ESP32_01.png" width="300"> 
  
 It look like so</br>
@@ -205,7 +205,7 @@ Basically  orient yourself on the pinmap of the SHC code for ESP32 and you read 
 ### Dragons ahead
 
 - THERE ARE DIFFERENCES IN HARDWARE SPECs for all of these parts out there.
-- THIS IS FORE ESP32 (30pin), an ARDUINO FORM FACTOR BREAKOUT BOARD AND an AREDUINO FORMFACTOR JOYSTICK SHIELD.
+- THIS IS FORE ESP32 (30pin), an ARDUINO FORM FACTOR BREAKOUT BOARD AND an ARDUINO FORM FACTOR JOYSTICK SHIELD.
 - PLEASE LOOK AT THE PICTURES DIRECTORY for the hardware, that is used.
 
 Everything will be reusable for a other projects and can be put apart totally. Nothing is soldered. 
@@ -219,7 +219,7 @@ Dealing with the source code is not easy, especially if you are new to OnStep, t
 
 1. You need to read carefully the main SHC instructions [howto install the software on the OnStep site -> right side -> Smart Hand Controller](https://onstep.groups.io/g/main/wiki).
 2. At time of writing you have to use the [main tree of the SHC software code](https://github.com/hjd1964/SmartHandController/tree/main) to get things running as stated in the [instructions](https://onstep.groups.io/g/main/wiki/7152). This and only this branch contains the necessary code to get things running 
-3. You need to add special configuration code to your **Config.h** (section `// KEYPAD`) to get things running. Especially the joystick probably needs finetuning (hysteresis) and the buttons debounce settings. Probably you need to alter the Joysticks direction (`#define X_PIN#_ACTIVE...`). You can find my Config.h in the config directory within this repository.
+3. You need to add special configuration code to your **Config.h** (section `// KEYPAD`) to get things running. Especially the joystick probably needs fine tuning (hysteresis) and the buttons debounce settings. Probably you need to alter the Joysticks direction (`#define X_PIN#_ACTIVE...`). You can find my Config.h in the config directory within this repository.
 - The additional Config.h settings do not exist per default, when you checkout the code. You have to add dem manually. 
 - Again: probably it is wise to have a look into the starter [thread on OnStep chat](https://onstep.groups.io/g/main/message/51440) like mentioned above.
 
@@ -228,13 +228,13 @@ This is work in progress, here and in the OnStep SHC source code (tree main). Un
 ### Program ESP32 - Platform.io
 I use the Visual Studio code plugin for [platform.io](https://platform.io). Arduino IDE is enough though (and the new 2.0 version works perfectly)
 
-If you do this you need:
+If you work with Platform.io you need:
 
-- special platformio.ini (see platfomrio dir)
-- remame SmartHandController.ino to SmartHandController.cpp
+- special platformio.ini (see platfoioio directory)
+- rename SmartHandController.ino to SmartHandController.cpp
 - know how to use platform.io (I can and will not give support on this)
 
-BE AWARE: sometimes you have to press the "Donwload" button on the ESP32 to upload the code and you need the correct driver. Normally the USB-C variants are newer and have no problems.
+BE AWARE: sometimes you have to press the "Download" button on the ESP32 to upload the code and you need the correct driver. Normally the USB-C variants are newer and have no problems.
 
 
 # 3D-printer model and parts
@@ -256,7 +256,7 @@ Important:
 
 - **Special orientation** on printer bed needed for some parts (see picture and red rectangles)
 - Print the OLED housing and the front cap for the base **separately with support only on printer bed standing right up on the side** Otherwise you could get trouble (parts could go off the print bed, supports might not get off)
-- Joystick "ring" and OLED housing back will be **glued** to it's corresonding parts with fast glue.
+- Joystick "ring" and OLED housing back will be **glued** to it's corresponding parts with fast glue.
 
 <img src="https://user-images.githubusercontent.com/456034/235313742-7612246b-d6f1-4d65-85ea-54cbd08101e5.png" width=600)>
 <img src="https://user-images.githubusercontent.com/456034/235313683-2c1f889e-322b-4c5f-954b-10d8d4716f2d.png" width=600)>
