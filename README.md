@@ -110,8 +110,8 @@ But it boils down to:
 #### Preparation
 
 3d printing parts
-- Fine (highly recommended):7-8 hour print (PLA, Prusa MKS3 Quality 0.2mm, 15% infill, only some support)+ 45 minutes for caps
-- Draft (NOT recommended): 4 hour print (PLA, Prusa MKS3 Draft 0.3mm, 20% infill, only some support) + 30 minutes for caps
+- Fine print (highly recommended): 7-8 hour print (PLA, Prusa MKS3 Quality 0.2mm, 15% infill, only some support)+ 45 minutes for caps
+- Draft print (NOT recommended): 4 hour print (PLA, Prusa MKS3 Draft 0.3mm, 20% infill, only some support) + 30 minutes for caps
 
 Cables
 - You can save a lot of time, when you use preconfigured cables with Dupont connectors (2 / 4 / 5 in a row). E.g. crimping takes the most of time.
