@@ -65,16 +65,16 @@ The model is bulky, because of the use of standard breakout boards and shields. 
 ### What you need
 It depends on the reference design (version) of the "bulky wSHC" you like to build.
 
-To do this you need:
+But it boils down to:
 
-4. Access to a 3D printer with PLA (or other materials which can be fine printed)
-5. [A standard ESP32 with 30 pim](media/ESP32_30pin_left_layout_comparison.jpg) (just the baseplate) best with USB-C jack
-6. [An Arduino form factor breakout board for the ESP32](media/ESP32-30pin-BO1-ESP32_compact_breakout_and%20ESP32.jpg) (Dupont variant) with USB-C (V) and a standard 5/2.1 mm jack (4.5 to 16V) - other breakout boards might fit. But these are very common. 
-7. [A Joystick shield](hmedia/ITEAD_Joystickshield_DS.pdf). The one I use here is very small. Reference Design V01 uses this one.
-8. An OLED 1,3 inch screen (I use a white colored one and put a red foil on it for the night)
-9. 15 cm long Dupont cables (female 2 female) OR use a crimp toolset and cables to make your own length (which is better). You can save a lot of time, if you buy preconfigured dupont cables (2,4,5 bundled). These hold better than single cables.
-10. A standard USB-C battery pack or, for the breakout board 6,5 to 14V DC input (standard 5/2.1 mm jack)- until now there is not space for the battery  
-11. A USB-C cable for programming and loading the ESP32 / Board
+1. Access to a 3D printer with PLA (or other materials which can be fine printed)
+2. [A standard ESP32 with 30 pim](media/ESP32_30pin_left_layout_comparison.jpg) (just the baseplate) best with USB-C jack
+3. [An Arduino form factor breakout board for the ESP32](media/ESP32-30pin-BO1-ESP32_compact_breakout_and%20ESP32.jpg) (Dupont variant) with USB-C (V) and a standard 5/2.1 mm jack (4.5 to 16V) - other breakout boards might fit. But these are very common. 
+4. [A Joystick shield](hmedia/ITEAD_Joystickshield_DS.pdf). The one I use here is very small. Reference Design V01 uses this one.
+5. An OLED 1,3 inch screen (I use a white colored one and put a red foil on it for the night)
+6. 10-15 cm long Dupont cables (female 2 female for breakout board 1) OR use a crimp toolset and cables to make your own length (which is better). You can save a lot of time, if you buy preconfigured dupont cables (2,4,5 bundled). These hold better than single cables.
+7. A standard USB-C battery pack or, for the breakout board 6,5 to 14V DC input (standard 5/2.1 mm jack)- until now there is not space for the battery  
+8. A USB-C cable for programming and loading the ESP32 / Board
 
 ### Costs 
 #### Total costs
