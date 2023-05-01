@@ -156,7 +156,7 @@ This is the most compact combination of hardware I could find out there:
 - OLED 1,3'' (2,42'' to come, but need software fix from OnStep project)
 - Optional: two M3 23mm length (not necessary, bevause parts should snap together
 
-#### Breakout board with DC for the 30pin ESP form factor (recommended)
+#### Breakout board with DC converter and the 30pin ESP32 (recommended version)
 This board has many advantages:
 - good USB-C jack located at the bottom
 - separate round 5/2.1mm DC jack (6.5 to 16 V)
