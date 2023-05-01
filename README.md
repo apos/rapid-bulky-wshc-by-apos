@@ -149,7 +149,7 @@ Within the folder structure in this repository you will find the different versi
 ### Components
 This is the most compact combination of hardware I could find out there:
 
-- [ESP32 30pin](https://de.aliexpress.com/item/1005004702430375.html)
+- [ESP32 30pin](https://de.aliexpress.com/item/1005004702430375.html) or ESP32 38pin (with [special breakout board for the 38pin](3d/V01/Breakout_board_2_with_clambs_and_38pin.jpg) )
 - [Breakout board 1](https://de.aliexpress.com/item/1005004786802668.html) - very slim, pins on top (which is what you want). You can use others, probably there will be other 3D models in the future. This has an Arduino form factor and simly is the best I could found. 
 - Breakout board 2 has clamps and is for 38pin ESP32.
 - ITEAD joystick shields (bought them on eBay last year). 
@@ -162,7 +162,7 @@ For the breakout board for the 30pin ESP form factor:</br>
 <img src="media/V01/rapid_bulky_wSHC_V01_BOM_a_ESP32_stacked_on_Board.jpg" width=300> 
 
 For the 38pin version you can use the breakout board with clamps:</br>
-<img src="3d/V01/Breakout_board_2_with_clambs_and_38pin.jpg" width="300">
+<img src="3d/V01/Breakout_board_2_with_clambs_and_38pin.jpg" width="300"> <img src="media/V01/ESP32_ITEAD_01" width="300"> 
 
 The uses joystick shield and pinmapping - PDF manual in the the media/V01 folder </br>
  <img src="https://user-images.githubusercontent.com/456034/234848548-31534d51-8aed-4dec-b4e7-3f7b9aa3a3b2.png" width=300> <img src="media/V01/ITEAD_Shield_pinmap_ESP32_01.png" width=300>
