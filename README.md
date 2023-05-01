@@ -14,7 +14,7 @@ In a hurry? This video is 50minutes long. But you can skip some chapters if you 
 
 But please afterwards read the informations carefully on this side to be able to understand what to order and what to expect :-)
 
-The video gives all informations needed from Adam to Eve, also includes an exlanation of ESP32 form factors. But it is not on programming the ESP32 with ARduino or Platform.IO IDE - only for assembling the parts. Please use the timestamps to possible switch between video parts:
+The video gives all informations needed from Adam to Eve, also includes an exlanation of ESP32 form factors. But it is not on programming the ESP32 with Arduino or Platform.IO IDE - only for assembling the parts. Please use the timestamps to possible switch between video parts:
 
 - https://www.youtube.com/watch?v=VndzQj0gUMc 
 
@@ -60,7 +60,7 @@ Be able to rapidly build a wireless Smart Hand Controller with common standard p
 
 The intended usage is prototyping, testing. But it also meets the requirements to use it in the field as a full featured and robust wSHC.
 
-The model is bulky, because of the use of standard breakout boards and shields. There exist others which use PCB's. This project gives you the time to do a more suffisticated wSHC without having one in the meantime :-)
+The model is bulky, because of the use of standard breakout boards and shields. There exist others which use PCB's. This project gives you the time to do a more sophisticated wSHC without having one in the meantime :-)
 
 ### What you need
 It depends on the reference design (version) of the "bulky wSHC" you like to build.
@@ -72,7 +72,7 @@ But it boils down to:
 3. [An Arduino form factor breakout board for the ESP32](media/ESP32-30pin-BO1-ESP32_compact_breakout_and%20ESP32.jpg) (Dupont variant) with USB-C (V) and a standard 5/2.1 mm jack (4.5 to 16V) - other breakout boards might fit. But these are very common. 
 4. [A Joystick shield](hmedia/ITEAD_Joystickshield_DS.pdf). The one I use here is very small. Reference Design V01 uses this one.
 5. An OLED 1,3 inch screen (I use a white colored one and put a red foil on it for the night)
-6. 10-15 cm long Dupont cables (female 2 female for breakout board 1) OR use a crimp toolset and cables to make your own length (which is better). You can save a lot of time, if you buy preconfigured dupont cables (2,4,5 bundled). These hold better than single cables.
+* 6. 10-15 cm long Dupont cables (female 2 female for breakout board 1). Or use a crimp toolset and cables to make your own length (which is better). You can save a lot of time, if you buy preconfigured dupont cables (2,4,5 bundled). If you use headers, that include a whole row of pins, this is more robust and also will lead to less misconfiguration.
 7. A standard USB powerbank, battery pack or for the breakout board no. 1 an 6,5 to 16V DC input (standard 5/2.1 mm jack) - until now there is no much space for a battery.  
 8. A matching USB-cable for programming and loading the ESP32 / Board (USB-C, Micro-USB, Mini-USB)
 
@@ -95,14 +95,14 @@ But it boils down to:
 
 **Reference design 01 (V01)**
 
-| Part | Version | Notes | Cost |
-| ------------- | -------- | ------------- | ----------- |
-| ESP32  | V01 | 30pin  | 5-7 € |
-| Breakout board  | V01 | for ESP32/30pin Arduino form factor  | 5 € |
-| Joystick shield  | V01 | ITEAD (seems to be not avaiable very easy). Very slim design. Arduino form factor  | 5 € |
-| OLED | V01 | 1,3 inch  | 5 € |
-| Filament | V01 | PLA | 2-3 € |
-| Cables | V01 | 10 to 15 cm long (female to female) | Cents |
+| Part            | Version | Notes                                                                             | Cost  |
+|-----------------|---------|-----------------------------------------------------------------------------------|-------|
+| ESP32           | V01     | 30pin                                                                             | 5-7 € |
+| Breakout board  | V01     | for ESP32/30pin Arduino form factor                                               | 5 €   |
+| Joystick shield | V01     | ITEAD (seems to be not avaiable very easy). Very slim design. Arduino form factor | 5 €   |
+| OLED            | V01     | 1,3 inch                                                                          | 5 €   |
+| Filament        | V01     | PLA                                                                               | 2-3 € |
+| Cables          | V01     | 10 to 15 cm long (female to female)                                               | Cents |
 
 
 ### Build Time
@@ -119,9 +119,9 @@ Cables
 
 #### Classroom project
 
-If you already implemented an OnStep controller with peoplo of you astronomy club, it is very easy now to get everything running with a wireless SHC. You will be surprised how much more intuitive this is, than using the handy app.
+If you already implemented an OnStep controller with people of you astronomy club, it is very easy now to get everything running with a wireless SHC. You will be surprised how much more intuitive this is, than using the handy app.
 
-If you are well prepared (get cables ready, print parts) you will make this in a 3 hour workshop. Inkluded a pause, 30min intro and 30 minutes for asking questions. 
+If you are well prepared (get cables ready, print parts) you will make this in a 3 hour workshop. Included a pause, 30min intro and 30 minutes for asking questions. 
 
 You can save really a lot of money if you order the parts in China (takes usually 2 weeks shipping).
 
@@ -150,11 +150,11 @@ Within the folder structure in this repository you will find the different versi
 This is the most compact combination of hardware I could find out there:
 
 - [ESP32 30pin](https://de.aliexpress.com/item/1005004702430375.html) or ESP32 38pin (with [special breakout board for the 38pin](3d/V01/Breakout_board_2_with_clambs_and_38pin.jpg) )
-- [Breakout board 1](https://de.aliexpress.com/item/1005004786802668.html) - very slim, pins on top (which is what you want). You can use others, probably there will be other 3D models in the future. This has an Arduino form factor and simly is the best I could found. 
+- [Breakout board 1](https://de.aliexpress.com/item/1005004786802668.html) - very slim, pins on top (which is what you want). You can use others, probably there will be other 3D models in the future. This has an Arduino form factor and simply is the best I could found. 
 - Breakout board 2 has clamps and is for 38pin ESP32.
 - ITEAD joystick shields (bought them on eBay last year). 
 - OLED 1,3'' (2,42'' to come, but need software fix from OnStep project)
-- Optional: two M3 23mm length (not necessary, bevause parts should snap together
+- Optional, but recommended for usage in the field: two M3 23mm length (not necessary, because 3d parts should snap together)
 
 #### Breakout board with DC converter and the 30pin ESP32 (recommended version)
 This board has many advantages:
