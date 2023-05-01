@@ -73,8 +73,8 @@ But it boils down to:
 4. [A Joystick shield](hmedia/ITEAD_Joystickshield_DS.pdf). The one I use here is very small. Reference Design V01 uses this one.
 5. An OLED 1,3 inch screen (I use a white colored one and put a red foil on it for the night)
 6. 10-15 cm long Dupont cables (female 2 female for breakout board 1) OR use a crimp toolset and cables to make your own length (which is better). You can save a lot of time, if you buy preconfigured dupont cables (2,4,5 bundled). These hold better than single cables.
-7. A standard USB-C battery pack or, for the breakout board 6,5 to 14V DC input (standard 5/2.1 mm jack)- until now there is not space for the battery  
-8. A USB-C cable for programming and loading the ESP32 / Board
+7. A standard USB powerbank, battery pack or for the breakout board no. 1 an 6,5 to 16V DC input (standard 5/2.1 mm jack) - until now there is no much space for a battery.  
+8. A matching USB-cable for programming and loading the ESP32 / Board (USB-C, Micro-USB, Mini-USB)
 
 ### Costs 
 #### Total costs
