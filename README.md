@@ -194,6 +194,14 @@ Please consider wleding right angled pins (7pin header) onto the board (facing i
 Use the correct 3d model  (2,4) for the OLD housing.</br>
 <img src="https://user-images.githubusercontent.com/456034/235375646-2a392b96-23dd-4ae4-afb2-1ef1a50baf26.png" width=300> <img src="https://user-images.githubusercontent.com/456034/235221460-2df23ae3-cc37-4036-960e-92521f07b0b4.png" width="300">
 
+
+## V02 (reference design V01) - longer, but more actual Joystick board
+This is work in progress (see issues).
+
+<img src="https://user-images.githubusercontent.com/456034/235509540-501aeed6-e818-4940-9b7d-6174cb2bc91f.png" width=400></br>
+<img src="https://user-images.githubusercontent.com/456034/235507702-e9caf042-37f5-4a0d-b1dc-3c391b947a72.png" width=300> <img src="https://user-images.githubusercontent.com/456034/235507799-ee5bc953-b546-453b-89fb-c334ee9c8903.png" width=300>
+
+
 ## More versions to come
 
 Please contribute at the tread [wSHC (wireless Smart Hand Controller) with standard ESP32-Board and standard joystick shield (anyone?)](https://onstep.groups.io/g/main/message/51440) .
