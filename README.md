@@ -1,13 +1,13 @@
 # Rapid (prototyping) bulky wSHC by apos (RPTB wSHC)
 
 Reference_layout_V01a.jpg </br>
-<img src="3d/V01/Reference_layout_V01a.jpg" width="600">
+<img src="media/Reference_layout_V01a.jpg" width="600">
 
 A very early prototype :-) </br>
-<img src="media/V01/ESP32-30pin-BO1-Rapid_Bulky_wSHC_V13_01.jpg" width="600"> 
+<img src="media/ESP32-30pin-BO1-Rapid_Bulky_wSHC_V13_01.jpg" width="600"> 
 
 Rapid_Bulky_wSHC_V39_M1 / Near final version of reference design V01 </br>
-<img src="3d/V01/V01_M1_01.png" width="300"> <img src="3d/V01/V01_M1_03.png" width="300">  <img src="3d/V01/V01_M1_02.png" width="300"> 
+<img src="V01_M1_01.png" width="300"> <img src="V01_M1_03.png" width="300">  <img src="V01_M1_02.png" width="300"> 
 
 ## YouTube video
 In a hurry?: This video is 50minutes long :-) But you can skip some chapters if you are only interested in certain aspects (see timeline in video). But be warned: you might miss important informations, especially if you are new to the subject ;-) 
@@ -163,7 +163,7 @@ This board has many advantages:
 - easy to reach Dupont jacks on the top
  
 ![grafik](https://user-images.githubusercontent.com/456034/234828495-9fc7945a-443b-43dd-a11a-569b4a9bc3a1.png)</br>
-<img src="media/V01/rapid_bulky_wSHC_V01_BOM_a_ESP32_stacked_on_Board.jpg" width=300> 
+<img src="media/rapid_bulky_wSHC_V01_BOM_a_ESP32_stacked_on_Board.jpg" width=300> 
 
 #### 38pin breakout board with DC converter
 Work in Progress - but should simply work. Same features as the board above. Might be a solution for the ESP32 38 pin versions which come with the JST 2.0 port for a battery.
@@ -177,14 +177,14 @@ This board is simply different
 - has clamps instead of Dupont jacks (might be also an advantage)
 - has no voltage surgery - so you have so use directly the ESP32 USB jack (I do not recommend this for production usage)
 
-<img src="3d/V01/Breakout_board_2_with_clambs_and_38pin.jpg" width="300"> <img src="media/V01/ESP32_ITEAD_01.jpg" width="300"> 
+<img src="media/Breakout_board_2_with_clambs_and_38pin.jpg" width="300"> <img src="media/ESP32_ITEAD_01.jpg" width="300"> 
 
 #### Joystick shield -  Arduino form factor
-This design uses an ITEAD joystick shield and pinmapping - see [ITEAD PDF manual](media/V01/ITEAD_Joystickshield_DS.pdf) in the the media/V01 folder. Unfortunately these Joystick boards seem not to be produced any more. V02 will use another shield. </br>
- <img src="https://user-images.githubusercontent.com/456034/234848548-31534d51-8aed-4dec-b4e7-3f7b9aa3a3b2.png" width=300> <img src="media/V01/ITEAD_Shield_pinmap_ESP32_01.png" width="300"> 
+This design uses an ITEAD joystick shield and pinmapping - see [ITEAD PDF manual](media/ITEAD_Joystickshield_DS.pdf) in the the media folder. Unfortunately these Joystick boards seem not to be produced any more. V02 will use another shield. </br>
+ <img src="https://user-images.githubusercontent.com/456034/234848548-31534d51-8aed-4dec-b4e7-3f7b9aa3a3b2.png" width=300> <img src="media/ITEAD_Shield_pinmap_ESP32_01.png" width="300"> 
  
 It look like so</br>
-<img src="3d/V01/Reference_layout_V01a.jpg" width="300"> <img src="3d/V01/V01_M1_03.png" width="300"> <img src="3d/V01/V01_M1_02.png" width="300">
+<img src="media/Reference_layout_V01a.jpg" width="300"> <img src="media/V01_M1_03.png" width="300"> <img src="media/V01_M1_02.png" width="300">
 
 #### Joystick shield - bigger
 This is work in progress (see issues). Have to wait until hardware arrives.
