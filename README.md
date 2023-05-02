@@ -1,7 +1,7 @@
 # Rapid (prototyping) bulky wSHC by apos (RPTB wSHC)
 
 Reference_layout_V01a.jpg </br>
-<img src="media/Reference_layout_V01a.jpg" width="600">
+<img src="media/V01a_Reference_layout.jpg" width="600">
 
 A very early prototype :-) </br>
 <img src="media/ESP32-30pin-BO1-Rapid_Bulky_wSHC_V13_01.jpg" width="600"> 
@@ -12,7 +12,7 @@ Rapid_Bulky_wSHC_V39_M1 / Near final version of reference design V01 </br>
 ## YouTube video
 In a hurry?: This video is 50minutes long :-) But you can skip some chapters if you are only interested in certain aspects (see timeline in video). But be warned: you might miss important informations, especially if you are new to the subject ;-) 
 
-Aerwards I rceommend to read this page carefully to understand what to order and what to expect :-)
+I recommend to read this page carefully afterwards to understand what to order and what to expect :-)
 
 The video gives all informations needed from Adam to Eve, also includes an explanation of ESP32 form factors. But it is not on programming the ESP32 with Arduino or Platform.IO IDE - only for assembling the parts. Please use the timestamps to possible switch between video parts:
 
@@ -184,7 +184,7 @@ This design uses an ITEAD joystick shield and pinmapping - see [ITEAD PDF manual
  <img src="https://user-images.githubusercontent.com/456034/234848548-31534d51-8aed-4dec-b4e7-3f7b9aa3a3b2.png" width=300> <img src="media/ITEAD_Shield_pinmap_ESP32_01.png" width="300"> 
  
 It look like so</br>
-<img src="media/Reference_layout_V01a.jpg" width="300"> <img src="media/V01_M1_03.png" width="300"> <img src="media/V01_M1_02.png" width="300">
+<img src="media/V01a_Reference_layout.jpg" width="300"> <img src="media/V01_M1_03.png" width="300"> <img src="media/V01_M1_02.png" width="300">
 
 #### Joystick shield - bigger
 This is work in progress (see issues). Have to wait until hardware arrives.
@@ -196,7 +196,7 @@ This is work in progress (see issues). Have to wait until hardware arrives.
 #### 1,3 inch OLED
 Please consider welding right angled pins (4pin header) onto the board (facing inwards) which could give you more space e. g. later on for a battery pack. 
 Use the correct 3d model  (1,3) for the OLD housing.</br>
-<img src="https://user-images.githubusercontent.com/456034/234855272-b8b3f6c1-4e9e-45da-81e8-0ee3521e33b8.png" width=300> <img src="3d/V01/V01_M1_01.png" width="300"> 
+<img src="https://user-images.githubusercontent.com/456034/234855272-b8b3f6c1-4e9e-45da-81e8-0ee3521e33b8.png" width=300> <img src="media/V01_M1_01.png" width="300"> 
 
 
 #### 2,4 inch OLED (NOT READY YET. Needs code change on SHC)
