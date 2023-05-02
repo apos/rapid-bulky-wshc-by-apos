@@ -173,8 +173,8 @@ These types of breakout boards I only found on Ebay and in China.
 
 <img src="https://user-images.githubusercontent.com/456034/235622255-b6c8133e-9775-4d4a-99c9-511349215d4e.png" width="300">
 
-#### Breakout board with clamps for ESP32 38pin version
-You can use this for prototyping or for getting these 38(plus)-pin ESP32 to run. You can also add a simple battery loading circuit.
+#### 30 or 38pin breakout board with clamps
+You can use this for prototyping or for getting almost any ESP32 to run (depends on the width!). You can also add a simple battery loading circuit.
 This board is simply different
 - is a little bigger
 - has clamps instead of Dupont jacks (might be also an advantage)
