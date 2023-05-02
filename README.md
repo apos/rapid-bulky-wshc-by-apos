@@ -1,4 +1,4 @@
-# Rapid (prototyping) bulky wSHC by apos (RPTB wSHC)
+# Rapid (prototyping) bulky wSHC by apos (RPB wSHC)
 
 Reference_layout_V01a.jpg </br>
 <img src="media/V01a_Reference_layout.jpg" width="600">
@@ -218,7 +218,7 @@ The models are more or less versatile.
 - Battery pack: space is very limited in the smal housing (V01). But a small battery (800 mAh lithium could 
 
 ### V01
-The smallest RPTb wSHC housing. Used for the smaller ITEAD joystick shield which is very small. Has also a "closed" top for your own design.
+The smallest RPB wSHC housing. Used for the smaller ITEAD joystick shield which is very small. Has also a "closed" top for your own design.
 
 ### V02
 Used for the bigger Joystick "Arduino" Joystick shields which are a little bigger (87mm long instead of 70mm). Also the base is bigger, which gives space for a lithium battery pack.  Has also a "closed" top for your own design.
