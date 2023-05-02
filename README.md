@@ -50,8 +50,8 @@ Be able to rapidly build a wireless Smart Hand Controller with common standard p
 - Build to use with **button / joystick shield**
 - Build a **wireles** SHC - no ST4 or cable
 - Build it **fast** (simply put things together)
-- Build it **cheap** (standard compnents)
-- In the first place use standard components. You should get every part within days in your country or your local hardware store
+- Build it **cheap** 
+- Use standard components. You should get every part within days in your country or your local hardware store
 - No long waiting China-imports necessary in the first place just to get started
 - **No welding** required (dupont connector, probably using a crimp tool if you like special cable length)
 - **No PCB** necessary
