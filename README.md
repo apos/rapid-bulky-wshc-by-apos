@@ -10,11 +10,11 @@ Rapid_Bulky_wSHC_V39_M1 / Near final version of reference design V01 </br>
 <img src="3d/V01/V01_M1_01.png" width="300"> <img src="3d/V01/V01_M1_03.png" width="300">  <img src="3d/V01/V01_M1_02.png" width="300"> 
 
 ## YouTube video
-In a hurry? This video is 50minutes long. But you can skip some chapters if you are only interested in certain aspects (see timeline in video). But be warned: you might miss important informations, especially if you are new to the subject ;-) 
+In a hurry?: This video is 50minutes long :-) But you can skip some chapters if you are only interested in certain aspects (see timeline in video). But be warned: you might miss important informations, especially if you are new to the subject ;-) 
 
-But please afterwards read the informations carefully on this side to be able to understand what to order and what to expect :-)
+Aerwards I rceommend to read this page carefully to understand what to order and what to expect :-)
 
-The video gives all informations needed from Adam to Eve, also includes an exlanation of ESP32 form factors. But it is not on programming the ESP32 with Arduino or Platform.IO IDE - only for assembling the parts. Please use the timestamps to possible switch between video parts:
+The video gives all informations needed from Adam to Eve, also includes an explanation of ESP32 form factors. But it is not on programming the ESP32 with Arduino or Platform.IO IDE - only for assembling the parts. Please use the timestamps to possible switch between video parts:
 
 - https://www.youtube.com/watch?v=VndzQj0gUMc 
 
@@ -128,7 +128,6 @@ You can save really a lot of money if you order the parts in China (takes usuall
 
 ### More to come
 
-- Detailed instructions, video 
 - More versions to come (OLED sizes, breakout boards, 30/38 pin layout of ESP32, battery pack,).
 
 
