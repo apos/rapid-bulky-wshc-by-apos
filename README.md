@@ -1,6 +1,6 @@
 # Rapid bulky wSHC by apos (RPB wSHC)
 
-Reference_layout_V01a.jpg </br>
+Smallest version with external battery pack or 6-16V DC</br>
 <img src="media/V01a_Reference_layout.jpg" width="600">
 
 A very early prototype :-) </br>
