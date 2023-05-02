@@ -41,7 +41,7 @@ Many thanks to [Howard Dutton](http://www.stellarjourney.com/) which is the foun
  
 ## History
 
-Everything started with the OnStep chat topic: "[wSHC (wireless Smart Hand Controller) with standard ESP32-Board and standard joystick shield (anyone?)](https://onstep.groups.io/g/main/message/51440)". I had laying around some ESP32 and a Joystick board with buttons. When I found out, that the SHC is simply that, I liked the idea for prototyping or even more. I did not order a PCB, extra parts or doing welding at the weekend just to get started with an wSHC when the list of components seem to be so simple. This lead to this project. 
+I never had a SHC because I did not want to build it. I already did this with OnStep and every half a year a new vervsion, PCB came out and there had been many problems. Therefore I built my OnStep with given hardware (Engraver boards). So I thought about the same for a SHC and everything started with the OnStep chat topic: "[wSHC (wireless Smart Hand Controller) with standard ESP32-Board and standard joystick shield (anyone?)](https://onstep.groups.io/g/main/message/51440)". I had laying around some ESP32 and a joystick board with buttons. When I found out, that the SHC is simply that, I liked the idea for prototyping or even more. I did not order a PCB, extra parts or doing welding at the weekend just to get started with an wSHC when the list of components seem to be so simple. This lead to this project. 
 
 ## Purpose
 
