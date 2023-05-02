@@ -6,7 +6,7 @@ Smallest version with external power bank or 6-16V DC</br>
 A very early prototype :-) </br>
 <img src="media/ESP32-30pin-BO1-Rapid_Bulky_wSHC_V13_01.jpg" width="600"> 
 
-Rapid_Bulky_wSHC_V39_M1 / Near final version of reference design V01 </br>
+3D models </br>
 <img src="media/V01_M1_01.png" width="300"> <img src="media/V01_M1_03.png" width="300">  <img src="media/V01_M1_02.png" width="300"> 
 
 ## YouTube video
