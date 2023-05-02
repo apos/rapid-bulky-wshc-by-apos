@@ -1,4 +1,4 @@
-# Rapid (prototypin) bulky wSHC by apos (RPTB wSHC)
+# Rapid (prototyping) bulky wSHC by apos (RPTB wSHC)
 
 Reference_layout_V01a.jpg </br>
 <img src="3d/V01/Reference_layout_V01a.jpg" width="600">
@@ -21,12 +21,12 @@ The video gives all informations needed from Adam to Eve, also includes an expla
 Have fun. 
 
 ## Preface
-This is for building a wireless [Smart Hand Controller (wSHC)](https://onstep.groups.io/g/main/wiki/7152) for the [OnStep telescope controller](https://onstep.groups.io/g/main/wiki/Home) with
+This is for building a wireless [Smart Hand Controller (wSHC)](https://onstep.groups.io/g/main/wiki/7152) for the [OnStep telescope controller](https://onstep.groups.io/g/main/wiki/Home) doing rapid prototyping method with
 
-- ESP32 (different layouts will be supported over time
-- Breakout board (ESP32 30 pin, see media) with e.g. dupont connectors 
-- Joystick shield 
-- External battery pack or power surge (5V, 6-14V - depending on hardware)
+- ESP32 controller (different layouts will be supported over time
+- Prototyping breakout boards (ESP32 30/38 pin, see media) with dupont connectors, clamps ... 
+- Joystick shield with buttons (different versions)
+- External or internal battery pack or externa power surge (5V, 6-14V) - depending on used hardware
 
 Many thanks to [Howard Dutton](http://www.stellarjourney.com/) which is the founder and lead developer of the [OnStep telescope controller](https://onstep.groups.io/g/main/wiki/Home). He did the main work on altering the source code so that things are working with the joystick shield (which they did not in the first place).
 
@@ -131,13 +131,12 @@ You can save really a lot of money if you order the parts in China (takes usuall
 - More versions to come (OLED sizes, breakout boards, 30/38 pin layout of ESP32, battery pack,).
 
 
-# Reference designs (versions)
-
+# Reference designs
 Any ESP32 and joystick board should work. For real world usage, there should be no bulky things on the top of the board! Pins you can get rid of, but not extra headers. I found this: https://de.aliexpress.com/item/32780304126.html (Keystudio Joystick shield). But it is bigger, I have to alter the design.
 
 Within the folder structure in this repository you will find the different versions (hardware, configuration and 3d model).
 
-## V01 (reference design V01)
+## Hardware components
 ### Feature list
 
 - 3D Model [finalize 3d model for V01]([https://github.com/apos/rapid-bulky-wshc-by-apos/issues/2](https://github.com/apos/rapid-bulky-wshc-by-apos/issues/1))
@@ -145,7 +144,7 @@ Within the folder structure in this repository you will find the different versi
 - 128x64 OLED 1,3 inch (OLED 2,42 inch to come when code is implemented)
 - External battery pack or power needed (USB-C / DC 5/2.1mm jack) 
 
-### Components
+### Principal components list
 This is the most compact combination of hardware I could find out there:
 
 - [ESP32 30pin](https://de.aliexpress.com/item/1005004702430375.html) or ESP32 38pin (with [special breakout board for the 38pin](3d/V01/Breakout_board_2_with_clambs_and_38pin.jpg) )
@@ -155,7 +154,7 @@ This is the most compact combination of hardware I could find out there:
 - OLED 1,3'' (2,42'' to come, but need software fix from OnStep project)
 - Optional, but recommended for usage in the field: two M3 23mm length (not necessary, because 3d parts should snap together)
 
-#### Breakout board with DC converter and the 30pin ESP32 (recommended version)
+#### 0pin breakout board with DC converter and the 30pin ESP32 (recommended version)
 This board has many advantages:
 - USB-C jack located at the left (and also a Micro-USB Jack in the middle, if you might need one)
 - separate round 5/2.1mm DC jack (6.5 to 16 V)
@@ -166,6 +165,11 @@ This board has many advantages:
 ![grafik](https://user-images.githubusercontent.com/456034/234828495-9fc7945a-443b-43dd-a11a-569b4a9bc3a1.png)</br>
 <img src="media/V01/rapid_bulky_wSHC_V01_BOM_a_ESP32_stacked_on_Board.jpg" width=300> 
 
+#### 38pin breakout board with DC converter
+Work in Progress - but should simply work. Same features as the board above. Might be a solution for the ESP32 38 pin versions which come with the JST 2.0 port for a battery.
+
+![grafik](https://user-images.githubusercontent.com/456034/235622255-b6c8133e-9775-4d4a-99c9-511349215d4e.png)
+
 #### Breakout board with clamps for ESP32 38pin version
 You can use this for prototyping or for getting these 38(plus)-pin ESP32 to run. You can also add a simple battery loading circuit.
 This board is simply different
@@ -175,34 +179,52 @@ This board is simply different
 
 <img src="3d/V01/Breakout_board_2_with_clambs_and_38pin.jpg" width="300"> <img src="media/V01/ESP32_ITEAD_01.jpg" width="300"> 
 
-#### Joystick shield
+#### Joystick shield -  Arduino form factor
 This design uses an ITEAD joystick shield and pinmapping - see [ITEAD PDF manual](media/V01/ITEAD_Joystickshield_DS.pdf) in the the media/V01 folder. Unfortunately these Joystick boards seem not to be produced any more. V02 will use another shield. </br>
  <img src="https://user-images.githubusercontent.com/456034/234848548-31534d51-8aed-4dec-b4e7-3f7b9aa3a3b2.png" width=300> <img src="media/V01/ITEAD_Shield_pinmap_ESP32_01.png" width="300"> 
  
 It look like so</br>
 <img src="3d/V01/Reference_layout_V01a.jpg" width="300"> <img src="3d/V01/V01_M1_03.png" width="300"> <img src="3d/V01/V01_M1_02.png" width="300">
- 
-#### V01a with 1,3 inch OLED
-Please consider welding right angled pins (4pin header) onto the board (facing inwards) which could give you more space e. g. later on for a battery pack. 
-Use the correct 3d model  (1,3) for the OLD housing.</br>
-<img src="https://user-images.githubusercontent.com/456034/234855272-b8b3f6c1-4e9e-45da-81e8-0ee3521e33b8.png" width=300> <img src="3d/V01/V01_M1_01.png" width="300"> 
 
-
-#### V01b with 2,4 inch OLED (NOT READY YET. Needs code change on SHC)
-Please consider wleding right angled pins (7pin header) onto the board (facing inwards) which could give you more space e. g. later on for a battery pack.
-Use the correct 3d model  (2,4) for the OLD housing.</br>
-<img src="https://user-images.githubusercontent.com/456034/235375646-2a392b96-23dd-4ae4-afb2-1ef1a50baf26.png" width=300> <img src="https://user-images.githubusercontent.com/456034/235221460-2df23ae3-cc37-4036-960e-92521f07b0b4.png" width="300">
-
-
-## V02 (reference design V02) - longer, but more actual Joystick board
+#### Joystick shield - bigger
 This is work in progress (see issues). Have to wait until hardware arrives.
 
 <img src="https://user-images.githubusercontent.com/456034/235507702-e9caf042-37f5-4a0d-b1dc-3c391b947a72.png" width=300> <img src="https://user-images.githubusercontent.com/456034/235507799-ee5bc953-b546-453b-89fb-c334ee9c8903.png" width=300></br>
 
 <img src="https://user-images.githubusercontent.com/456034/235509540-501aeed6-e818-4940-9b7d-6174cb2bc91f.png" width=300> <img src="https://user-images.githubusercontent.com/456034/235510275-84a1a18c-374a-4f09-a9df-a84ffa4dace0.png" width=300>
+ 
+#### 1,3 inch OLED
+Please consider welding right angled pins (4pin header) onto the board (facing inwards) which could give you more space e. g. later on for a battery pack. 
+Use the correct 3d model  (1,3) for the OLD housing.</br>
+<img src="https://user-images.githubusercontent.com/456034/234855272-b8b3f6c1-4e9e-45da-81e8-0ee3521e33b8.png" width=300> <img src="3d/V01/V01_M1_01.png" width="300"> 
 
 
-## More versions to come
+#### 2,4 inch OLED (NOT READY YET. Needs code change on SHC)
+Please consider wleding right angled pins (7pin header) onto the board (facing inwards) which could give you more space e. g. later on for a battery pack.
+Use the correct 3d model  (2,4) for the OLD housing.</br>
+<img src="https://user-images.githubusercontent.com/456034/235375646-2a392b96-23dd-4ae4-afb2-1ef1a50baf26.png" width=300> <img src="https://user-images.githubusercontent.com/456034/235221460-2df23ae3-cc37-4036-960e-92521f07b0b4.png" width="300">
+
+
+## Model for 3D printer
+The models are more or less versatile. 
+
+- Both OLED housings can be used for all models. 
+- Base and middle plate are different in size  (length) due to the design of the used Joystick shield. 
+- Probably you also will solder your own PCB using standard parts (Joystick / Buttons) or combine avaiable joy sticks, push buttons with pin headers or a touch switch. Therefore there exit closed tops for your design which you can bore for you joystick/button design. Or simply take the STL/3MF and alter it to your needs.
+- For every case I use the avaable breakout boards. 
+- Battery pack: space is very limited in the smal housing (V01). But a small battery (800 mAh lithium could 
+
+### V01
+The smallest RPTb wSHC housing. Used for the smaller ITEAD joystick shield which is very small. Has also a "closed" top for your own design.
+
+### V02
+Used for the bigger Joystick "Arduino" Joystick shields which are a little bigger (87mm long instead of 70mm). Also the base is bigger, which gives space for a lithium battery pack.  Has also a "closed" top for your own design.
+
+### V03 
+Work in progress to use with avaiable Joysticks and buttons with Dupont connectors. 
+
+
+## Please contribute you Ideas 
 
 Please contribute at the tread [wSHC (wireless Smart Hand Controller) with standard ESP32-Board and standard joystick shield (anyone?)](https://onstep.groups.io/g/main/message/51440) .
 
@@ -284,10 +306,3 @@ Important:
 Put a strong nylon cable into the two holes at the back of the base. You can simply break through the holes with a screw driver. 4mm diameter is default, but you can easily make the bore narrower or bigger.
 
 <img src="https://user-images.githubusercontent.com/456034/235374283-9e5f7264-5594-44c1-a8f3-87ec31bd8614.png" width=300)>
-
-
-
-
-
-
-
