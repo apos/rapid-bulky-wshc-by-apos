@@ -150,11 +150,12 @@ This is the most compact combination of hardware I could find out there:
 - [ESP32 30pin](https://de.aliexpress.com/item/1005004702430375.html) or ESP32 38pin (with [special breakout board for the 38pin](3d/V01/Breakout_board_2_with_clambs_and_38pin.jpg) )
 - [Breakout board 1](https://de.aliexpress.com/item/1005004786802668.html) - very slim, pins on top (which is what you want). You can use others, probably there will be other 3D models in the future. This has an Arduino form factor and simply is the best I could found. 
 - Breakout board 2 has clamps and is for 38pin ESP32.
-- ITEAD joystick shields (bought them on eBay last year). 
-- OLED 1,3'' (2,42'' to come, but need software fix from OnStep project)
+- ITEAD joystick or other Joystick shield. 
+- OLED 1,3'' 
+- OLED 2,42'' to come, need software fix from OnStep project
 - Optional, but recommended for usage in the field: two M3 23mm length (not necessary, because 3d parts should snap together)
 
-#### 0pin breakout board with DC converter and the 30pin ESP32 (recommended version)
+#### 30pin breakout board with DC converter for the 30pin ESP32 (recommended version)
 This board has many advantages:
 - USB-C jack located at the left (and also a Micro-USB Jack in the middle, if you might need one)
 - separate round 5/2.1mm DC jack (6.5 to 16 V)
@@ -165,8 +166,10 @@ This board has many advantages:
 ![grafik](https://user-images.githubusercontent.com/456034/234828495-9fc7945a-443b-43dd-a11a-569b4a9bc3a1.png)</br>
 <img src="media/rapid_bulky_wSHC_V01_BOM_a_ESP32_stacked_on_Board.jpg" width=300> 
 
-#### 38pin breakout board with DC converter
+#### 38pin breakout board with DC converter for a 38pin (!) ESP32
 Work in Progress - but should simply work. Same features as the board above. Might be a solution for the ESP32 38 pin versions which come with the JST 2.0 port for a battery.
+
+These types of breakout boards I only found on Ebay and in China.
 
 <img src="https://user-images.githubusercontent.com/456034/235622255-b6c8133e-9775-4d4a-99c9-511349215d4e.png" width="300">
 
