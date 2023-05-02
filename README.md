@@ -131,12 +131,11 @@ You can save really a lot of money if you order the parts in China (takes usuall
 - More versions to come (OLED sizes, breakout boards, 30/38 pin layout of ESP32, battery pack,).
 
 
-# Reference designs
+## Reference designs
 Any ESP32 and joystick board should work. For real world usage, there should be no bulky things on the top of the board! Pins you can get rid of, but not extra headers. I found this: https://de.aliexpress.com/item/32780304126.html (Keystudio Joystick shield). But it is bigger, I have to alter the design.
 
 Within the folder structure in this repository you will find the different versions (hardware, configuration and 3d model).
 
-## Hardware components
 ### Feature list
 
 - 3D Model [finalize 3d model for V01]([https://github.com/apos/rapid-bulky-wshc-by-apos/issues/2](https://github.com/apos/rapid-bulky-wshc-by-apos/issues/1))
@@ -189,7 +188,7 @@ This design uses an ITEAD joystick shield and pinmapping - see [ITEAD PDF manual
 It look like so</br>
 <img src="media/V01a_Reference_layout.jpg" width="300"> <img src="media/V01_M1_03.png" width="300"> <img src="media/V01_M1_02.png" width="300">
 
-#### Joystick shield - bigger
+#### Joystick shield - bigger, but very common
 This is work in progress (see issues). Have to wait until hardware arrives.
 
 <img src="https://user-images.githubusercontent.com/456034/235507702-e9caf042-37f5-4a0d-b1dc-3c391b947a72.png" width=300> <img src="https://user-images.githubusercontent.com/456034/235507799-ee5bc953-b546-453b-89fb-c334ee9c8903.png" width=300></br>
