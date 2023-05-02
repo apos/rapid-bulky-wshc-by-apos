@@ -131,7 +131,7 @@ You can save really a lot of money if you order the parts in China (takes usuall
 
 
 ## Reference designs
-Any ESP32 and joystick board should work. For real world usage, there should be no bulky things on the top of the board! Pins you can get rid of, but not extra headers. I found this: https://de.aliexpress.com/item/32780304126.html (Keystudio Joystick shield). But it is bigger, I have to alter the design.
+Any ESP32 and joystick board should work. For real world usage, there should be no bulky things on the top of the board! Probably you have to cut off the pins and headers. 
 
 Within the folder structure in this repository you will find the different versions (hardware, configuration and 3d model).
 
