@@ -1,4 +1,4 @@
-# Rapid bulky wSHC by apos
+# Rapid (prototypin) bulky wSHC by apos (RPTB wSHC)
 
 Reference_layout_V01a.jpg </br>
 <img src="3d/V01/Reference_layout_V01a.jpg" width="600">
