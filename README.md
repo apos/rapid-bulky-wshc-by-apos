@@ -14,8 +14,7 @@ In a hurry?: This video is 50minutes long :-) But you can skip some chapters if 
 
 I recommend to read this page carefully afterwards to understand what to order and what to expect :-)
 
-The video gives all informations needed from Adam to Eve, also includes an explanation of ESP32 form factors. But it is not on programming the ESP32 with Arduino or Platform.IO IDE - only for assembling the parts. Please use the timestamps to possible switch between video parts:
-
+The video gives all informations needed from Adam to Eve, also includes an explanation of ESP32 form factors. But it is not on programming the SHC code onto the ESP32 with Arduino or Platform.IO IDE - only for assembling the parts.
 - https://www.youtube.com/watch?v=VndzQj0gUMc 
 
 Have fun. 
