@@ -181,14 +181,14 @@ This board is simply different
 
 <img src="media/Breakout_board_2_with_clambs_and_38pin.jpg" width="300"> <img src="media/ESP32_ITEAD_01.jpg" width="300"> 
 
-#### Joystick shield -  Arduino form factor
+#### Joystick shield 1 -  very short, Arduino form factor
 This design uses an ITEAD joystick shield and pinmapping - see [ITEAD PDF manual](media/manuals/ITEAD_Joystickshield_DS.pdf) in the the media folder. Unfortunately these Joystick boards seem not to be produced any more. V02 will use another shield. </br>
  <img src="https://user-images.githubusercontent.com/456034/234848548-31534d51-8aed-4dec-b4e7-3f7b9aa3a3b2.png" width=300> <img src="media/ITEAD_Shield_pinmap_ESP32_01.png" width="300"> 
  
 It look like so</br>
 <img src="media/V01a_Reference_layout.jpg" width="300"> <img src="media/V01_M1_03.png" width="300"> <img src="media/V01_M1_02.png" width="300">
 
-#### Joystick shield - bigger, but very common
+#### Joystick shield 2 - bigger, but very common shield
 This is work in progress (see issues). Have to wait until hardware arrives.
 
 <img src="https://user-images.githubusercontent.com/456034/235507702-e9caf042-37f5-4a0d-b1dc-3c391b947a72.png" width=300> <img src="https://user-images.githubusercontent.com/456034/235507799-ee5bc953-b546-453b-89fb-c334ee9c8903.png" width=300></br>
@@ -199,6 +199,9 @@ This is work in progress (see issues). Have to wait until hardware arrives.
 Please consider welding right angled pins (4pin header) onto the board (facing inwards) which could give you more space e. g. later on for a battery pack. 
 Use the correct 3d model  (1,3) for the OLD housing.</br>
 <img src="https://user-images.githubusercontent.com/456034/234855272-b8b3f6c1-4e9e-45da-81e8-0ee3521e33b8.png" width=300> <img src="media/V01_M1_01.png" width="300"> 
+
+#### 1,54 inch OLED
+5 pin models are not easy to get and expensive. 7 pins is I2C. Until noe I do not own one ...
 
 
 #### 2,4 inch OLED (NOT READY YET. Needs code change on SHC)
