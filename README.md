@@ -142,7 +142,7 @@ Within the folder structure in this repository you will find the different versi
 - 128x64 OLED 1,3 inch (OLED 2,42 inch to come when code is implemented)
 - External battery pack or power needed (USB-C / DC 5/2.1mm jack) 
 
-### Principal components list
+### Basic hardware components overview
 This is the most compact combination of hardware I could find out there:
 
 - [ESP32 30pin](https://de.aliexpress.com/item/1005004702430375.html) or ESP32 38pin (with [special breakout board for the 38pin](3d/V01/Breakout_board_2_with_clambs_and_38pin.jpg) )
@@ -153,6 +153,7 @@ This is the most compact combination of hardware I could find out there:
 - OLED 2,42'' to come, need software fix from OnStep project
 - Optional, but recommended for usage in the field: two M3 23mm length (not necessary, because 3d parts should snap together)
 
+### Detailed hardware components
 #### 30pin breakout board with DC converter for the 30pin ESP32 (recommended version)
 This board has many advantages:
 - USB-C jack located at the left (and also a Micro-USB Jack in the middle, if you might need one)
