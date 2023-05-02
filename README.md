@@ -7,7 +7,7 @@ A very early prototype :-) </br>
 <img src="media/ESP32-30pin-BO1-Rapid_Bulky_wSHC_V13_01.jpg" width="600"> 
 
 Rapid_Bulky_wSHC_V39_M1 / Near final version of reference design V01 </br>
-<img src="V01_M1_01.png" width="300"> <img src="V01_M1_03.png" width="300">  <img src="V01_M1_02.png" width="300"> 
+<img src="media/V01_M1_01.png" width="300"> <img src="media/V01_M1_03.png" width="300">  <img src="media/V01_M1_02.png" width="300"> 
 
 ## YouTube video
 In a hurry?: This video is 50minutes long :-) But you can skip some chapters if you are only interested in certain aspects (see timeline in video). But be warned: you might miss important informations, especially if you are new to the subject ;-) 
@@ -168,7 +168,7 @@ This board has many advantages:
 #### 38pin breakout board with DC converter
 Work in Progress - but should simply work. Same features as the board above. Might be a solution for the ESP32 38 pin versions which come with the JST 2.0 port for a battery.
 
-![grafik](https://user-images.githubusercontent.com/456034/235622255-b6c8133e-9775-4d4a-99c9-511349215d4e.png)
+<img src="https://user-images.githubusercontent.com/456034/235622255-b6c8133e-9775-4d4a-99c9-511349215d4e.png" width="300">
 
 #### Breakout board with clamps for ESP32 38pin version
 You can use this for prototyping or for getting these 38(plus)-pin ESP32 to run. You can also add a simple battery loading circuit.
