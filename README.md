@@ -67,7 +67,7 @@ It depends on the reference design (version) of the "bulky wSHC" you like to bui
 But it boils down to:
 
 1. Access to a 3D printer with PLA (or other materials which can be fine printed)
-2. [A standard ESP32 with 30 or 38 pim](media/ESP32_30pin_left_layout_comparison.jpg) (just the baseplate) best with USB-C jack
+2. [A standard ESP32 with 30 or 38 pins](media/ESP32_30pin_left_layout_comparison.jpg) best with USB-C jack
 3. [A breakout board for the ESP32](media/ESP32-30pin-BO1-ESP32_compact_breakout_and%20ESP32.jpg) with USB-C (V) and a standard 5/2.1 mm jack (4.5 to 16V) - other breakout boards might fit. But these are very common. 
 4. A Arduino form factor Joystick shield
 5. An OLED 1,3 inch screen (I use a white colored one and put a red foil on it for the night)
