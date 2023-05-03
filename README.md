@@ -67,9 +67,9 @@ It depends on the reference design (version) of the "bulky wSHC" you like to bui
 But it boils down to:
 
 1. Access to a 3D printer with PLA (or other materials which can be fine printed)
-2. [A standard ESP32 with 30 pim](media/ESP32_30pin_left_layout_comparison.jpg) (just the baseplate) best with USB-C jack
-3. [An Arduino form factor breakout board for the ESP32](media/ESP32-30pin-BO1-ESP32_compact_breakout_and%20ESP32.jpg) (Dupont variant) with USB-C (V) and a standard 5/2.1 mm jack (4.5 to 16V) - other breakout boards might fit. But these are very common. 
-4. [A Joystick shield](media/manuals/ITEAD_Joystickshield_DS.pdf). The one I use here is very small. Reference Design V01 uses this one.
+2. [A standard ESP32 with 30 or 38 pim](media/ESP32_30pin_left_layout_comparison.jpg) (just the baseplate) best with USB-C jack
+3. [A breakout board for the ESP32](media/ESP32-30pin-BO1-ESP32_compact_breakout_and%20ESP32.jpg) with USB-C (V) and a standard 5/2.1 mm jack (4.5 to 16V) - other breakout boards might fit. But these are very common. 
+4. A Arduino form factor Joystick shield
 5. An OLED 1,3 inch screen (I use a white colored one and put a red foil on it for the night)
 6. 10-15 cm long Dupont cables (female 2 female for breakout board 1). Or use a crimp toolset and cables to make your own length (which is better). You can save a lot of time, if you buy preconfigured dupont cables (2,4,5 bundled). If you use headers, that include a whole row of pins, this is more robust and also will lead to less misconfiguration.
 7. A standard USB powerbank, battery pack or for the breakout board no. 1 an 6,5 to 16V DC input (standard 5/2.1 mm jack) - until now there is no much space for a battery.  
@@ -101,7 +101,7 @@ But it boils down to:
 | Joystick shield | V01     | ITEAD (seems to be not avaiable very easy). Very slim design. Arduino form factor | 5 €   |
 | OLED            | V01     | 1,3 inch                                                                          | 5 €   |
 | Filament        | V01     | PLA                                                                               | 2-3 € |
-| Cables          | V01     | 10 to 15 cm long (female to female)                                               | Cents |
+| Cables          Juni| V01     | 10 to 15 cm long (female to female)                                               | Cents |
 
 
 ### Build Time
