@@ -37,7 +37,7 @@
 #define DISPLAY_WRAP_MENUS OFF         //    OFF, ON allows menus to wrap so moving past bottom returns to top, etc.       Option
 #define DISPLAY_24HR_TIME ON           //     ON, OFF to use 12 hour format for entering time.                             Option
 
-// KEYPAD --------------------------------------------------------------------------------------------------------------------------
+// KEYPAD / JOYSTICK ---------------------------------------------------------------------------------------------------------------
 #define KEYPAD_JOYSTICK_ANALOG JS1     //    OFF, JS1 for Jerry's analog joystick                                          Option
 #define KEYPAD_JOYSTICK_HYSTERESIS 400 //    200, Sensitivity of joystick in ADC counts (larger is less sensitive)         Adjust
 
