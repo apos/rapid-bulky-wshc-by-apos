@@ -213,7 +213,7 @@ Use the correct 3d model  (2,4) for the OLD housing.</br>
 ## Model for 3D printer
 The models are more or less versatile. 
 
-- Both OLED housings can be used for all models. 
+- All OLED housings can be used and interchanged within all bases.. 
 - Base and middle plate are different in size  (length) due to the design of the used Joystick shield. 
 - Probably you also will solder your own PCB using standard parts (Joystick / Buttons) or combine avaiable joy sticks, push buttons with pin headers or a touch switch. Therefore there exit closed tops for your design which you can bore for you joystick/button design. Or simply take the STL/3MF and alter it to your needs.
 - For every case I use the avaable breakout boards. 
