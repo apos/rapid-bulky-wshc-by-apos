@@ -246,8 +246,8 @@ Basically  orient yourself on the pinmap of the SHC code for ESP32 and you read 
 ### Dragons ahead
 
 - THERE ARE DIFFERENCES IN HARDWARE SPECs for all of these parts out there.
-- THIS IS FORE ESP32 (30pin), an ARDUINO FORM FACTOR BREAKOUT BOARD AND an ARDUINO FORM FACTOR JOYSTICK SHIELD.
-- PLEASE LOOK AT THE PICTURES DIRECTORY for the hardware, that is used.
+- THIS IS FORE ESP32 (30/38pin), an ARDUINO FORM FACTOR BREAKOUT BOARD AND an ARDUINO FORM FACTOR JOYSTICK SHIELD. 
+- You can also use your own housing. But if you stay with these 3d designs, you should stack with the hardware mentioned here. So PLEASE LOOK AT THE MEDIA DIRECTORY and here on this page for the hardware, that is used.
 
 Everything will be reusable for a other projects and can be put apart totally. Nothing is soldered. 
 
