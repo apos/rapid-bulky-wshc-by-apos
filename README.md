@@ -201,14 +201,20 @@ Use the correct 3d model  (1,3) for the OLD housing.</br>
 <img src="https://user-images.githubusercontent.com/456034/234855272-b8b3f6c1-4e9e-45da-81e8-0ee3521e33b8.png" width=300> <img src="media/V01_M1_01.png" width="300"> 
 
 #### 1,54 inch OLED
-5 pin models are not easy to get and expensive. 7 pins is I2C. Until noe I do not own one ...
+Type SSD1306
 
+4 pin models (I2C) are not easy to get and expensive. 7 pins are SPI - see 2,42 inch OLED. 
+Until now I do not own one ... so can not test it. Therefore no 3d model at the time of writing. Please contribute. 
 
 #### 2,4 inch OLED (NOT READY YET. Needs code change on SHC)
-Please consider wleding right angled pins (7pin header) onto the board (facing inwards) which could give you more space e. g. later on for a battery pack.
+Type SSD1309
+
+Important notice: there are  SPI (7 pin) and I2C (4 pin) models out there -  [be very careful, which version to choose (e. g. here von Ali)](https://de.aliexpress.com/item/1005004106570899.html). The SHC by default works with the I2C layout. If you got an SPI version you haver to move very little resistors like described in 
+
+Please slos consider wleding **right angled pins** (7pin header or 4  header) onto the board (facing inwards) which could give you more space e. g. later on for a battery pack. The even ones delivered with them are not very good for the building into the housing. 
+ 
 Use the correct 3d model  (2,4) for the OLD housing.</br>
 <img src="https://user-images.githubusercontent.com/456034/235375646-2a392b96-23dd-4ae4-afb2-1ef1a50baf26.png" width=300> <img src="https://user-images.githubusercontent.com/456034/235221460-2df23ae3-cc37-4036-960e-92521f07b0b4.png" width="300">
-
 
 ## Model for 3D printer
 The models are more or less versatile. 
