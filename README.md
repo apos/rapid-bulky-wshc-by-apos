@@ -226,7 +226,7 @@ I have tested and successfully converted two DIYmore SSD1309 from SPI to I2C:
 <img src="https://github.com/apos/rapid-bulky-wshc-by-apos/assets/456034/452da837-e6f1-48d0-9b35-68108625c537" width="300">
 <img src="https://github.com/apos/rapid-bulky-wshc-by-apos/assets/456034/8304bbac-4dd4-4982-a72d-4c52d0a87a81" width="300">
 
-Conversion steps (soldering of very tiny smd parts required - see video linked above):
+##### Conversion steps (soldering of very tiny smd parts required - see video linked above):
 1. shorted R5 and R7 with a little piece of cable
 2. moved R4 to position R3 (R4 will be left open)
 3. IMPORTANT: you have to use pin16 for reset (default in SHC code), otherwise the display will keep blank
