@@ -132,17 +132,16 @@ You can save really a lot of money if you order the parts in China (takes usuall
 
 ## Reference designs
 Any ESP32 and joystick board should work. For real world usage, there should be no bulky things on the top of the board! Probably you have to cut off the pins and headers. 
-
 Within the folder structure in this repository you will find the different versions (hardware, configuration and 3d model).
 
-### Feature list
+## Feature list
 
 - 3D Model [finalize 3d model for V01]([https://github.com/apos/rapid-bulky-wshc-by-apos/issues/2](https://github.com/apos/rapid-bulky-wshc-by-apos/issues/1))
 - Configure.h tested: main branch (https://github.com/hjd1964/SmartHandController/commits/main)
 - 128x64 OLED 1,3 inch (OLED 2,42 inch to come when code is implemented)
 - External battery pack or power needed (USB-C / DC 5/2.1mm jack) 
 
-### Basic hardware components overview
+## Hardware components overview
 This is the most compact combination of hardware I could find out there:
 
 - [ESP32 30pin](https://de.aliexpress.com/item/1005004702430375.html) or ESP32 38pin (with [special breakout board for the 38pin](3d/V01/Breakout_board_2_with_clambs_and_38pin.jpg) )
@@ -153,13 +152,13 @@ This is the most compact combination of hardware I could find out there:
 - OLED 2,42'' to come, need software fix from OnStep project
 - Optional, but recommended for usage in the field: two M3 23mm length (not necessary, because 3d parts should snap together)
 
-### Detailed hardware components
-#### ESP32
+### ESP32
 There are a lot of form factors for ESP32 out there (see [here](https://de.aliexpress.com/item/4000071762309.html)):
 <img src="https://github.com/apos/rapid-bulky-wshc-by-apos/assets/456034/0b445027-35b6-4f70-a5e7-312254f347cd" width=300> 
 
 Every ESP32 will do, but we have some constraints depending on the breakout board you will use. Especially, if you consider to use the ESPDuino-32 form factor, be aware, that you have to solder extra pins onto the board, since not all necassary pins will be there. 
 
+### Breakout board
 #### 30pin breakout board with DC converter for the 30pin ESP32 (RECOMMENDED)
 This board has many advantages:
 - USB-C jack located at the left (and also a Micro-USB Jack in the middle, if you might need one)
@@ -187,6 +186,7 @@ This board is simply different
 
 <img src="media/Breakout_board_2_with_clambs_and_38pin.jpg" width="300"> <img src="media/ESP32_ITEAD_01.jpg" width="300"> 
 
+### Joystick shield
 #### Joystick shield 1 -  very short, Arduino form factor (RECOMMENDED)
 This design uses an ITEAD joystick shield and pinmapping - see [ITEAD PDF manual](media/manuals/ITEAD_Joystickshield_DS.pdf) in the the media folder. Unfortunately these Joystick boards seem not to be produced any more. V02 will use another shield. </br>
  <img src="https://user-images.githubusercontent.com/456034/234848548-31534d51-8aed-4dec-b4e7-3f7b9aa3a3b2.png" width=300> <img src="media/ITEAD_Shield_pinmap_ESP32_01.png" width="300"> 
@@ -201,6 +201,14 @@ This is work in progress (see issues). Have to wait until hardware arrives.
 
 <img src="https://user-images.githubusercontent.com/456034/235509540-501aeed6-e818-4940-9b7d-6174cb2bc91f.png" width=300> <img src="https://user-images.githubusercontent.com/456034/235510275-84a1a18c-374a-4f09-a9df-a84ffa4dace0.png" width=300>
  
+### OLED
+Please consider wleding **right angled pins** (7pin header or 4  header) onto the board (facing inwards) which could give you more space e. g. later on for a battery pack. The even ones delivered with them are not very good for the building into the housing. 
+ 
+Use the correct 3d model  (2,4) for the OLD housing.</br>
+<img src="https://user-images.githubusercontent.com/456034/235375646-2a392b96-23dd-4ae4-afb2-1ef1a50baf26.png" width=300> <img src="https://user-images.githubusercontent.com/456034/235221460-2df23ae3-cc37-4036-960e-92521f07b0b4.png" width="300">
+
+Use I2C OLEDs (not SPI, you have to convert them by soldering).
+
 #### 1,3 inch OLED
 Please consider welding right angled pins (4pin header) onto the board (facing inwards) which could give you more space e. g. later on for a battery pack. 
 Use the correct 3d model  (1,3) for the OLD housing.</br>
@@ -233,13 +241,6 @@ I have tested and successfully converted two DIYmore SSD1309 from SPI to I2C:
 
 <img src="https://github.com/apos/rapid-bulky-wshc-by-apos/assets/456034/a29b4ff4-2a04-49a0-ae96-2484e7f5ab29" width="400">
 
-#####  Here what I did for 
-
-Please consider wleding **right angled pins** (7pin header or 4  header) onto the board (facing inwards) which could give you more space e. g. later on for a battery pack. The even ones delivered with them are not very good for the building into the housing. 
- 
-Use the correct 3d model  (2,4) for the OLD housing.</br>
-<img src="https://user-images.githubusercontent.com/456034/235375646-2a392b96-23dd-4ae4-afb2-1ef1a50baf26.png" width=300> <img src="https://user-images.githubusercontent.com/456034/235221460-2df23ae3-cc37-4036-960e-92521f07b0b4.png" width="300">
-
 ## Model for 3D printer
 The models are more or less versatile. 
 
@@ -258,6 +259,14 @@ Used for the bigger Joystick "Arduino" Joystick shields which are a little bigge
 ### V03 
 Work in progress to use with avaiable Joysticks and buttons with Dupont connectors. 
 
+### User contributions
+#### Supply case version from Matthias
+> The case is finished and it works. I glued the red ring on as a "design extra". The case is an old power supply case, which I still had left over.
+He also used an old handy accu an integrated a loading circuit. After the prototyping phase he soldered everything. Good idea! See https://onstep.groups.io/g/main/message/51556 
+
+<img src="https://github.com/apos/rapid-bulky-wshc-by-apos/assets/456034/886b92aa-355f-4a0c-bfe2-5082154bb5c5" width=300)>
+<img src="https://github.com/apos/rapid-bulky-wshc-by-apos/assets/456034/6f007e68-1056-41ed-ba8c-a45189aea038" width=300)>
+<img src="https://github.com/apos/rapid-bulky-wshc-by-apos/assets/456034/6ede2306-9b15-4c2d-937b-7c00678dc38a" width=600)>
 
 ## Please contribute you Ideas 
 
@@ -275,7 +284,7 @@ Basically  orient yourself on the pinmap of the SHC code for ESP32 and you read 
 
 Everything will be reusable for a other projects and can be put apart totally. Nothing is soldered. 
 
-Basically you can do this now wiht every ESP32 and Joystick board, BUT: you should know what you are doing and the 3D model probably will not fit.
+Basically you can do this now wiht every ESP32 and Joystick board, BUT: you should know what you are doing and the 3D model probably will not fit. 
 
 
 ### Source code
