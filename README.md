@@ -259,18 +259,16 @@ Used for the bigger Joystick "Arduino" Joystick shields which are a little bigge
 ### V03 
 Work in progress to use with avaiable Joysticks and buttons with Dupont connectors. 
 
-### User contributions
+### Please contribute you Ideas 
+Please contribute at the tread [wSHC (wireless Smart Hand Controller) with standard ESP32-Board and standard joystick shield (anyone?)](https://onstep.groups.io/g/main/message/51440) .
 #### Supply case version from Matthias
 > The case is finished and it works. I glued the red ring on as a "design extra". The case is an old power supply case, which I still had left over.
+
 He also used an old handy accu an integrated a loading circuit. After the prototyping phase he soldered everything. Good idea! See https://onstep.groups.io/g/main/message/51556 
 
 <img src="https://github.com/apos/rapid-bulky-wshc-by-apos/assets/456034/886b92aa-355f-4a0c-bfe2-5082154bb5c5" width=300)>
 <img src="https://github.com/apos/rapid-bulky-wshc-by-apos/assets/456034/6f007e68-1056-41ed-ba8c-a45189aea038" width=300)>
 <img src="https://github.com/apos/rapid-bulky-wshc-by-apos/assets/456034/6ede2306-9b15-4c2d-937b-7c00678dc38a" width=600)>
-
-## Please contribute you Ideas 
-
-Please contribute at the tread [wSHC (wireless Smart Hand Controller) with standard ESP32-Board and standard joystick shield (anyone?)](https://onstep.groups.io/g/main/message/51440) .
 
 ## Instructions
 
