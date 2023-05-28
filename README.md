@@ -100,9 +100,9 @@ But it boils down to:
 | Breakout board  | V01     | for ESP32/30pin Arduino form factor                                               | 5 €   |
 | Joystick shield | V01     | ITEAD (seems to be not avaiable very easy). Very slim design. Arduino form factor | 5 €   |
 | OLED            | V01     | 1,3 inch                                                                          | 5 €   |
+| OLED            | V01     | 2,4 inch                                                                          | 15 €   |
 | Filament        | V01     | PLA                                                                               | 2-3 € |
-| Cables          Juni| V01     | 10 to 15 cm long (female to female)                                               | Cents |
-
+| Cables          | V01     | 10 to 15 cm long (female to female)                                           | Cents |
 
 ### Build Time
 
@@ -154,7 +154,13 @@ This is the most compact combination of hardware I could find out there:
 - Optional, but recommended for usage in the field: two M3 23mm length (not necessary, because 3d parts should snap together)
 
 ### Detailed hardware components
-#### 30pin breakout board with DC converter for the 30pin ESP32 (recommended version)
+#### ESP32
+There are a lot of form factors for ESP32 out there (see [here](https://de.aliexpress.com/item/4000071762309.html)):
+<img src="https://github.com/apos/rapid-bulky-wshc-by-apos/assets/456034/0b445027-35b6-4f70-a5e7-312254f347cd" width=300> 
+
+Every ESP32 will do, but we have some constraints depending on the breakout board you will use. Especially, if you consider to use the ESPDuino-32 form factor, be aware, that you have to solder extra pins onto the board, since not all necassary pins will be there. 
+
+#### 30pin breakout board with DC converter for the 30pin ESP32 (RECOMMENDED)
 This board has many advantages:
 - USB-C jack located at the left (and also a Micro-USB Jack in the middle, if you might need one)
 - separate round 5/2.1mm DC jack (6.5 to 16 V)
@@ -181,7 +187,7 @@ This board is simply different
 
 <img src="media/Breakout_board_2_with_clambs_and_38pin.jpg" width="300"> <img src="media/ESP32_ITEAD_01.jpg" width="300"> 
 
-#### Joystick shield 1 -  very short, Arduino form factor
+#### Joystick shield 1 -  very short, Arduino form factor (RECOMMENDED)
 This design uses an ITEAD joystick shield and pinmapping - see [ITEAD PDF manual](media/manuals/ITEAD_Joystickshield_DS.pdf) in the the media folder. Unfortunately these Joystick boards seem not to be produced any more. V02 will use another shield. </br>
  <img src="https://user-images.githubusercontent.com/456034/234848548-31534d51-8aed-4dec-b4e7-3f7b9aa3a3b2.png" width=300> <img src="media/ITEAD_Shield_pinmap_ESP32_01.png" width="300"> 
  
@@ -204,14 +210,32 @@ Use the correct 3d model  (1,3) for the OLD housing.</br>
 Type SSD1306
 
 4 pin models (I2C) are not easy to get and expensive. 7 pins are SPI - see 2,42 inch OLED. 
-Until now I do not own one ... so can not test it. Therefore no 3d model at the time of writing. Please contribute. 
+Until now I do not own one ... so can not test it. Therefore no 3d model at the time of writing. Please contribute, if you like and file an issue with the solution here in GitHub. 
 
-#### 2,4 inch OLED (NOT READY YET. Needs code change on SHC)
+#### 2,4 inch OLED I2C (RECOMMENDED)
 Type SSD1309
 
-Important notice: there are  SPI (7 pin) and I2C (4 pin) models out there -  [be very careful, which version to choose (e. g. here von Ali)](https://de.aliexpress.com/item/1005004106570899.html). The SHC by default works with the I2C layout. If you got an SPI version you haver to move very little resistors like described in 
+Important notice: there are  SPI (7 pin) and I2C (4 pin) models out there -  [be very careful, which version to choose (e. g. here von Ali)](https://de.aliexpress.com/item/1005004106570899.html). 
+- You should buy the I2C Version (4 pin). This is less trouble free for the given use case. 
+- If you got an SPI version you haver to move very little resistors like described in the manufacors manual. I can recommend this video: https://www.youtube.com/watch?v=6wR_OBNOr7I  (Converting an SPI OLED to i2c 2.42in. DIYmore SSD1309). The video shows very detailed how to convert the diymore.cc-branded OLED from SPI to IIC. For all new buyers, I recommend getting the 4 pin version (I2C) as stated above, if you do not need SPI. 
 
-Please slos consider wleding **right angled pins** (7pin header or 4  header) onto the board (facing inwards) which could give you more space e. g. later on for a battery pack. The even ones delivered with them are not very good for the building into the housing. 
+I have tested and successfully converted two DIYmore SSD1309 from SPI to I2C:
+
+<img src="https://github.com/apos/rapid-bulky-wshc-by-apos/assets/456034/f40aa843-4d77-4122-a652-8733c27c3577" width="300">
+<img src="https://github.com/apos/rapid-bulky-wshc-by-apos/assets/456034/7d95fb10-40c8-4a5d-bf65-d5e6d9cb1364" width="300">  </br>
+<img src="https://github.com/apos/rapid-bulky-wshc-by-apos/assets/456034/452da837-e6f1-48d0-9b35-68108625c537" width="300">
+<img src="https://github.com/apos/rapid-bulky-wshc-by-apos/assets/456034/8304bbac-4dd4-4982-a72d-4c52d0a87a81" width="300">
+
+Conversion steps (soldering of very tiny smd parts required - see video linked above):
+1. shorted R5 and R7 with a little piece of cable
+2. moved R4 to position R3 (R4 will be left open)
+3. IMPORTANT: you have to use pin16 for reset (default in SHC code), otherwise the display will keep blank
+
+<img src="https://github.com/apos/rapid-bulky-wshc-by-apos/assets/456034/a29b4ff4-2a04-49a0-ae96-2484e7f5ab29" width="400">
+
+#####  Here what I did for 
+
+Please consider wleding **right angled pins** (7pin header or 4  header) onto the board (facing inwards) which could give you more space e. g. later on for a battery pack. The even ones delivered with them are not very good for the building into the housing. 
  
 Use the correct 3d model  (2,4) for the OLD housing.</br>
 <img src="https://user-images.githubusercontent.com/456034/235375646-2a392b96-23dd-4ae4-afb2-1ef1a50baf26.png" width=300> <img src="https://user-images.githubusercontent.com/456034/235221460-2df23ae3-cc37-4036-960e-92521f07b0b4.png" width="300">
