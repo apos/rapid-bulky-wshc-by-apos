@@ -1,10 +1,14 @@
 # Rapid bulky wSHC by apos (RPB wSHC)
 
-Smallest version with external power bank or 6-16V DC</br>
+Smallest version with external power bank or 6-16V DC. Version with 1,54'' OLED</br>
 <img src="media/V01a_Reference_layout.jpg" width="600">
 
+Version with 2,4'' OLED </br>
+<img src="https://github.com/apos/rapid-bulky-wshc-by-apos/assets/456034/cada79fa-d38b-4851-8a12-9563c813e525" width="600">
+
+
 A very early prototype :-) </br>
-<img src="media/ESP32-30pin-BO1-Rapid_Bulky_wSHC_V13_01.jpg" width="600"> 
+<img src="media/ESP32-30pin-BO1-Rapid_Bulky_wSHC_V13_01.jpg" width="300"> 
 
 3D models </br>
 <img src="media/V01_M1_01.png" width="300"> <img src="media/V01_M1_03.png" width="300">  <img src="media/V01_M1_02.png" width="300"> 
