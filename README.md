@@ -251,8 +251,8 @@ The models are more or less versatile.
 - All OLED housings can be used and interchanged within all bases.. 
 - Base and middle plate are different in size  (length) due to the design of the used Joystick shield. 
 - Probably you also will solder your own PCB using standard parts (Joystick / Buttons) or combine avaiable joy sticks, push buttons with pin headers or a touch switch. Therefore there exit closed tops for your design which you can bore for you joystick/button design. Or simply take the STL/3MF and alter it to your needs.
-- For every case I use the avaable breakout boards. 
-- Battery pack: space is very limited in the smal housing (V01). But a small battery (800 mAh lithium could 
+- For every case I use the available breakout boards. 
+- Battery pack: space is very limited in the smal housing (V01). But a small battery (800 mAh lithium) could fit.
 
 ### V01
 The smallest RPB wSHC housing. Used for the smaller ITEAD joystick shield which is very small. Has also a "closed" top for your own design.
@@ -282,17 +282,17 @@ Basically  orient yourself on the pinmap of the SHC code for ESP32 and you read 
 ### Dragons ahead
 
 - THERE ARE DIFFERENCES IN HARDWARE SPECs for all of these parts out there.
-- THIS IS FORE ESP32 (30/38pin), an ARDUINO FORM FACTOR BREAKOUT BOARD AND an ARDUINO FORM FACTOR JOYSTICK SHIELD. 
+- THIS DESIGN IS FOR AN ESP32 (30/38pin), an ARDUINO FORM FACTOR BREAKOUT BOARD AND an ARDUINO FORM FACTOR JOYSTICK SHIELD. 
 - You can also use your own housing. But if you stay with these 3d designs, you should stack with the hardware mentioned here. So PLEASE LOOK AT THE MEDIA DIRECTORY and here on this page for the hardware, that is used.
 
 Everything will be reusable for a other projects and can be put apart totally. Nothing is soldered. 
 
-Basically you can do this now wiht every ESP32 and Joystick board, BUT: you should know what you are doing and the 3D model probably will not fit. 
+Basically you can do this now with every ESP32 and Joystick board, BUT: you should know what you are doing and the 3D model probably will not fit. 
 
 
 ### Source code
 
-Dealing with the source code is not easy, especially if you are new to OnStep, to ESP32 development, or to 
+Dealing with the source code is not easy, especially if you are new to OnStep, to ESP32 development, or to the Arduino IDE.
 
 1. You need to read carefully the main SHC instructions [howto install the software on the OnStep site -> right side -> Smart Hand Controller](https://onstep.groups.io/g/main/wiki).
 2. At time of writing you have to use the [main tree of the SHC software code](https://github.com/hjd1964/SmartHandController/tree/main) to get things running as stated in the [instructions](https://onstep.groups.io/g/main/wiki/7152). This and only this branch contains the necessary code to get things running 
@@ -303,15 +303,15 @@ Dealing with the source code is not easy, especially if you are new to OnStep, t
 This is work in progress, here and in the OnStep SHC source code (tree main). Until now it is limited to special hardware.
 
 ### Program ESP32 - Platform.io
-I use the Visual Studio code plugin for [platform.io](https://platform.io). Arduino IDE is enough though (and the new 2.0 version works perfectly)
+I use the Visual Studio code plugin for [platform.io](https://platform.io). Arduino IDE is enough though (and the new 2.0 version works perfectly).
 
 If you work with Platform.io you need:
 
 - special platformio.ini (see platfoioio directory)
-- rename SmartHandController.ino to SmartHandController.cpp
+- rename SmartHandController.ino to SmartHandController.cpp (not any more for recent PlatformIO versions.
 - know how to use platform.io (I can and will not give support on this)
 
-BE AWARE: sometimes you have to press the "Download" button on the ESP32 to upload the code and you need the correct driver. Normally the USB-C variants are newer and have no problems.
+BE AWARE: sometimes you have to press the "Download" button on the ESP32 to upload the code. You also need the correct driver depending on the chipset beeing used. Normally the USB-C variants are newer and have no problems.
 
 
 # 3D-printer model and parts
