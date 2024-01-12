@@ -21,6 +21,9 @@ I recommend to read this page carefully afterwards to understand what to order a
 The video gives all informations needed from Adam to Eve, also includes an explanation of ESP32 form factors. But it is not on programming the SHC code onto the ESP32 with Arduino or Platform.IO IDE - only for assembling the parts.
 - https://www.youtube.com/watch?v=VndzQj0gUMc 
 
+![grafik](https://github.com/apos/rapid-bulky-wshc-by-apos/assets/456034/92c97783-ecbc-45d6-abdd-bdf1eb0a577a)
+
+
 Have fun. 
 
 ## Preface
