@@ -19,12 +19,12 @@ In a hurry?: This video is 50minutes long :-) But you can skip some chapters if 
 I recommend to read this page carefully afterwards to understand what to order and what to expect :-)
 
 The video gives all informations needed from Adam to Eve, also includes an explanation of ESP32 form factors. But it is not on programming the SHC code onto the ESP32 with Arduino or Platform.IO IDE - only for assembling the parts.
+
+Have fun. 
+
 - https://www.youtube.com/watch?v=VndzQj0gUMc 
 
 <img src="https://github.com/apos/rapid-bulky-wshc-by-apos/assets/456034/92c97783-ecbc-45d6-abdd-bdf1eb0a577a" width="600">
-
-
-Have fun. 
 
 ## Preface
 This is for building a wireless [Smart Hand Controller (wSHC)](https://onstep.groups.io/g/main/wiki/7152) for the [OnStep telescope controller](https://onstep.groups.io/g/main/wiki/Home) doing rapid prototyping method with
