@@ -8,7 +8,7 @@ Version with 2,4'' OLED </br>
 
 
 A very early prototype :-) </br>
-<img src="media/ESP32-30pin-BO1-Rapid_Bulky_wSHC_V13_01.jpg" width="300"> 
+src="media/ESP32-30pin-BO1-Rapid_Bulky_wSHC_V13_01.jpg" width="300"> 
 
 3D models </br>
 <img src="media/V01_M1_01.png" width="300"> <img src="media/V01_M1_03.png" width="300">  <img src="media/V01_M1_02.png" width="300"> 
@@ -21,7 +21,7 @@ I recommend to read this page carefully afterwards to understand what to order a
 The video gives all informations needed from Adam to Eve, also includes an explanation of ESP32 form factors. But it is not on programming the SHC code onto the ESP32 with Arduino or Platform.IO IDE - only for assembling the parts.
 - https://www.youtube.com/watch?v=VndzQj0gUMc 
 
-![grafik](https://github.com/apos/rapid-bulky-wshc-by-apos/assets/456034/92c97783-ecbc-45d6-abdd-bdf1eb0a577a)
+<img src="https://github.com/apos/rapid-bulky-wshc-by-apos/assets/456034/92c97783-ecbc-45d6-abdd-bdf1eb0a577a" width="600">
 
 
 Have fun. 
