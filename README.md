@@ -28,18 +28,18 @@ Have fun.
 
 ## UPDATES on the "rapid bulky wSHC"
 
-12.01.24: just updated to firmware 4.24s (SHC 4.01b) for hardware V01. Simply worked (see here).
-08.05.23: got 2,42 OLED working - changed from SPI to IIC mode (welding) - you should get the 4pin version! SPI usage and cabling still not clear
-07.05.23: 3d: Housing for 2,42'' OLED ready (could not pause completely pause today)
-30.04.23: Pause for 2 weeks on project
-30.04.23: Reference design V01, corresponding 3d-printable files on GitHub page and YouTube video are ready
-27.04.23: Major Upgrades and all project informations at the central GitHub page.
-26.04.23: Project name "rapid bulky wSHC by apos".
-26.04.23: First prototype (3D), all further updates on files, STL, Fusion360, information you will find on GitHub (not GitLab, sorry)
-25.04.23: Howard did some significant code refactoring and additions to Config.h. Shield is working. Abandoned usage of Espduino-32 (ESP32 with Arduino form factor). See https://onstep.groups.io/g/main/message/51416. Further testing needed.
-24.04.23: Some significant efforts. Joystick shield works
-23.04.23: Only problem is the joystick now ... only North/South work. Joystick is constantly triggering a signal (analogRead()?)
-22.04.23: Unfortunately, my trials combining a joystick shield (Arduino form factor) with a ESP32 (Arduino form factor) had not been successful. If t will (ever) be, I will continue the thread.
+- 12.01.24: just updated to firmware 4.24s (SHC 4.01b) for hardware V01. Simply worked (see here).
+- 08.05.23: got 2,42 OLED working - changed from SPI to IIC mode (welding) - you should get the 4pin version! SPI usage and cabling still not clear
+- 07.05.23: 3d: Housing for 2,42'' OLED ready (could not pause completely pause today)
+- 30.04.23: Pause for 2 weeks on project
+- 30.04.23: Reference design V01, corresponding 3d-printable files on GitHub page and YouTube video are ready
+- 27.04.23: Major Upgrades and all project informations at the central GitHub page.
+- 26.04.23: Project name "rapid bulky wSHC by apos".
+- 26.04.23: First prototype (3D), all further updates on files, STL, Fusion360, information you will find on GitHub (not GitLab, sorry)
+- 25.04.23: Howard did some significant code refactoring and additions to Config.h. Shield is working. Abandoned usage of Espduino-32 (ESP32 with Arduino form factor). See https://onstep.groups.io/g/main/message/51416. Further testing needed.
+- 24.04.23: Some significant efforts. Joystick shield works
+- 23.04.23: Only problem is the joystick now ... only North/South work. Joystick is constantly triggering a signal (analogRead()?)
+- 22.04.23: Unfortunately, my trials combining a joystick shield (Arduino form factor) with a ESP32 (Arduino form factor) had not been successful. If t will (ever) be, I will continue the thread.
 
 
 ## Preface
