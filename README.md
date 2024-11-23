@@ -248,6 +248,12 @@ Important notice: there are  SPI (7 pin) and I2C (4 pin) models out there -  [be
 - You should buy the I2C Version (4 pin). This is less trouble free for the given use case. 
 - If you got an SPI version you haver to move very little resistors like described in the manufacors manual. I can recommend this video: https://www.youtube.com/watch?v=6wR_OBNOr7I  (Converting an SPI OLED to i2c 2.42in. DIYmore SSD1309). The video shows very detailed how to convert the diymore.cc-branded OLED from SPI to IIC. For all new buyers, I recommend getting the 4 pin version (I2C) as stated above, if you do not need SPI. 
 
+##### Native I2C (4 pin)
+
+<img src="https://github.com/user-attachments/assets/788279e9-2ed6-4cc8-b492-a9555ed610ef" width="300">
+
+
+##### Conversion of SPI to I2C (7 pin)
 I have tested and successfully converted two DIYmore SSD1309 from SPI to I2C:
 
 <img src="https://github.com/apos/rapid-bulky-wshc-by-apos/assets/456034/f40aa843-4d77-4122-a652-8733c27c3577" width="300">
