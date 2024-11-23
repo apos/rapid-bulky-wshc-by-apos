@@ -244,7 +244,7 @@ Until now I do not own one ... so can not test it. Therefore no 3d model at the 
 #### 2,4 inch OLED I2C (RECOMMENDED)
 Type SSD1309
 
-Important notice: there are  SPI (7 pin) and I2C (4 pin) models out there -  [be very careful, which version to choose (e. g. here von Ali)](https://de.aliexpress.com/item/1005004106570899.html). 
+Important notice: there are  SPI (7 pin) and I2C (4 pin) models out there, [be very careful, to choose a 4 pin I2C in white OLED color (e. g. here von Ali)](https://de.aliexpress.com/item/1005004106570899.html). 
 - You should buy the I2C Version (4 pin). This is less trouble free for the given use case. 
 - If you got an SPI version you haver to move very little resistors like described in the manufacors manual. I can recommend this video: https://www.youtube.com/watch?v=6wR_OBNOr7I  (Converting an SPI OLED to i2c 2.42in. DIYmore SSD1309). The video shows very detailed how to convert the diymore.cc-branded OLED from SPI to IIC. For all new buyers, I recommend getting the 4 pin version (I2C) as stated above, if you do not need SPI. 
 
