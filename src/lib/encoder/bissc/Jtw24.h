@@ -1,23 +1,20 @@
 // JTW 24 BIT BISS-C encoders
 #pragma once
 
-#include "../Encoder.h"
+#include "Bissc.h"
 
 #ifdef HAS_JTW_24BIT
 
-  #include "Bissc.h"
-
   class Jtw24 : public Bissc {
     public:
-      // initialize Bissc encoder
-      // nvAddress holds settings for the 9 supported axes, 9*4 = 72 bytes; set nvAddress 0 to disable
-      Jtw24(int16_t maPin, int16_t sloPin, int16_t axis);
+      // initialize BiSS-C encoder
+      Jtw24(int16_t axis, int16_t maPin, int16_t sloPin);
 
     private:
-      // read encoder position
-      bool readEnc(uint32_t &position);
+      // get encoder count relative to origin
+      bool getCount(uint32_t &count);
 
-      // BiSS-C 6-bit CRC of 50 bit data (24 multi-turn + 24 position + 2 err/wrn)
+      // BiSS-C 6-bit CRC of 26 bit data (24 position + 2 err/wrn)
       uint8_t crc6(uint64_t data);
 
       // BiSS-C 6-bit CRC table (x^6 + x^1 + 1)

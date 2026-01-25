@@ -62,10 +62,6 @@
   #define TASKS_MAX 8
 #endif
 
-// default is to allow only higher priority tasks to run during a yield()
-// comment out and any task can run except the task that yields
-#define TASKS_HIGHER_PRIORITY_ONLY
-
 // ESP32 override cli/sei and use muxes to block the h/w timer ISR's instead
 #ifdef ESP32
   // on the ESP32 noInterrupts()/interrupts() are #defined to be cli()/sei()
@@ -84,7 +80,9 @@
   extern void timerAlarmsEnable();
 #endif
 
-// short Y macro to embed yield()
+// runs tasks at their prescribed interval
+// \note allows only higher priority tasks to run
+// \note each call can trigger running at most a single process
 #define Y tasks.yield()
 
 // short macro to allow momentary postponement of the current task
@@ -102,13 +100,13 @@ enum TimingMode: uint8_t {TM_BALANCED, TM_MINIMUM, TM_GAP};
 
 class Task {
   public:
-    Task(uint32_t period, uint32_t duration, bool repeat, uint8_t priority, void (*volatile callback)());
+    Task(uint32_t period, uint32_t duration, bool repeat, uint8_t priority, void (*callback)());
     ~Task();
 
     bool requestHardwareTimer(uint8_t num, uint8_t hwPriority);
     uint8_t hardware_timer = 0;
 
-    void setCallback(void (*volatile callback)());
+    void setCallback(void (*callback)());
 
     void setTimingMode(TimingMode mode);
 
@@ -189,7 +187,7 @@ class Tasks {
     //                  only higher priority tasks are allowed to run when a lower priority task yields
     // \param callback  function to handle this tasks processing
     // \return          handle to the task on success, or 0 on failure
-    uint8_t add(uint32_t period, uint32_t duration, bool repeat, uint8_t priority, void (*volatile callback)());
+    uint8_t add(uint32_t period, uint32_t duration, bool repeat, uint8_t priority, void (*callback)());
 
     // add process task
     // \param period    between process calls in milliseconds, use 0 to disable
@@ -203,7 +201,7 @@ class Tasks {
     // \param callback  function to handle this tasks processing
     // \param name      an optional short (max length 7) char str describing the task 
     // \return          handle to the task on success, or 0 on failure
-    uint8_t add(uint32_t period, uint32_t duration, bool repeat, uint8_t priority, void (*volatile callback)(), const char name[]);
+    uint8_t add(uint32_t period, uint32_t duration, bool repeat, uint8_t priority, void (*callback)(), const char name[]);
 
     // allocates a hardware timer, if available, for this task. Note: for the associated task: *repeat* must be true,
     // *priority* must be 0 (all are higher than s/w task priority 0.)
@@ -217,7 +215,7 @@ class Tasks {
     // \param handle        task handle
     // \param callback      function to handle this tasks processing
     // \return              true if successful, or false if unable to find the associated task
-    bool setCallback(uint8_t handle, void (*volatile callback)());
+    bool setCallback(uint8_t handle, void (*callback)());
 
     // change task timing mode
     // \param handle        task handle
@@ -242,66 +240,81 @@ class Tasks {
     void setPeriod(uint8_t handle, unsigned long period);
 
     // set process period us
-    // handle: task handle
-    // period: in milliseconds, use 0 for disabled
-    // notes:
-    //   the period/frequency change takes effect on the next task cycle
-    //   if the period is > the hardware timers maximum period the task is disabled
+    // \param handle: task handle
+    // \param period: in milliseconds, use 0 for disabled
+    // \return nothing
+    // \note the period/frequency change takes effect on the next task cycle
+    // \note if the period is > the hardware timers maximum period the task is disabled
     void setPeriodMicros(uint8_t handle, unsigned long period);
 
     // set process period sub-us
-    // handle: task handle
-    // period: in sub-microseconds (1/16 microsecond units), use 0 for disabled
-    // notes:
-    //   the period/frequency change takes effect on the next task cycle
-    //   if the period is > the hardware timers maximum period the task is disabled
+    // \param handle: task handle
+    // \param period: in sub-microseconds (1/16 microsecond units), use 0 for disabled
+    // \return nothing
+    // \note the period/frequency change takes effect on the next task cycle
+    // \note if the period is > the hardware timers maximum period the task is disabled
     void setPeriodSubMicros(uint8_t handle, unsigned long period);
 
     // change process period Hz
-    // handle: task handle
-    // freq:  in Hertz, use 0 for disabled
-    // notes:
-    //   the period/frequency change takes effect on the next task cycle
-    //   when setting a frequency the most appropriate setPeriod is used automatically
-    //   if the period is > ~49 days (or > the hardware timers maximum period) the task is disabled
+    // \param handle: task handle
+    // \param freq:   in Hertz, use 0 for disabled
+    // \return nothing
+    // \note the period/frequency change takes effect on the next task cycle
+    // \note when setting a frequency the most appropriate setPeriod is used automatically
+    // \note if the period is > ~49 days (or > the hardware timers maximum period) the task is disabled
     void setFrequency(uint8_t handle, double freq);
 
     // set the period ratio to compensate for MCU clock inaccuracy
-    // in sub-microseconds per second, this is safe to call from within an ISR
-    // values above 16M cause the timers to compensate by running slower
-    // values below 16M cause the timers to compensate by running faster
-    IRAM_ATTR void setPeriodRatioSubMicros(unsigned long value);
+    // \param value: in submicros per second (default 16000000)
+    // \note values above 16M cause the timers to compensate by running slower
+    // \note values below 16M cause the timers to compensate by running faster
+    void setPeriodRatioSubMicros(unsigned long value);
 
     // set process to run immediately on the next pass (within its priority level)
+    // \param handle: task handle
     IRAM_ATTR inline void immediate(uint8_t handle) { if (handle != 0 && allocated[handle - 1]) { task[handle - 1]->immediate = true; } }
 
-    // change process duration (milliseconds,) use 0 for disabled
+    // change process duration
+    // \param handle: task handle
+    // \param duration: in milliseconds use 0 to disable
     void setDuration(uint8_t handle, unsigned long duration);
 
     // late removal of process task
-    // handle: task handle
-    // note:   removes a task process, even if it is running
+    // \param handle: task handle
+    // \param note removes a task process, even if it is running
     void setDurationComplete(uint8_t handle);
 
-    // change process repeat (true/false)
+    // change process repeat
+    // \param handle: task handle
+    // \param repeat: true to repeat indefinately
     void setRepeat(uint8_t handle, bool repeat);
 
-    // change process priority level (highest 0 to 7 lowest)
+    // change process priority level
+    // \param handle: task handle
+    // \param priority: highest 0 to 7 lowest
     void setPriority(uint8_t handle, uint8_t priority);
 
+    // gets process priority level, highest 0 to 7 lowest or -1 on failure
+    // \param handle: task handle
+    inline int getPriority(uint8_t handle) { if (handle != 0 && allocated[handle - 1]) { return task[handle - 1]->getPriority(); } else return -1; }
+
     // set the process name
+    // \param handle: task handle
+    // \param name: up to 7 chars
     void setNameStr(uint8_t handle, const char name[]);
 
     // get the process name
+    // \param handle: task handle
     char *getNameStr(uint8_t handle);
 
-    // search for tasks, returns 0 if no tasks are found
+    // get first task, returns handle or 0 if no tasks are found
     uint8_t getFirstHandle();
 
-    // return next task (after task handle) or 0 if no tasks are found
+    // get next task, returns handle or 0 if no tasks are found
     uint8_t getNextHandle(uint8_t handle);
 
-    // search for task by name, returns 0 if not found
+    // search for task by name, returns handle or 0 if not found
+    // \param name: up to 7 chars
     uint8_t getHandleByName(const char name[]);
 
     #ifdef TASKS_PROFILER_ENABLE
@@ -312,11 +325,41 @@ class Tasks {
       double getRuntimeMax(uint8_t handle);
     #endif
 
-    // runs tasks at their prescribed interval, each call can trigger at most a single process
-    // processes that are already running are ignored so it's ok to poll() within a process
+    // runs higher priority tasks at their prescribed interval
+    // \note processes that are already running are ignored so it's ok to yield() within a process
+    // \note processes assigned to hardware timers run outside this mechanism
+    // \note each call can trigger running at most a single process
     void yield();
+
+    // runs higher priority tasks at their prescribed interval
+    // \param milliseconds: time to repeatedly run any tasks that need servicing
+    // \note processes that are already running are ignored so it's ok to yield() within a process
+    // \note processes assigned to hardware timers run outside this mechanism
     void yield(unsigned long milliseconds);
+
+    // runs higher priority tasks at their prescribed interval
+    // \param microseconds: time to repeatedly run any tasks that need servicing
+    // \note processes that are already running are ignored so it's ok to yield() within a process
+    // \note processes assigned to hardware timers run outside this mechanism
     void yieldMicros(unsigned long microseconds);
+
+    // runs all other tasks at their prescribed interval
+    // \note processes that are already running are ignored so it's ok to yield() within a process
+    // \note processes assigned to hardware timers run outside this mechanism
+    // \note each call can trigger running at most a single process
+    void yieldAll();
+
+    // runs all other tasks at their prescribed interval
+    // \param milliseconds: time to repeatedly run any tasks that need servicing
+    // \note processes that are already running are ignored so it's ok to yield() within a process
+    // \note processes assigned to hardware timers run outside this mechanism
+    void yieldAll(unsigned long milliseconds);
+
+    // runs all other tasks at their prescribed interval
+    // \param microseconds: time to repeatedly run any tasks that need servicing
+    // \note processes that are already running are ignored so it's ok to yield() within a process
+    // \note processes assigned to hardware timers run outside this mechanism
+    void yieldAllMicros(unsigned long microseconds);
 
   private:
     // keep track of the range of priorities so we don't waste cycles looking at empty ones
@@ -326,9 +369,6 @@ class Tasks {
 
     uint8_t highest_task     = 0; // the highest task# assigned
     uint8_t highest_priority = 0; // the highest task priority
-    #ifdef TASKS_HIGHER_PRIORITY_ONLY
-      uint8_t highest_active_priority = 8;
-    #endif
     uint8_t count            = 0;
     uint8_t num_tasks        = 0; // the total number of tasks
     uint8_t number[8]        = {255, 255, 255, 255, 255, 255, 255, 255}; // the task# we are servicing at this priority level

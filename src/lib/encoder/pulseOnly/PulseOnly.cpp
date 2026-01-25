@@ -6,130 +6,149 @@
     AXIS4_ENCODER == PULSE_ONLY || AXIS5_ENCODER == PULSE_ONLY || AXIS6_ENCODER == PULSE_ONLY || \
     AXIS7_ENCODER == PULSE_ONLY || AXIS8_ENCODER == PULSE_ONLY || AXIS9_ENCODER == PULSE_ONLY
 
-volatile int32_t _pulse_count[9] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
-volatile int16_t *_direction[9];
+PulseOnly *pulseOnlyInstance[9];
 
 #if AXIS1_ENCODER == PULSE_ONLY
-  IRAM_ATTR void pulse_A_Axis1() { if (_direction) _pulse_count[0]--; else _pulse_count[0]++; }
+  IRAM_ATTR void pulse_A_Axis1() { pulseOnlyInstance[0]->pulse();  }
 #endif
 
 #if AXIS2_ENCODER == PULSE_ONLY
-  IRAM_ATTR void pulse_A_Axis2() { _pulse_count[1] += *_direction[1]; }
+  IRAM_ATTR void pulse_A_Axis2() { pulseOnlyInstance[1]->pulse();  }
 #endif
 
 #if AXIS3_ENCODER == PULSE_ONLY
-  IRAM_ATTR void pulse_A_Axis3() { _pulse_count[2] += *_direction[2]; }
+  IRAM_ATTR void pulse_A_Axis3() { pulseOnlyInstance[2]->pulse();  }
 #endif
 
 #if AXIS4_ENCODER == PULSE_ONLY
-  IRAM_ATTR void pulse_A_Axis4() { _pulse_count[3] += *_direction[3]; }
+  IRAM_ATTR void pulse_A_Axis4() { pulseOnlyInstance[3]->pulse();  }
 #endif
 
 #if AXIS5_ENCODER == PULSE_ONLY
-  IRAM_ATTR void pulse_A_Axis5() { _pulse_count[4] += *_direction[4]; }
+  IRAM_ATTR void pulse_A_Axis5() { pulseOnlyInstance[4]->pulse(); }
 #endif
 
 #if AXIS6_ENCODER == PULSE_ONLY
-  IRAM_ATTR void pulse_A_Axis6() { _pulse_count[5] += *_direction[5]; }
+  IRAM_ATTR void pulse_A_Axis6() { pulseOnlyInstance[5]->pulse(); }
 #endif
 
 #if AXIS7_ENCODER == PULSE_ONLY
-  IRAM_ATTR void pulse_A_Axis7() { _pulse_count[6] += *_direction[6]; }
+  IRAM_ATTR void pulse_A_Axis7() { pulseOnlyInstance[6]->pulse(); }
 #endif
 
 #if AXIS8_ENCODER == PULSE_ONLY
-  IRAM_ATTR void pulse_A_Axis8() { _pulse_count[7] += *_direction[7]; }
+  IRAM_ATTR void pulse_A_Axis8() { pulseOnlyInstance[7]->pulse(); }
 #endif
 
 #if AXIS9_ENCODER == PULSE_ONLY
-  IRAM_ATTR void pulse_A_Axis9() { _pulse_count[8] += *_direction[8]; }
+  IRAM_ATTR void pulse_A_Axis9() { pulseOnlyInstance[8]->pulse(); }
 #endif
 
-PulseOnly::PulseOnly(int16_t pulsePin, int16_t *direction, int16_t axis) {
+PulseOnly::PulseOnly(int16_t pulsePin, volatile int8_t *direction, int16_t axis) {
   if (axis < 1 || axis > 9) return;
 
-  this->pulsePin = pulsePin;
-  this->axis = axis - 1;
-  _direction[this->axis] = direction;
+  this->axis = axis;
+  axis_index = axis - 1;
+
+  PulsePin = pulsePin;
+  pulseDirection = direction;
+
+  pulseOnlyInstance[axis_index] = this;
 }
 
-void PulseOnly::init() {
-  if (initialized) { VF("WRN: Encoder PulseOnly"); V(axis); VLF(" init(), already initialized!"); return; }
+bool PulseOnly::init() {
+  if (ready) return true;
+  if (!Encoder::init()) return false;
 
   pinMode(pulsePin, INPUT_PULLUP);
-  #if AXIS1_ENCODER == PULSE_ONLY
-    if (axis == 0) {
-      attachInterrupt(digitalPinToInterrupt(pulsePin), pulse_A_Axis1, CHANGE);
-    }
-  #endif
-  #if AXIS2_ENCODER == PULSE_ONLY
-    if (axis == 1) {
-      attachInterrupt(digitalPinToInterrupt(pulsePin), pulse_A_Axis2, CHANGE);
-    }
-  #endif
-  #if AXIS3_ENCODER == PULSE_ONLY
-    if (axis == 2) {
-      attachInterrupt(digitalPinToInterrupt(pulsePin), pulse_A_Axis3, CHANGE);
-    }
-  #endif
-  #if AXIS4_ENCODER == PULSE_ONLY
-    if (axis == 3) {
-      attachInterrupt(digitalPinToInterrupt(pulsePin), pulse_A_Axis4, CHANGE);
-    }
-  #endif
-  #if AXIS5_ENCODER == PULSE_ONLY
-    if (axis == 4) {
-      attachInterrupt(digitalPinToInterrupt(pulsePin), pulse_A_Axis5, CHANGE);
-    }
-  #endif
-  #if AXIS6_ENCODER == PULSE_ONLY
-    if (axis == 5) {
-      attachInterrupt(digitalPinToInterrupt(pulsePin), pulse_A_Axis6, CHANGE);
-    }
-  #endif
-  #if AXIS7_ENCODER == PULSE_ONLY
-    if (axis == 6) {
-      attachInterrupt(digitalPinToInterrupt(pulsePin), pulse_A_Axis7, CHANGE);
-    }
-  #endif
-  #if AXIS8_ENCODER == PULSE_ONLY
-    if (axis == 7) {
-      attachInterrupt(digitalPinToInterrupt(pulsePin), pulse_A_Axis8, CHANGE);
-    }
-  #endif
-  #if AXIS9_ENCODER == PULSE_ONLY
-    if (axis == 8) {
-      attachInterrupt(digitalPinToInterrupt(pulsePin), pulse_A_Axis9, CHANGE);
-    }
-  #endif
 
-  initialized = true;
+  int pulsePin = digitalPinToInterrupt(PulsePin);
+
+  if (pulsePin < 0) {
+    DF("ERR: Encoder PulseOnly"); D(axis); DLF(" init(), couldn't attach interrupt!"); 
+    return false;
+  }
+
+  switch (axis) {
+    #if AXIS1_ENCODER == PULSE_ONLY
+      case 1:
+        attachInterrupt(pulsePin, pulse_A_Axis1, ENCODER_SIGNAL_MODE);
+      break;
+    #endif
+    #if AXIS2_ENCODER == PULSE_ONLY
+      case 2:
+        attachInterrupt(pulsePin, pulse_A_Axis2, ENCODER_SIGNAL_MODE);
+      break;
+    #endif
+    #if AXIS3_ENCODER == PULSE_ONLY
+      case 3:
+        attachInterrupt(pulsePin, pulse_A_Axis3, ENCODER_SIGNAL_MODE);
+      break;
+    #endif
+    #if AXIS4_ENCODER == PULSE_ONLY
+      case 4:
+        attachInterrupt(pulsePin, pulse_A_Axis4, ENCODER_SIGNAL_MODE);
+      break;
+    #endif
+    #if AXIS5_ENCODER == PULSE_ONLY
+      case 5:
+        attachInterrupt(pulsePin, pulse_A_Axis5, ENCODER_SIGNAL_MODE);
+      break;
+    #endif
+    #if AXIS6_ENCODER == PULSE_ONLY
+      case 6:
+        attachInterrupt(pulsePin, pulse_A_Axis6, ENCODER_SIGNAL_MODE);
+      break;
+    #endif
+    #if AXIS7_ENCODER == PULSE_ONLY
+      case 7:
+        attachInterrupt(pulsePin, pulse_A_Axis7, ENCODER_SIGNAL_MODE);
+      break;
+    #endif
+    #if AXIS8_ENCODER == PULSE_ONLY
+      case 8:
+        attachInterrupt(pulsePin, pulse_A_Axis8, ENCODER_SIGNAL_MODE);
+      break;
+    #endif
+    #if AXIS9_ENCODER == PULSE_ONLY
+      case 9:
+        attachInterrupt(pulsePin, pulse_A_Axis9, ENCODER_SIGNAL_MODE);
+      break;
+    #endif
+  }
+
+  ready = true;
 }
 
 int32_t PulseOnly::read() {
-  if (!initialized) { VF("WRN: Encoder PulseOnly"); V(axis); VLF(" read(), not initialized!"); return 0; }
+  if (!ready) return 0;
 
   noInterrupts();
-  int32 count = _pulse_count[axis];
+  count = pulseCount;
   interrupts();
 
-  return count + origin;
+  return count + index;
 }
 
-void PulseOnly::write(int32_t count) {
-  if (!initialized) { VF("WRN: Encoder PulseOnly"); V(axis); VLF(" write(), not initialized!"); return; }
-
-  count -= origin;
+void PulseOnly::write(int32_t position) {
+  if (!ready) return;
 
   noInterrupts();
-  _pulse_count[axis] = count;
+  index = position - pulseCount;
   interrupts();
 }
 
-void PulseOnly::setDirection(int16_t direction) {
-  if (!initialized) { VF("WRN: Encoder PulseOnly"); V(axis); VLF(" setDirection(), not initialized!"); return; }
+void PulseOnly::setDirection(volatile int8_t *direction) {
+  if (!ready) return;
 
-  _direction[axis] = direction;
+  pulseDirection = direction;
+}
+
+IRAM_ATTR void PulseOnly::pulse() {
+  #if ENCODER_FILTER > 0
+    ENCODER_FILTER_UNTIL(ENCODER_FILTER);
+  #endif
+  pulseCount += *pulseDirection; 
 }
 
 #endif

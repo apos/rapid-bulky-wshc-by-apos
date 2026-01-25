@@ -6,7 +6,7 @@
 #include "../libApp/keyPad/KeyPad.h"
 #include "../libApp/u8g2ext/u8g2_ext.h"
 #include "../libApp/status/Status.h"
-#include "../libApp/cmd/Cmd.h"
+#include "../libApp/cmdLx200/CmdLx200.h"
 #include "message/Message.h"
 
 // coordinate mode for getting and setting RA/Dec
@@ -15,11 +15,19 @@
 #define ASTROMETRIC_J2000 3
 
 #define MY_BORDER_SIZE 1
+#define icon_narrow_width 8
 #define icon_width 16
 #define icon_height 16
 
 #define onstep_logo_width 128
 #define onstep_logo_height 68
+
+enum OperatingMode {OM_SERIAL, OM_WIFI};
+enum ConnectSelection {
+  CS_NONE, CS_CONNECT_MENU, CS_SERIAL,
+  CS_WIFI_STA1, CS_WIFI_STA2, CS_WIFI_STA3, CS_WIFI_STA4, CS_WIFI_STA5, CS_WIFI_STA6, CS_WIFI_STA7, CS_WIFI_STA8, 
+  CS_BT_STA1, CS_BT_STA2, CS_BT_STA3, CS_BT_STA4, CS_BT_STA5, CS_BT_STA6, CS_BT_STA7, CS_BT_STA8
+};
 
 enum OLED { OLED_SH1106, OLED_SH1106_4W_SW_SPI, OLED_SH1106_4W_HW_SPI, OLED_SSD1306, OLED_SSD1309, OLED_SSD1309_4W_SW_SPI, OLED_SSD1309_4W_HW_SPI };
 #define SH1106 OLED_SH1106
@@ -46,7 +54,7 @@ typedef struct DisplaySettings {
 
 class UI {
 public:
-  void init(const char version[], const int pin[7], const int active[7], const int SerialBaud, const OLED model);
+  void init(const char version[], const KeyPad::Pin pins[7], const int SerialBaud, const OLED model);
 
   void connect();
   void drawIntro();
@@ -65,8 +73,12 @@ private:
 
   void menuMain();
   void menuFeatureKey();
-  #if SERIAL_IP_MODE == STATION
-    void menuWifi();
+  #if SERIAL_IP_MODE != OFF || SERIAL_BT_MODE != OFF
+    void menuWireless();
+    void menuWiFiStationEditSelect(const char *ssid);
+    void menuWiFiStationEdit(const char *ssid, int index);
+    void menuBTStationEditSelect(const char *name, const char *address);
+    void menuBTStationEdit(const char *name, const char *address, int index);
   #endif
   
   MENU_RESULT menuSyncGoto(bool sync);
@@ -120,6 +132,8 @@ private:
   void menuMeridianE();
   void menuMeridianW();
   void menuFirmware();
+  
+  void initGuideCommands();
 
   Status status;
 
@@ -135,7 +149,13 @@ private:
   RotState rotState = RS_STOPPED;
   int nextRotMessageUpdateCycles = 0;
 
+  #if SERIAL_BT_MODE != OFF
+    bool bluetoothStarted = false;
+  #endif
   bool firstConnect = true;
+  ConnectSelection connectionSelection = CS_NONE;
+  int skipConnectionSelection = 1;
+  int queryTry;
   bool hasAuxFeatures = false;
   bool sleepDisplay = false;
   bool lowContrast = false;
@@ -184,6 +204,7 @@ private:
   long angleDEC = 0;
 
   long serialBaud = 9600;
+  long reconnectionCount;
 };
 
 extern UI userInterface;

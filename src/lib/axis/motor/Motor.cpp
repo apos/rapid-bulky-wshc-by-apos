@@ -5,24 +5,39 @@
 
 #ifdef MOTOR_PRESENT
 
-// get motor default parameters
-void Motor::getDefaultParameters(float *param1, float *param2, float *param3, float *param4, float *param5, float *param6){
-  *param1 = default_param1;
-  *param2 = default_param2;
-  *param3 = default_param3;
-  *param4 = default_param4;
-  *param5 = default_param5;
-  *param6 = default_param6;
+Motor::Motor(uint8_t axisNumber, int8_t reverse) {
+  this->axisNumber = axisNumber;
+  this->reverse.valueDefault = reverse == ON;
 }
 
-// set motor default parameters
-void Motor::setDefaultParameters(float param1, float param2, float param3, float param4, float param5, float param6){
-  default_param1 = param1;
-  default_param2 = param2;
-  default_param3 = param3;
-  default_param4 = param4;
-  default_param5 = param5;
-  default_param6 = param6;
+bool Motor::init() {
+  VF("MSG:"); V(axisPrefix); VLF("motor init");
+  normalizedReverse = (bool)lround(reverse.value);
+  return true;
+}
+
+// returns the specified axis parameter by name
+AxisParameter* Motor::getParameterByName(const char* name) {
+  for (int i = 1; i <= getParameterCount(); i++) {
+    if (strcmp(getParameter(i)->name, name) == 0) { return getParameter(i); }
+  }
+  return &invalid;
+}
+
+// check if parameter is valid
+bool Motor::parameterIsValid(AxisParameter* parameter, bool next) {
+  float value;
+  if (next) value = parameter->valueNv; else value = parameter->value;
+  if (value < parameter->min) return false;
+  if (value > parameter->max) return false;
+  if (parameter->type == AXP_POW2) {
+    if (value != 1.0F && value != 2.0F && value != 4.0F &&
+        value != 8.0F && value != 16.0F && value != 32.0F &&
+        value != 64.0F && value != 128.0F && value != 256.0F) {
+      return false;
+    }
+  }
+  return true;
 }
 
 // resets motor and target angular position in steps, also zeros backlash and index 
@@ -69,12 +84,13 @@ void Motor::setInstrumentCoordinateSteps(long value) {
 // should only be called when the axis is not moving
 void Motor::setInstrumentCoordinateParkSteps(long value, int modulo) {
   if (driverType == STEP_DIR) {
+    if (modulo == OFF) modulo = 1;
     long steps = value - motorSteps;
     steps -= modulo*2L;
     for (int l = 0; l < modulo*4; l++) { if (steps % (modulo*4L) == 0) break; steps++; }
     indexSteps = steps;
   } else setInstrumentCoordinateSteps(value);
-  V(axisPrefix); VF("setInstrumentCoordinateParkSteps at "); V(indexSteps); VF(" (was "); V(value - motorSteps); VL(")");
+  VF("MSG:"); V(axisPrefix); VF("setInstrumentCoordinateParkSteps at "); V(indexSteps); VF(" (was "); V(value - motorSteps); VL(")");
 }
 
 // get target coordinate (with index), in steps
@@ -96,6 +112,7 @@ void Motor::setTargetCoordinateSteps(long value) {
 // should only be called when the axis is not moving
 void Motor::setTargetCoordinateParkSteps(long value, int modulo) {
   if (driverType == STEP_DIR) {
+    if (modulo == OFF) modulo = 1;
     long steps = value - indexSteps;
     steps -= modulo*2L;
     for (int l = 0; l < modulo*4; l++) { if (steps % (modulo*4L) == 0) break; steps++; }
@@ -103,7 +120,7 @@ void Motor::setTargetCoordinateParkSteps(long value, int modulo) {
     targetSteps = steps;
     interrupts();
   } else setTargetCoordinateSteps(value);
-  V(axisPrefix); VF("setTargetCoordinateParkSteps at "); V(targetSteps); VF(" (was "); V(value - indexSteps); VL(")");
+  VF("MSG:"); V(axisPrefix); VF("setTargetCoordinateParkSteps at "); V(targetSteps); VF(" (was "); V(value - indexSteps); VL(")");
 }
 
 // get backlash amount in steps

@@ -7,6 +7,7 @@
 #define LF_GREEK u8g2_font_unifont_t_greek  // 10 pixel height
 #define LF_STANDARD u8g2_font_helvR10_tf    // 11 pixel height
 #define LF_LARGE u8g2_font_helvR12_tf       // 12 pixel height
+#define LF_PASSWORD u8g2_font_t0_17_mf      // 11 pixel height monospaced
 
 // General
 #define L_OK "OK"
@@ -17,16 +18,31 @@
 #define L_NOW "Now"
 #define L_SETV "Set"
 #define L_ALL "All"
+#define L_USE "Use"
 #define L_SET_STATE "Set State"
 #define L_VALUE "Value"
 #define L_WITHIN "Within"
 #define L_DISABLE "Disable"
 #define L_CANCELED "Canceled"
+#define L_CURRENT "Current"
 #define L_FAILED "Failed"
 #define L_DEGREE "degree"
 #define L_ARCSEC "arc-sec"
 #define L_MICRON_PER_C "um/C"
 #define L_DAYS "Days"
+#define L_SHOW_EDIT "- Edit -"
+#define L_SHOW_KNOWN "- Show Known -"
+#define L_UPDATING "Updating"
+#define L_SCANNING "Scanning"
+#define L_PLEASE_WAIT "Please wait"
+#define L_CONFIRM "Are you sure?"
+#define L_CLEAR "Clear"
+#define L_MEMORY "Memory"
+#define L_OVERWRITE "Overwrite"
+#define L_PASSWORD "Password"
+#define L_DHCP_LINE1 "DHCP disable can"
+#define L_DHCP_LINE2 "disrupt operation!"
+#define L_POWERING "Powering"
 
 // common abbreviations
 #define L_TELESCOPE "Scope" // telescope
@@ -123,7 +139,6 @@
 // PEC menu
 #define L_PEC_PLAY "Play"
 #define L_PEC_STOP "Stop"
-#define L_PEC_CLEAR "Clear"
 #define L_PEC_RECORD "Record"
 #define L_PEC_WRITENV "Write to NV"
 #define L_PEC "PEC"
@@ -176,7 +191,7 @@
 #define L_SET_BUZ "Buzzer"
 #define L_SET_MERIDIAN_FLIP "Meridian Flip"
 #define L_SET_CONFIG "Configuration"
-#define L_SET_VERSION "Firmware Ver"
+#define L_SET_VERSION "Firmware"
 #define L_SETTINGS "Settings"
 
 // date/time
@@ -341,9 +356,10 @@
 #define L_SG_FILT_BY_PER_MAX "Filter Var* Period"
 
 // ------------------- SmartController.h -----------------------
-#define L_WIFI_SELECT "SHC, Select WiFi:"
-#define L_WIFI_CONNECTION1 "Starting WiFi:"
-#define L_WIFI_CONNECTION2 "Restart WiFi:"
+#define L_WIFI_SELECT "OnStep Connection:"
+#define L_WIFI_SELECT_EDIT "Edit Connection:"
+#define L_WIFI_CONNECTION "Starting WiFi:"
+#define L_BT_CONNECTION "Starting BT:"
 #define L_LOOKING "Looking for"
 #define L_WARNING "Warning"
 #define L_CONNECTION "Connection"

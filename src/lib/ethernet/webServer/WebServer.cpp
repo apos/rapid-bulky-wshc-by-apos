@@ -4,7 +4,7 @@
 #include "WebServer.h"
 #include "../../tasks/OnTask.h"
 
-#if (OPERATIONAL_MODE == ETHERNET_W5100 || OPERATIONAL_MODE == ETHERNET_W5500) && WEB_SERVER == ON
+#if OPERATIONAL_MODE >= ETHERNET_FIRST && OPERATIONAL_MODE <= ETHERNET_LAST && WEB_SERVER != OFF
 
   void WebServer::begin(long port, long timeToClose, bool autoReset) {
     if (webServer == NULL) {
@@ -134,7 +134,7 @@
     // isolate the content
     *line = line->substring(0, url_end);
     int url_start = 0;
-    int url_end2 = line->lastIndexOf('?');
+    int url_end2 = line->indexOf('?');
     if (url_end2 > 0) url_end = url_end2;
     requestedHandler = line->substring(url_start, url_end);
     *line = line->substring(url_end);

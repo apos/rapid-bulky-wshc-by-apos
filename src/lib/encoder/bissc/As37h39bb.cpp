@@ -5,17 +5,18 @@
 #ifdef HAS_AS37_H39B_B
 
 // initialize BiSS-C encoder
-// nvAddress holds settings for the 9 supported axes, 9*4 = 72 bytes; set nvAddress 0 to disable
-As37h39bb::As37h39bb(int16_t maPin, int16_t sloPin, int16_t axis) {
+As37h39bb::As37h39bb(int16_t axis, int16_t maPin, int16_t sloPin) {
   if (axis < 1 || axis > 9) return;
+
+  this->axis = axis;
 
   this->maPin = maPin;
   this->sloPin = sloPin;
-  this->axis = axis;
 }
 
-// read encoder count
-IRAM_ATTR bool As37h39bb::readEnc(uint32_t &position) {
+// get encoder count relative to origin
+IRAM_ATTR bool As37h39bb::getCount(uint32_t &count) {
+
   bool foundAck = false;
   bool foundStart = false;
   bool foundCds = false;
@@ -27,7 +28,7 @@ IRAM_ATTR bool As37h39bb::readEnc(uint32_t &position) {
   uint32_t encTurns = 0;
 
   // prepare for a reading
-  position = 0;
+  count = 0;
 
   // bit delay in nanoseconds
   int rate = lround(500000.0/BISSC_CLOCK_RATE_KHZ);
@@ -35,16 +36,16 @@ IRAM_ATTR bool As37h39bb::readEnc(uint32_t &position) {
   #ifdef ESP32
     portMUX_TYPE bisscMutex = portMUX_INITIALIZER_UNLOCKED;
     taskENTER_CRITICAL(&bisscMutex);
-  #elif defined(__TEENSYDUINO__)
+  #else
     noInterrupts();
   #endif
 
   // sync phase
   for (int i = 0; i < 20; i++) {
-    digitalWriteF(maPin, LOW);
-    if (digitalReadF(sloPin) == LOW) foundAck = true;
+    digitalWriteF(maPin, LOW_MA);
+    if (digitalReadF(sloPin) == LOW_SLO) foundAck = true;
     delayNanoseconds(rate);
-    digitalWriteF(maPin, HIGH);
+    digitalWriteF(maPin, HIGH_MA);
     delayNanoseconds(rate);
     if (foundAck) break;
   }
@@ -52,20 +53,20 @@ IRAM_ATTR bool As37h39bb::readEnc(uint32_t &position) {
   // if we have an Ack
   if (foundAck) {
     for (int i = 0; i < 20; i++) {
-      digitalWriteF(maPin, LOW);
-      if (digitalReadF(sloPin) == HIGH) foundStart = true;
+      digitalWriteF(maPin, LOW_MA);
+      if (digitalReadF(sloPin) == HIGH_SLO) foundStart = true;
       delayNanoseconds(rate);
-      digitalWriteF(maPin, HIGH);
+      digitalWriteF(maPin, HIGH_MA);
       delayNanoseconds(rate);
       if (foundStart) break;
     }
 
     // if we have an Start
     if (foundStart) {
-      digitalWriteF(maPin, LOW);
-      if (digitalReadF(sloPin) == LOW) foundCds = true;
+      digitalWriteF(maPin, LOW_MA);
+      if (digitalReadF(sloPin) == LOW_SLO) foundCds = true;
       delayNanoseconds(rate);
-      digitalWriteF(maPin, HIGH);
+      digitalWriteF(maPin, HIGH_MA);
       delayNanoseconds(rate);
 
       // if we have an Cds, read the data
@@ -73,42 +74,42 @@ IRAM_ATTR bool As37h39bb::readEnc(uint32_t &position) {
 
         // the first 16 bits are the multi-turn count
         for (int i = 0; i < 16; i++) {
-          digitalWriteF(maPin, LOW);
-          if (digitalReadF(sloPin) == HIGH) bitSet(encTurns, 15 - i);
+          digitalWriteF(maPin, LOW_MA);
+          if (digitalReadF(sloPin) == HIGH_SLO) bitSet(encTurns, 15 - i);
           delayNanoseconds(rate);
-          digitalWriteF(maPin, HIGH);
+          digitalWriteF(maPin, HIGH_MA);
           delayNanoseconds(rate);
         }
         
         // the next 23 bits are the encoder absolute count
         for (int i = 0; i < 23; i++) {
-          digitalWriteF(maPin, LOW);
-          if (digitalReadF(sloPin) == HIGH) bitSet(position, 22 - i);
+          digitalWriteF(maPin, LOW_MA);
+          if (digitalReadF(sloPin) == HIGH_SLO) bitSet(count, 22 - i);
           delayNanoseconds(rate);
-          digitalWriteF(maPin, HIGH);
+          digitalWriteF(maPin, HIGH_MA);
           delayNanoseconds(rate);
         }
 
         // the Err bit
-        digitalWriteF(maPin, LOW);
-        if (digitalReadF(sloPin) == HIGH) encErr = 1;
+        digitalWriteF(maPin, LOW_MA);
+        if (digitalReadF(sloPin) == HIGH_SLO) encErr = 1;
         delayNanoseconds(rate);
-        digitalWriteF(maPin, HIGH);
+        digitalWriteF(maPin, HIGH_MA);
         delayNanoseconds(rate);
 
         // the Wrn bit
-        digitalWriteF(maPin, LOW);
-        if (digitalReadF(sloPin) == HIGH) encWrn = 1;
+        digitalWriteF(maPin, LOW_MA);
+        if (digitalReadF(sloPin) == HIGH_SLO) encWrn = 1;
         delayNanoseconds(rate);
-        digitalWriteF(maPin, HIGH);
+        digitalWriteF(maPin, HIGH_MA);
         delayNanoseconds(rate);
 
         // the last 6 bits are the CRC
         for (int i = 0; i < 6; i++) {
-          digitalWriteF(maPin, LOW);
-          if (digitalReadF(sloPin) == HIGH) bitSet(as37Crc, 5 - i);
+          digitalWriteF(maPin, LOW_MA);
+          if (digitalReadF(sloPin) == HIGH_SLO) bitSet(as37Crc, 5 - i);
           delayNanoseconds(rate);
-          digitalWriteF(maPin, HIGH);
+          digitalWriteF(maPin, HIGH_MA);
           delayNanoseconds(rate);
         }
       }
@@ -116,56 +117,55 @@ IRAM_ATTR bool As37h39bb::readEnc(uint32_t &position) {
   }
 
   // send a CDM (invert)
-  digitalWriteF(maPin, LOW);
+  digitalWriteF(maPin, LOW_MA);
   delayNanoseconds(rate*4);
-  digitalWriteF(maPin, HIGH);
+  digitalWriteF(maPin, HIGH_MA);
 
   #ifdef ESP32
     taskEXIT_CRITICAL(&bisscMutex);
-  #elif defined(__TEENSYDUINO__)
+  #else
     interrupts();
   #endif
 
   // trap errors
   int16_t errors = 0;
-  UNUSED(encWrn);
 
-  uint64_t encData = (uint64_t)position | ((uint64_t)encTurns << 23);
+  uint64_t encData = (uint64_t)count | ((uint64_t)encTurns << 23);
   encData = (encData << 1) | encErr;
   encData = (encData << 1) | encWrn;
 
+  if (!encWrn)     { DF("WRN: Encoder AS37_H39B_B"); D(axis); DLF(", Warn bit set"); warn++; }
+
+  if (!foundAck)   { DF("WRN: Encoder AS37_H39B_B"); D(axis); DLF(", Ack bit invalid"); errors++; } else
+  if (!foundStart) { DF("WRN: Encoder AS37_H39B_B"); D(axis); DLF(", Start bit invalid"); errors++; } else
+  if (!foundCds)   { DF("WRN: Encoder AS37_H39B_B"); D(axis); DLF(", Cds bit invalid"); errors++; } else
+  if (encErr)      { DF("WRN: Encoder AS37_H39B_B"); D(axis); DLF(", Error bit set"); errors++; } else
   if (crc6(encData) != as37Crc) {
-    bad++;
-    VF("WRN: Encoder AS37_H39B_B"); V(axis); VF(", Crc invalid (overall "); V(((float)bad/good)*100.0F); V('%'); VLF(")"); errors++;
-  } else {
-    good++;
-    if (!foundAck) { VF("WRN: Encoder AS37_H39B_B"); V(axis); VLF(", Ack bit invalid"); errors++; } else
-    if (!foundStart) { VF("WRN: Encoder AS37_H39B_B"); V(axis); VLF(", Start bit invalid"); errors++; } else
-    if (!foundCds) { VF("WRN: Encoder AS37_H39B_B"); V(axis); VLF(", Cds bit invalid"); errors++; } else
-    if (encErr) { VF("WRN: Encoder AS37_H39B_B"); V(axis); VLF(", Error bit set"); errors++; } else errors = 0;
-  }
+    DF("WRN: Encoder AS37_H39B_B"); D(axis); DF(", Crc invalid (overall "); D(((float)(++bad)/good)*100.0F); D("%"); DLF(")");
+    errors++;
+  } else good++;
 
   if (errors > 0) {
-    if (errors <= 2) warn = true; else error = true;
+    error++;
     return false;
   }
 
   #if BISSC_SINGLE_TURN == ON
     // extend negative to 32 bits
-    if (bitRead(position, 23)) { position |= 0b11111111100000000000000000000000; }
+    if (bitRead(count, 23)) { count |= 0b11111111100000000000000000000000; }
   #else
     // combine absolute and 9 low order bits of multi-turn count for a 32 bit count
-    position = position | ((encTurns & 0b0111111111) << 23);
+    count = count | ((encTurns & 0b0111111111) << 23);
   #endif
 
-  position += origin;
+  count += origin;
 
   #if BISSC_SINGLE_TURN == ON
-    if ((int32_t)position > 8388608) position -= 8388608;
-    if ((int32_t)position < 0) position += 8388608;
+    if ((int32_t)count >= 8388608) count -= 8388608;
+    if ((int32_t)count < 0) count += 8388608;
   #endif
 
-  position -= 4194304;
+  count -= 4194304;
 
   return true;
 }

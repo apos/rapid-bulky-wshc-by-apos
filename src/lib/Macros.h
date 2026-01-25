@@ -22,8 +22,34 @@
 #define NormalizeAzimuth(x)         (x<0.0L?x+360.0L:x)
 
 // strings
+
+// tests if strings are equal
+#define strequ(str1, str2) (strlen(str1) != strlen(str2) ? 0 : strstr(str1, str2))
+
+// safe string copy from (char*)source to (char *)dest for a destination array of size bytes 
+#define sstrcpy(dest, source, size) for (int i = 0; source[i] && i < size - 1; i++) { dest[i] = source[i]; dest[i + 1] = 0; }
+
+// convert string to lower case
+#define strtolower(source) for (int i = 0; source[i]; i++) source[i] = tolower(source[i])
+
+#define _allowed_fqdn "0123456789abcdefghijklmnopqrstuvwxyz"
+// convert to lower case and strip away characters that aren't allowed in an hostname
+#define strtohostname(source) for (int i = 0; source[i]; i++) { source[i] = tolower(source[i]); if (!strchr(_allowed_fqdn "-", source[i])) { if (i < (int)(strlen(source) - 1)) { memmove(&source[i], &source[i + 1], strlen(&source[i])); i--; } else source[i] = 0;; } }
+
+// convert to lower case and strip away characters that aren't allowed in an hostname (and '-')
+#define strtohostname2(source) for (int i = 0; source[i]; i++) { source[i] = tolower(source[i]); if (!strchr(_allowed_fqdn, source[i])) { if (i < (int)(strlen(source) - 1)) { memmove(&source[i], &source[i + 1], strlen(&source[i])); i--; } else source[i] = 0;; } }
+
+// embeds a string in a macro
 #define STR_HELPER(x) #x
 #define STR(x) STR_HELPER(x)
+
+// ip address helper copies from one ip[4] address to another
+#define ip4toip4(ip4, ip) for (int i = 0; i < 4; i++) ip4[i] = ip[i]
+
+// check for an invalid ip[4] address of 0:0:0:0 
+#define validip4(ip4) (ip4[0]!=0?true:ip4[1]!=0?true:ip4[2]!=0?true:ip4[3]!=0?true:false)
+
+// an empty string
 #ifndef EmptyStr
   #define EmptyStr ""
 #endif
@@ -35,51 +61,9 @@
 // sense
 #define THLD(v)                     ((v)<<1)  // 10 bit analog threshold, bits 1 through 10
 #define HYST(v)                     ((v)<<11) // 10 bit hysteresis, bits 11 through 20
+#define ANLG(v)                     ((v)<<21) // 10 bit analog value, bits 21 through 30
 #ifndef INPUT_PULLDOWN
   #define INPUT_PULLDOWN INPUT
-#endif
-
-// use "Ex" functions to exclude pins that are OFF or SHARED
-// pins in range 0x00 to 0xFF are normal, 0x100 to 0x1FF are DAC as digital outputs, 0x200 to 0x2FF are external GPIO pins
-#define CLEAN_PIN(pin) ((uint8_t)((pin) & 0xff))
-#if defined(GPIO_DEVICE) && GPIO_DEVICE != OFF
-  #include "gpio/Gpio.h"
-  #if defined(HAL_DAC_AS_DIGITAL)
-    // external GPIO and DAC as digital
-    #define pinModeEx(pin,mode)       { if (pin >= 0x200) gpio.pinMode(pin-0x200,mode); else if (pin > 0x100) pinMode(pin-0x100,mode); else if (pin >= 0) pinMode(CLEAN_PIN(pin),mode); }
-    #define digitalWriteEx(pin,value) { if (pin >= 0x200) gpio.digitalWrite(pin-0x200,value); else if (pin > 0x100) analogWrite(pin-0x100,value); else if (pin >= 0) digitalWriteF(CLEAN_PIN(pin),value); }
-    // special case(s) allowing digitalWriteF() to work with GPIOs
-    #if GPIO_DEVICE == SSR74HC595
-      #define digitalWriteF(pin,value) { if (pin >= 0x200) gpio.digitalWrite(pin-0x200,value); else if (pin > 0x100) analogWrite(pin-0x100,value); else if (pin >= 0) digitalWrite(CLEAN_PIN(pin),value); }
-    #endif
-  #else
-    // external GPIO but no DAC as digital
-    #define pinModeEx(pin,mode)       { if (pin >= 0x200) gpio.pinMode(pin-0x200,mode); else if (pin >= 0) pinMode(CLEAN_PIN(pin),mode); }
-    #define digitalWriteEx(pin,value) { if (pin >= 0x200) gpio.digitalWrite(pin-0x200,value); else if (pin >= 0) digitalWriteF(CLEAN_PIN(pin),value); }
-    // special case(s) allowing digitalWriteF() to work with GPIOs
-    #if GPIO_DEVICE == SSR74HC595
-      #define digitalWriteF(pin,value) { if (pin >= 0x200) gpio.digitalWrite(pin-0x200,value); else if (pin >= 0) digitalWrite(CLEAN_PIN(pin),value); }
-    #endif
-  #endif
-  // no support for DAC input
-  #define digitalReadEx(pin)          ( (pin >= 0)?((pin < 0x100)?digitalReadF(CLEAN_PIN(pin)):gpio.digitalRead(pin-0x200)):0 )
-
-  // external GPIO analogWrite
-  #if GPIO_DEVICE == SWS
-    #define analogWriteEx(pin,value)  { if (pin >= 0x200) gpio.analogWrite(pin-0x200,value); else if (pin >= 0) analogWrite(CLEAN_PIN(pin),value); }
-  #endif
-#else
-  #if defined(HAL_DAC_AS_DIGITAL)
-    // DAC but no external GPIO
-    #define pinModeEx(pin,mode)       { if (pin > 0x100) pinMode(CLEAN_PIN(pin-0x100),mode); else if (pin >= 0) pinMode(CLEAN_PIN(pin),mode); }
-    #define digitalWriteEx(pin,value) { if (pin > 0x100) analogWrite(CLEAN_PIN(pin-0x100),value); else if (pin >= 0) { digitalWriteF(CLEAN_PIN(pin),value); } }
-  #else
-    // neither DAC as digital or external GPIO
-    #define pinModeEx(pin,mode)       { if (pin >= 0) pinMode(pin,mode); }
-    #define digitalWriteEx(pin,value) { if (pin >= 0) { digitalWriteF(pin,value); } }
-  #endif
-  // no support for DAC input and no external GPIO
-  #define digitalReadEx(pin)          ( (pin >= 0)?digitalReadF(pin):0 )
 #endif
 
 // automatically use fast I/O if available
@@ -96,11 +80,6 @@
   #else
     #define digitalWriteF(pin,value)   { digitalWrite(pin,value); }
   #endif
-#endif
-
-// automatically use analogWrite
-#ifndef analogWriteEx
-  #define analogWriteEx(pin,value)     { analogWrite(pin,value); }
 #endif
 
 // supress compiler warnings for unused parameters

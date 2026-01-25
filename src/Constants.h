@@ -3,7 +3,7 @@
 #pragma once
 
 // misc.
-#define PROD_ABV                    "SHC" // Friendly three letter product abbreviation
+#define TASKS_HWTIMERS              1
 
 #define METRIC                      -200
 #define IMPERIAL                    -201
@@ -13,7 +13,7 @@
 #define FWU                         -205
 #define JS1                         -206
 
-#define TIMEOUT_CMD                 2000  // Default 2000 ms, 2 seconds
+#define TIMEOUT_CMD                 3000  // Default 3000 ms, 3 seconds
 #define FOREGROUND_CMD_RATE         300   // Default 300 ms, regulates the forground command rate
 #define BACKGROUND_CMD_RATE         1500  // Default 1500 ms, regulates the background (dimmed display) command rate
 
@@ -39,7 +39,10 @@
 #define WEATHER_LAST                6
 
 // NV -------------------------------------------------------------------------------------------------------------------
-#define INIT_NV_KEY                 159301352UL
+#define INIT_NV_KEY                 159301360UL
 
-#define NV_KEY                      0      // bytes: 4   , addr:   0..  3
-#define NV_DISPLAY_SETTINGS_BASE    4      // bytes: 1   , addr:   4..  4
+#define NV_KEY                      0      // bytes:   4 , addr:   0..   3
+#define NV_DISPLAY_SETTINGS_BASE    4      // bytes:  24 , addr:   4..  27
+#define NV_SERIAL_BOOT_FLAG_BASE   28      // bytes:   1 , addr:  28..  28
+#define NV_BT_SETTINGS_BASE        29      // bytes: 149 , addr:  29.. 177 (BluetoothSettingsSize)
+#define NV_WIFI_SETTINGS_BASE     178      // bytes: 988 , addr: 178..1165 (WifiSettingsSize)

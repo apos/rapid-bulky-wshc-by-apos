@@ -40,6 +40,417 @@ return:
 
 #include "../../locales/Locale.h"
 
+uint8_t ext_UserInterfaceInputValuePassword(u8g2_t *u8g2, KeyPad* extPad, const char *title, const char *pre, char *value, uint8_t lo, uint8_t hi, uint8_t width, const char *post) {
+  u8g2_SetFont(u8g2, LF_STANDARD);
+
+  const float pixel_char_width_scale = 1.1; // horizontal spacing of chars
+  const int visual_width_max = 10;          // maximum display width in chars (before scrolling)
+
+  uint8_t line_height;
+  uint8_t height;
+  u8g2_uint_t pixel_height;
+  u8g2_uint_t  y, yy;
+  u8g2_uint_t  pixel_width;
+  u8g2_uint_t  x, xx;
+
+  uint8_t event;
+
+  // transfer password to local variable and pad with spaces
+  if (width > 63) width = 63;
+  int visible_width = width;
+  if (visible_width > visual_width_max) visible_width = visual_width_max;
+  char local_value[64];
+  sstrcpy(local_value, value, 64);
+  while (strlen(local_value) < width) { strcat(local_value, " "); }
+
+  uint8_t selected_char = 0; // the character being edited
+
+  /* only horizontal strings are supported, so force this here */
+  u8g2_SetFontDirection(u8g2, 0);
+
+  /* force baseline position */
+  u8g2_SetFontPosBaseline(u8g2);
+
+  /* calculate line height */
+  line_height = u8g2_GetAscentEx(u8g2);
+  line_height -= u8g2_GetDescent(u8g2);
+
+  /* calculate overall height of the input value box */
+  height = 1;	/* value input line */
+  height += u8x8_GetStringLineCnt(title);
+
+  /* calculate the height in pixel */
+  pixel_height = height;
+  pixel_height *= line_height;
+
+  /* calculate offset from top */
+  y = 0;
+  if (pixel_height < u8g2_GetDisplayHeight(u8g2))
+  {
+    y = u8g2_GetDisplayHeight(u8g2);
+    y -= pixel_height;
+    y /= 2;
+  }
+
+  /* calculate offset from left for the label */
+  u8g2_SetFont(u8g2, LF_PASSWORD);
+  x = 0;
+  int pixel_char_width = u8g2_GetUTF8Width(u8g2, "X");
+  int pixel_char_height = u8g2_GetFontAscent(u8g2);
+  pixel_width = u8g2_GetUTF8Width(u8g2, pre);
+  pixel_width += pixel_char_width*pixel_char_width_scale * visible_width;
+  pixel_width += u8g2_GetUTF8Width(u8g2, post);
+  if (pixel_width < u8g2_GetDisplayWidth(u8g2)) {
+    x = u8g2_GetDisplayWidth(u8g2);
+    x -= pixel_width;
+    x /= 2;
+  }
+  
+  // event loop
+  for (;;) {
+    u8g2_FirstPage(u8g2);
+    do {
+      u8g2_SetFont(u8g2, LF_STANDARD);
+      yy = y + line_height / 2;
+      yy += u8g2_DrawUTF8Lines(u8g2, 0, yy, u8g2_GetDisplayWidth(u8g2), line_height, title);
+      yy += line_height / 2;
+      xx = x;
+
+      u8g2_SetFont(u8g2, LF_PASSWORD);
+      xx += u8g2_DrawUTF8(u8g2, xx, yy, pre);
+
+      int start = selected_char - (visible_width - 1);
+      if (start < 0) start = 0;
+
+      char thisChar[] = " ";
+      for (int i = 0; i < width; i++) {
+        thisChar[0] = local_value[i + start];
+        thisChar[1] = 0;
+
+        if (i < visible_width) {
+          int xl = xx + pixel_char_width*pixel_char_width_scale*i;
+          int yh = yy - pixel_char_height + 17;
+          u8g2_DrawUTF8(u8g2, xl, yy, thisChar);
+          if (i + start == selected_char) {
+            u8g2_DrawLine(u8g2, xl,  yh, xl + pixel_char_width, yh);
+          }
+          if (thisChar[0] == ' ') {
+            u8g2_DrawBox(u8g2, xl + pixel_char_width*0.4, yy - pixel_char_height*0.4, 2, 2);
+          }
+        }
+      }
+
+      u8g2_DrawUTF8(u8g2, xx, yy, post);
+
+    } while (u8g2_NextPage(u8g2));
+
+    #ifdef U8G2_REF_MAN_PIC
+      return 0;
+    #endif
+
+    for (;;) {
+      event = ext_GetMenuEvent(extPad);
+
+      if (event == U8X8_MSG_GPIO_MENU_NEXT) {
+        local_value[width] = 0;
+        for (int i = width - 1; i >= 0; i--) { if (local_value[i] == ' ') local_value[i] = 0; else break; }
+        for (int i = 0; i < width; i++) { if (local_value[i] == ' ') local_value[i] = lo; else break; }
+        strcpy(value, local_value);
+        return 1;
+      } else
+
+      if (event == U8X8_MSG_GPIO_MENU_PREV) {
+        return 0;
+      } else
+
+      if (event == U8X8_MSG_GPIO_MENU_SELECT) {
+        if (selected_char > 0) selected_char--;
+        break;
+      } else
+
+      if (event == U8X8_MSG_GPIO_MENU_HOME) {
+        if (selected_char < width - 1) selected_char++;
+        break;
+      } else
+
+      if (event == U8X8_MSG_GPIO_MENU_UP || event == MSG_MENU_UP_FAST) {
+        if (local_value[selected_char] >= hi) local_value[selected_char] = ' '; else
+        if (local_value[selected_char] >= ' ' && local_value[selected_char] < lo) local_value[selected_char] = lo; else local_value[selected_char]++;
+        break;
+      } else
+
+      if (event == U8X8_MSG_GPIO_MENU_DOWN || event == MSG_MENU_DOWN_FAST) {
+        if (local_value[selected_char] <= lo && local_value[selected_char] > ' ') local_value[selected_char] = ' '; else
+        if (local_value[selected_char] <= ' ') local_value[selected_char] = hi; else local_value[selected_char]--;
+        break;
+      }
+    }
+  }
+}
+
+uint8_t ext_UserInterfaceInputValueFQDN(u8g2_t *u8g2, KeyPad* extPad, const char *title, const char *pre, char *value, uint8_t width, const char *post) {
+  u8g2_SetFont(u8g2, LF_STANDARD);
+
+  const float pixel_char_width_scale = 1.1; // horizontal spacing of chars
+  const int visual_width_max = 10;          // maximum display width in chars (before scrolling)
+
+  char cross_ref[] = "? -.0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+
+  uint8_t line_height;
+  uint8_t height;
+  u8g2_uint_t pixel_height;
+  u8g2_uint_t  y, yy;
+  u8g2_uint_t  pixel_width;
+  u8g2_uint_t  x, xx;
+
+  uint8_t event;
+
+  // transfer password to local variable and pad with spaces
+  if (width > 32) width = 32;
+  int visible_width = width;
+  if (visible_width > visual_width_max) visible_width = visual_width_max;
+  char local_value[33];
+  sstrcpy(local_value, value, 33);
+  while (strlen(local_value) < width) { strcat(local_value, " "); }
+
+  for (int i = 0; i < strlen(local_value); i++) {
+    bool found = false;
+    for (int j = 0; j < strlen(cross_ref); j++) {
+      if (local_value[i] == cross_ref[j]) { local_value[i] = j; found = true; break; }
+    }
+    if (!found) local_value[i] = (char)1;
+  }
+
+  uint8_t selected_char = 0; // the character being edited
+
+  /* only horizontal strings are supported, so force this here */
+  u8g2_SetFontDirection(u8g2, 0);
+
+  /* force baseline position */
+  u8g2_SetFontPosBaseline(u8g2);
+
+  /* calculate line height */
+  line_height = u8g2_GetAscentEx(u8g2);
+  line_height -= u8g2_GetDescent(u8g2);
+
+  /* calculate overall height of the input value box */
+  height = 1;	/* value input line */
+  height += u8x8_GetStringLineCnt(title);
+
+  /* calculate the height in pixel */
+  pixel_height = height;
+  pixel_height *= line_height;
+
+  /* calculate offset from top */
+  y = 0;
+  if (pixel_height < u8g2_GetDisplayHeight(u8g2))
+  {
+    y = u8g2_GetDisplayHeight(u8g2);
+    y -= pixel_height;
+    y /= 2;
+  }
+
+  /* calculate offset from left for the label */
+  u8g2_SetFont(u8g2, LF_PASSWORD);
+  x = 0;
+  int pixel_char_width = u8g2_GetUTF8Width(u8g2, "X");
+  int pixel_char_height = u8g2_GetFontAscent(u8g2);
+  pixel_width = u8g2_GetUTF8Width(u8g2, pre);
+  pixel_width += pixel_char_width*pixel_char_width_scale * visible_width;
+  pixel_width += u8g2_GetUTF8Width(u8g2, post);
+  if (pixel_width < u8g2_GetDisplayWidth(u8g2)) {
+    x = u8g2_GetDisplayWidth(u8g2);
+    x -= pixel_width;
+    x /= 2;
+  }
+
+  // event loop
+  for (;;) {
+    u8g2_FirstPage(u8g2);
+    do {
+      u8g2_SetFont(u8g2, LF_STANDARD);
+      yy = y + line_height / 2;
+      yy += u8g2_DrawUTF8Lines(u8g2, 0, yy, u8g2_GetDisplayWidth(u8g2), line_height, title);
+      yy += line_height / 2;
+      xx = x;
+
+      u8g2_SetFont(u8g2, LF_PASSWORD);
+      xx += u8g2_DrawUTF8(u8g2, xx, yy, pre);
+
+      int start = selected_char - (visible_width - 1);
+      if (start < 0) start = 0;
+
+      char thisChar[] = " ";
+      for (int i = 0; i < width; i++) {
+        thisChar[0] = cross_ref[(uint8_t)local_value[i + start]];
+        thisChar[1] = 0;
+
+        if (i < visible_width) {
+          int xl = xx + pixel_char_width*pixel_char_width_scale*i;
+          int yh = yy - pixel_char_height + 17;
+          u8g2_DrawUTF8(u8g2, xl, yy, thisChar);
+          if (i + start == selected_char) {
+            u8g2_DrawLine(u8g2, xl,  yh, xl + pixel_char_width, yh);
+          }
+          if (thisChar[0] == ' ') {
+            u8g2_DrawBox(u8g2, xl + pixel_char_width*0.4, yy - pixel_char_height*0.4, 2, 2);
+          }
+        }
+      }
+
+      u8g2_DrawUTF8(u8g2, xx, yy, post);
+
+    } while (u8g2_NextPage(u8g2));
+
+    #ifdef U8G2_REF_MAN_PIC
+      return 0;
+    #endif
+
+    for (;;) {
+      event = ext_GetMenuEvent(extPad);
+
+      if (event == U8X8_MSG_GPIO_MENU_NEXT) {
+        for (int i = 0; i < strlen(local_value); i++) {
+          value[i] = cross_ref[(uint8_t)local_value[i]];
+          if (value[i] == ' ') { value[i] = 0; break; }
+        }
+        return 1;
+      } else
+
+      if (event == U8X8_MSG_GPIO_MENU_PREV) {
+        return 0;
+      } else
+
+      if (event == U8X8_MSG_GPIO_MENU_SELECT) {
+        if (selected_char > 0) selected_char--;
+        break;
+      } else
+
+      if (event == U8X8_MSG_GPIO_MENU_HOME) {
+        if (selected_char < width - 1) selected_char++;
+        break;
+      } else
+
+      if (event == U8X8_MSG_GPIO_MENU_UP || event == MSG_MENU_UP_FAST) {
+        if (local_value[selected_char] >= strlen(cross_ref)) local_value[selected_char] = 1; else
+        local_value[selected_char]++;
+        break;
+      } else
+
+      if (event == U8X8_MSG_GPIO_MENU_DOWN || event == MSG_MENU_DOWN_FAST) {
+        if (local_value[selected_char] <= 1) local_value[selected_char] = strlen(cross_ref); else
+        local_value[selected_char]--;
+        break;
+      }
+    }
+  }
+}
+
+uint8_t ext_UserInterfaceInputValueIP(u8g2_t *u8g2, KeyPad* extPad, const char *title, uint8_t value[4])
+{
+  u8g2_SetFont(u8g2, LF_STANDARD);
+  uint8_t line_height;
+  uint8_t height;
+  u8g2_uint_t pixel_height;
+  u8g2_uint_t y, yy;
+  u8g2_uint_t pixel_width;
+  u8g2_uint_t x;
+
+  uint8_t local_value[4];
+  uint8_t selected_digit = 3;
+  ip4toip4(local_value, value);
+
+  //uint8_t r; /* not used ??? */
+  uint8_t event;
+
+  /* only horizontal strings are supported, so force this here */
+  u8g2_SetFontDirection(u8g2, 0);
+
+  /* force baseline position */
+  u8g2_SetFontPosBaseline(u8g2);
+
+  /* calculate line height */
+  line_height = u8g2_GetAscentEx(u8g2);
+  line_height -= u8g2_GetDescent(u8g2);
+
+  /* calculate overall height of the input value box */
+  height = 1;	/* value input line */
+  height += u8x8_GetStringLineCnt(title);
+
+  /* calculate the height in pixel */
+  pixel_height = height;
+  pixel_height *= line_height;
+
+  /* calculate offset from top */
+  y = 0;
+  if (pixel_height < u8g2_GetDisplayHeight(u8g2))
+  {
+    y = u8g2_GetDisplayHeight(u8g2);
+    y -= pixel_height;
+    y /= 2;
+  }
+
+  /* event loop */
+  for (;;) {
+    u8g2_FirstPage(u8g2);
+    do {
+      yy = y + line_height / 2;
+      yy += u8g2_DrawUTF8Lines(u8g2, 0, yy, u8g2_GetDisplayWidth(u8g2), line_height, title);
+      yy += line_height / 2;
+
+      char local_value_string[24];
+      switch (selected_digit) {
+        case 0: sprintf(local_value_string, "[%d].%d.%d.%d", local_value[0], local_value[1], local_value[2], local_value[3]); break;
+        case 1: sprintf(local_value_string, "%d.[%d].%d.%d", local_value[0], local_value[1], local_value[2], local_value[3]); break;
+        case 2: sprintf(local_value_string, "%d.%d.[%d].%d", local_value[0], local_value[1], local_value[2], local_value[3]); break;
+        case 3: sprintf(local_value_string, "%d.%d.%d.[%d]", local_value[0], local_value[1], local_value[2], local_value[3]); break;
+      }
+
+      x = 0;
+      pixel_width = u8g2_GetUTF8Width(u8g2, local_value_string);
+      if (pixel_width < u8g2_GetDisplayWidth(u8g2)) {
+        x = u8g2_GetDisplayWidth(u8g2);
+        x -= pixel_width;
+        x /= 2;
+      }
+
+      // show the edited value
+      u8g2_DrawUTF8(u8g2, x, yy, local_value_string);
+    } while (u8g2_NextPage(u8g2));
+
+    #ifdef U8G2_REF_MAN_PIC
+      return 0;
+    #endif
+
+    for (;;) {
+      event = ext_GetMenuEvent(extPad);
+      if (event == U8X8_MSG_GPIO_MENU_NEXT) {
+        ip4toip4(value, local_value);
+        return 1;
+      } else
+      if (event == U8X8_MSG_GPIO_MENU_PREV) {
+        return 0;
+      } else
+      if (event == U8X8_MSG_GPIO_MENU_SELECT) {
+        if (selected_digit > 0) selected_digit--;
+        break;
+      } else
+      if (event == U8X8_MSG_GPIO_MENU_HOME) {
+        if (selected_digit < 3) selected_digit++;
+        break;
+      } else
+      if (event == U8X8_MSG_GPIO_MENU_UP || event == MSG_MENU_UP_FAST) {
+        if (local_value[selected_digit] >= 255) local_value[selected_digit] = 0; else local_value[selected_digit]++;
+        break;
+      } else
+      if (event == U8X8_MSG_GPIO_MENU_DOWN || event == MSG_MENU_DOWN_FAST) {
+        if (local_value[selected_digit] <= 0) local_value[selected_digit] = 255; else local_value[selected_digit]--;
+        break;
+      }
+    }
+  }
+}
+
 uint8_t ext_UserInterfaceInputValueBoolean(u8g2_t *u8g2, KeyPad* extPad, const char *title, boolean *value)
 {
   u8g2_SetFont(u8g2, LF_STANDARD);

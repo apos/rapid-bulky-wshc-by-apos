@@ -13,13 +13,13 @@ void Message::show(const char* txt1, const char* txt2, int duration) {
   do {
     if (txt2 != NULL) {
       y = 50;
-      x = (display->getDisplayWidth() - display->getStrWidth(txt2)) / 2;
-      display->drawStr(x, y, txt2);
+      x = (display->getDisplayWidth() - display->getUTF8Width(txt2)) / 2;
+      display->drawUTF8(x, y, txt2);
       y = 25;
     }
 
-    x = (display->getDisplayWidth() - display->getStrWidth(txt1)) / 2;
-    display->drawStr(x, y, txt1);
+    x = (display->getDisplayWidth() - display->getUTF8Width(txt1)) / 2;
+    display->drawUTF8(x, y, txt1);
   } while (display->nextPage());
 
   if (duration >= 0) {
@@ -38,17 +38,17 @@ void Message::show(const char* txt1, const char* txt2, const char* txt3, int dur
   do {
     if (txt2 != NULL) {
       y = 50;
-      x = (display->getDisplayWidth() - display->getStrWidth(txt2)) / 2;
-      display->drawStr(x, y, txt2);
+      x = (display->getDisplayWidth() - display->getUTF8Width(txt2)) / 2;
+      display->drawUTF8(x, y, txt2);
       if (txt3 != NULL) {
-        x = display->getDisplayWidth() - (display->getStrWidth(txt3) + 15);
-        display->drawStr(x, y, txt3);
+        x = display->getDisplayWidth() - (display->getUTF8Width(txt3) + 15);
+        display->drawUTF8(x, y, txt3);
       }
       y = 25;
     }
 
-    x = (display->getDisplayWidth() - display->getStrWidth(txt1)) / 2;
-    display->drawStr(x, y, txt1);
+    x = (display->getDisplayWidth() - display->getUTF8Width(txt1)) / 2;
+    display->drawUTF8(x, y, txt1);
   } while (display->nextPage());
 
   if (duration >= 0) {
@@ -68,14 +68,14 @@ void Message::show(const char* txt1, const char* txt2, const char* txt3, const c
   display->firstPage();
   do {
     y = h;
-    x = (display->getDisplayWidth() - display->getStrWidth(txt1)) / 2;
+    x = (display->getDisplayWidth() - display->getUTF8Width(txt1)) / 2;
 
-    display->drawStr(x, y, txt1);
+    display->drawUTF8(x, y, txt1);
 
     y += h;
     if (txt2 != NULL) {
       x = 0;
-      display->drawStr(x, y, txt2);
+      display->drawUTF8(x, y, txt2);
     } else {
       y -= 7;
     }
@@ -83,13 +83,13 @@ void Message::show(const char* txt1, const char* txt2, const char* txt3, const c
     y += 15;
     if (txt3 != NULL) {
       x = 0;
-      display->drawStr(x, y, txt3);
+      display->drawUTF8(x, y, txt3);
     }
 
     y += 15;
     if (txt4 != NULL) {
       x = 0;
-      display->drawStr(x, y, txt4);
+      display->drawUTF8(x, y, txt4);
     }
   } while (display->nextPage());
 
@@ -128,7 +128,7 @@ bool Message::show(CMD_RESULT cmdResult, bool silentOk) {
     else if (cmdResult == CR_GOTO_GOING_TO) { sprintf(text1, L_CMD_GOTOK_1); sprintf(text2, L_CMD_GOTOK_2);  }
     show(text1, text2, time);
   }
-  return onStep.isOk(cmdResult);
+  return onStepLx200.isOk(cmdResult);
 }
 
 void Message::brief(const char* txt1, int duration) {

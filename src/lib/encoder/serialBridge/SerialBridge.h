@@ -1,7 +1,7 @@
 // Serial bridge encoder
 #pragma once
 
-#include "../Encoder.h"
+#include "../EncoderBase.h"
 
 #if (AXIS1_ENCODER == SERIAL_BRIDGE || AXIS2_ENCODER == SERIAL_BRIDGE || AXIS3_ENCODER == SERIAL_BRIDGE || \
      AXIS4_ENCODER == SERIAL_BRIDGE || AXIS5_ENCODER == SERIAL_BRIDGE || AXIS6_ENCODER == SERIAL_BRIDGE || \
@@ -16,14 +16,14 @@ class SerialBridge : public Encoder {
     SerialBridge(int16_t axis);
     int32_t read();
     void write(int32_t count);
+    bool errorThresholdExceeded() { return errorDetected; }
 
   private:
-    int32_t raw();
-
-    int32_t offset = 0;
+    int32_t getCount();
 
     char channel[2] = "0";
     unsigned long lastReadMillis = 0;
+    bool errorDetected = false;
 };
 
 #endif

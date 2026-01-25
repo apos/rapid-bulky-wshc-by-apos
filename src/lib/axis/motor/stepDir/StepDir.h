@@ -10,11 +10,19 @@
   #error "Configuration (Config.h): Having both GPIO_DIRECTION_PINS and SHARED_DIRECTION_PINS is not allowed"
 #endif
 
+#include "../../../gpioEx/GpioEx.h"
+
 #include "generic/Generic.h"
-#include "tmcLegacy/LegacySPI.h"
-#include "tmcLegacy/LegacyUART.h"
-#include "tmcStepper/StepperSPI.h"
-#include "tmcStepper/StepperUART.h"
+#include "tmc/legacy/tmc2130/Tmc2130.h"
+#include "tmc/legacy/tmc2209/Tmc2209.h"
+#include "tmc/legacy/tmc5160/Tmc5160.h"
+#include "tmc/tmcStepper/tmc2130/Tmc2130.h"
+#include "tmc/tmcStepper/tmc2160/Tmc2160.h"
+#include "tmc/tmcStepper/tmc2208/tmc2208.h"
+#include "tmc/tmcStepper/tmc2209/Tmc2209.h"
+#include "tmc/tmcStepper/tmc2660/Tmc2660.h"
+#include "tmc/tmcStepper/tmc5160/Tmc5160.h"
+#include "tmc/tmcStepper/tmc5161/Tmc5161.h"
 #include "../Motor.h"
 
 typedef struct StepDirPins {
@@ -34,35 +42,35 @@ enum MicrostepModeControl: uint8_t {MMC_TRACKING, MMC_SLEWING, MMC_SLEWING_REQUE
 class StepDirMotor : public Motor {
   public:
     // constructor
-    StepDirMotor(uint8_t axisNumber, const StepDirPins *Pins, StepDirDriver *Driver, bool useFastHardwareTimers = true);
+    StepDirMotor(uint8_t axisNumber, int8_t reverse, const StepDirPins *Pins, StepDirDriver *Driver, bool useFastHardwareTimers = true);
 
     // sets up the driver step/dir/enable pins
     bool init();
 
-    // set driver default reverse state
-    void setReverse(int8_t state);
+    // returns the number of parameters from the motor/driver
+    uint8_t getParameterCount() { return Motor::getParameterCount() + driver->getParameterCount(); }
 
-    // get driver type code
-    inline char getParameterTypeCode() { return driver->getParameterTypeCode(); }
+    // returns the specified axis parameter
+    AxisParameter* getParameter(uint8_t number) {
+      if (number > Motor::getParameterCount()) return driver->getParameter(number - Motor::getParameterCount()); else
+      if (number >= 1 && number <= Motor::getParameterCount()) return Motor::getParameter(number); else
+      return &invalid;
+    }
 
-    // sets driver parameters: microsteps, microsteps goto, hold current, run current, goto current, unused
-    void setParameters(float param1, float param2, float param3, float param4, float param5, float param6);
-
-    // validate driver parameters
-    bool validateParameters(float param1, float param2, float param3, float param4, float param5, float param6);
+    // check if parameter is valid
+    bool parameterIsValid(AxisParameter* parameter, bool next = false) { 
+      if (!Motor::parameterIsValid(parameter, next)) return false; else return driver->parameterIsValid(parameter, next);
+    }
+    
+    // sets reversal of axis directions
+    // \param state: true reverses the direction behavior specified in settings
+    void setReverse(bool state);
 
     // sets motor enable on/off (if possible)
     void enable(bool value);
 
-    // calibrate stealthChop then return to tracking mode
-    void calibrateDriver() {
-      digitalWriteEx(Pins->enable, Pins->enabledState);
-      driver->calibrateDriver();
-      digitalWriteEx(Pins->enable, !Pins->enabledState);
-    }
-
     // get the associated stepper driver status
-    DriverStatus getDriverStatus();
+    DriverStatus getDriverStatus() { if (ready) { driver->updateStatus(); return driver->getStatus(); } else return errorStatus; }
 
     // get movement frequency in steps per second
     float getFrequencySteps();
@@ -73,15 +81,20 @@ class StepDirMotor : public Motor {
     // get tracking mode steps per slewing mode step
     inline int getStepsPerStepSlewing() { return driver->getMicrostepRatio(); }
 
-    // switch microstep modes as needed
-    void modeSwitch();
-
-    // swaps in/out fast unidirectional ISR for slewing 
-    bool enableMoveFast(const bool state);
+    // microstep sequencer steps
+    int getSequencerSteps() { return driver->getMicrostepMode(); };
 
     // set slewing state (hint that we are about to slew or are done slewing)
     void setSlewing(bool state);
 
+    // calibrate stealthChop then return to tracking mode
+    void calibrateDriver() {
+      if (!ready) return;
+      digitalWriteEx(Pins->enable, Pins->enabledState);
+      driver->calibrateDriver();
+      digitalWriteEx(Pins->enable, !Pins->enabledState);
+    }
+  
     #if defined(GPIO_DIRECTION_PINS)
       // monitor and respond to motor state as required
       void poll() { updateMotorDirection(); }
@@ -99,6 +112,9 @@ class StepDirMotor : public Motor {
     // fast reverse axis movement, no backlash, no mode switching
     void moveFR(const int16_t stepPin);
 
+    // get the motor name
+    const char* name() { strcpy(nameStr, "Step/Dir, "); strcat(nameStr, driver->name()); return nameStr; }
+
     // a stepper motor driver, should not be used above the StepDir class
     StepDirDriver *driver;
 
@@ -106,6 +122,12 @@ class StepDirMotor : public Motor {
     const StepDirPins *Pins;
 
   private:
+    // switch microstep modes as needed
+    void modeSwitch();
+
+    // swaps in/out fast unidirectional ISR for slewing 
+    bool enableMoveFast(const bool state);
+
     uint8_t taskHandle = 0;
 
     #ifdef DRIVER_STEP_DEFAULTS
@@ -120,7 +142,6 @@ class StepDirMotor : public Motor {
     volatile uint8_t direction = LOW;    // current direction in use
     volatile uint32_t pulseWidth = 2000; // step/dir driver pulse width in nanoseconds
 
-    volatile int16_t homeSteps = 1;      // step count for microstep sequence between home positions (driver indexer)
     volatile int16_t stepSize = 1;       // step size during slews (for micro-step mode switching)
     volatile bool takeStep = false;      // should we take a step
 

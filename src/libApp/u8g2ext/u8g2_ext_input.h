@@ -48,6 +48,27 @@ return:
 0: value is not changed (HOME/Break Button pressed)
 1: value has been updated
 */
+uint8_t ext_UserInterfaceInputValuePassword(u8g2_t *u8g2, KeyPad* extPad, const char *title, const char *pre, char *value, uint8_t lo, uint8_t hi, uint8_t width, const char *post);
+
+/*
+return:
+0: value is not changed (HOME/Break Button pressed)
+1: value has been updated
+*/
+uint8_t ext_UserInterfaceInputValueFQDN(u8g2_t *u8g2, KeyPad* extPad, const char *title, const char *pre, char *value, uint8_t width, const char *post);
+
+/*
+return:
+0: value is not changed (HOME/Break Button pressed)
+1: value has been updated
+*/
+uint8_t ext_UserInterfaceInputValueIP(u8g2_t *u8g2, KeyPad* extPad, const char *title, uint8_t value[4]);
+
+/*
+return:
+0: value is not changed (HOME/Break Button pressed)
+1: value has been updated
+*/
 uint8_t ext_UserInterfaceInputValueBoolean(u8g2_t *u8g2, KeyPad *extPad, const char *title, boolean *value);
 
 /*
