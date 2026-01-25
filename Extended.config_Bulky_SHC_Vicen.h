@@ -29,7 +29,7 @@
 // IP ADDRESS SETTINGS -------------------------------------------------------------------------------------------------------------
                                           //              then specify SERIAL_IP as the serial port in Config.h
 
-#define ONSTEP1_HOST_NAME        "onstepvx" //    "OnStep", Wifi Host Name to connnect to, leave blank to disable.              Adjust
+#define ONSTEP1_HOST_NAME        "OnStepVX" //    "OnStep", Wifi Host Name to connnect to, leave blank to disable.              Adjust
 #define ONSTEP1_SSID             "onstepvx" //    "ONSTEP", Wifi alternate Station SSID to connnect to.                         Adjust
 #define ONSTEP1_PASSWORD         "onstepvx" //  "password", Wifi Station mode password.                                         Adjust
 #define ONSTEP1_IP_ADDR     {192,168,0,1} //  ..168,0,1}, Wifi Target IP Address to connect to.                               Adjust
