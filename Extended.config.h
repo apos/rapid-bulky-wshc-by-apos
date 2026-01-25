@@ -24,22 +24,3 @@
 // Warning --->                           //              ***     OR TWO THEN SET THIS OPTION TO OFF AND UPLOAD AGAIN.        ***
                                           //              ***     LEAVING THIS OPTION ENABLED CAN CAUSE EXCESSIVE NV          ***
                                           //              ***     WEAR AND DAMAGE THE MICROCONTROLLER NV SUBSYSTEM !!!        ***
-
-#define SERIAL_IP_MODE            STATION //         OFF, Use STATION to enable the interface (ESP32 only.)                   Option
-// IP ADDRESS SETTINGS -------------------------------------------------------------------------------------------------------------
-                                          //              then specify SERIAL_IP as the serial port in Config.h
-
-#define ONSTEP1_HOST_NAME        "onstepvx" //    "OnStep", Wifi Host Name to connnect to, leave blank to disable.              Adjust
-#define ONSTEP1_SSID             "onstepvx" //    "ONSTEP", Wifi alternate Station SSID to connnect to.                         Adjust
-#define ONSTEP1_PASSWORD         "onstepvx" //  "password", Wifi Station mode password.                                         Adjust
-#define ONSTEP1_IP_ADDR     {192,168,0,1} //  ..168,0,1}, Wifi Target IP Address to connect to.                               Adjust
-
-#define ONSTEP2_HOST_NAME        "OnStepX" //          "", Wifi Host Name to connnect to, leave blank to disable.              Adjust
-#define ONSTEP2_SSID           "ONSTEPX" //    "ONSTEP", Wifi alternate Station SSID to connnect to.                         Adjust
-#define ONSTEP2_PASSWORD       "password" //  "password", Wifi alternate Station mode password.                               Adjust
-#define ONSTEP2_IP_ADDR     {192,168,0,1} //  ..168,0,1}, Wifi alternate Target IP Address to connect to.                  Adjust
-
-#define ONSTEP3_HOST_NAME       "" //          "", Wifi Host Name to connnect to, leave blank to disable.              Adjust
-#define ONSTEP3_SSID            "" //    "ONSTEP", Wifi alternate Station SSID to connnect to.                         Adjust
-#define ONSTEP3_PASSWORD        "" //          "", Wifi alternate Station mode password.                               Adjust
-#define ONSTEP3_IP_ADDR     {192,168,0,1} //  ..168,0,1}, Wifi alternate Target IP Address to connect to.                     Adjust              Adjust
