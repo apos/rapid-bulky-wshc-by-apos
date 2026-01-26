@@ -41,7 +41,7 @@
 
 // KEYPAD --------------------------------------------------------------------------------------------------------------------------
 #define KEYPAD_JOYSTICK_ANALOG        JS1 //    OFF, JS1 for Jerry's analog joystick                                          Option
-#define KEYPAD_JOYSTICK_HYSTERESIS    200 //    200, Sensitivity of joystick in ADC counts (larger is less sensitive)         Adjust
+#define KEYPAD_JOYSTICK_HYSTERESIS    80 //    200, Sensitivity of joystick in ADC counts (larger is less sensitive)         Adjust
 #define B_PIN1_ACTIVE_STATE HIGH // default was LOW
 #define B_PIN2_ACTIVE_STATE HIGH // default was LOW
 #define B_PIN3_ACTIVE_STATE HIGH // default was LOW                                                                                                            s LOW
