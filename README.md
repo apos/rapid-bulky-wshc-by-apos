@@ -58,6 +58,40 @@ Many thanks to [Howard Dutton](http://www.stellarjourney.com/) which is the foun
 
 *Annotation*: **this is not the documentation for an SHC implementation**. This project only gives you reference designs among many others and a combination of hardware that is tested and works, a 3d model to print and some hints about getting things done. 
 
+## Repository layout (Submodule)
+Dieses Projekt fuehrt den SHC-Code als Git-Submodule unter `src/`.
+Das Submodule zeigt auf den Fork `https://github.com/apos/SmartHandController` und hat zusaetzlich `upstream` auf `https://github.com/hjd1964/SmartHandController`.
+
+### Klonen
+```
+git clone https://github.com/apos/rapid-bulky-wshc-by-apos.git
+cd rapid-bulky-wshc-by-apos
+git submodule update --init --recursive
+```
+
+### Update des Submodules (src)
+```
+cd src
+git fetch upstream
+git merge upstream/main   # oder rebase, je nach Workflow
+git push origin main      # in den Fork
+cd ..
+git add src
+git commit -m "Bump submodule"
+```
+
+### Lokale Konfiguration (Config.h)
+`Config.h` liegt im Submodule. Aendere sie im Submodule und committe sie dort:
+```
+cd src
+git add Config.h
+git commit -m "Update Config.h"
+git push origin main
+cd ..
+git add src
+git commit -m "Bump submodule"
+```
+
 ## Further reading on Onstep.groups.io
 
 I never had a SHC because I did not want to build it. I already did this with OnStep and every half a year a new vervsion, PCB came out and there had been many problems. Therefore I built my OnStep with given hardware (Engraver boards). So I thought about the same for a SHC and everything started with the OnStep chat topic: "[wSHC (wireless Smart Hand Controller) with standard ESP32-Board and standard joystick shield (anyone?)](https://onstep.groups.io/g/main/message/51440)". I had laying around some ESP32 and a joystick board with buttons. When I found out, that the SHC is simply that, I liked the idea for prototyping or even more. I did not order a PCB, extra parts or doing welding at the weekend just to get started with an wSHC when the list of components seem to be so simple. This lead to this project.
