@@ -28,6 +28,7 @@ Have fun.
 
 ## UPDATES on the "rapid bulky wSHC"
 
+- 27.01.26: SHC code moved to a Git submodule (`src`) pointing to https://github.com/apos/SmartHandController (fork) with upstream set to https://github.com/hjd1964/SmartHandController. README updated with submodule workflow.
 - 12.01.24: just updated to firmware 4.24s (SHC 4.01b) for hardware V01. Simply worked (see [here](https://onstep.groups.io/g/main/message/56564)).
 - 08.05.23: got 2,42 OLED working - changed from SPI to IIC mode (welding) - you should get the 4pin version! SPI usage and cabling still not clear
 - 07.05.23: 3d: Housing for 2,42'' OLED ready (could not pause completely pause today)
