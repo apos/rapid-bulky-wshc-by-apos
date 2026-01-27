@@ -59,29 +59,29 @@ Many thanks to [Howard Dutton](http://www.stellarjourney.com/) which is the foun
 *Annotation*: **this is not the documentation for an SHC implementation**. This project only gives you reference designs among many others and a combination of hardware that is tested and works, a 3d model to print and some hints about getting things done. 
 
 ## Repository layout (Submodule)
-Dieses Projekt fuehrt den SHC-Code als Git-Submodule unter `src/`.
-Das Submodule zeigt auf den Fork `https://github.com/apos/SmartHandController` und hat zusaetzlich `upstream` auf `https://github.com/hjd1964/SmartHandController`.
+This project tracks the SHC code as a Git submodule under `src/`.
+The submodule points to the fork `https://github.com/apos/SmartHandController` and has `upstream` set to `https://github.com/hjd1964/SmartHandController`.
 
-### Klonen
+### Clone
 ```
 git clone https://github.com/apos/rapid-bulky-wshc-by-apos.git
 cd rapid-bulky-wshc-by-apos
 git submodule update --init --recursive
 ```
 
-### Update des Submodules (src)
+### Update the submodule (src)
 ```
 cd src
 git fetch upstream
-git merge upstream/main   # oder rebase, je nach Workflow
-git push origin main      # in den Fork
+git merge upstream/main   # or rebase, depending on your workflow
+git push origin main      # push to the fork
 cd ..
 git add src
 git commit -m "Bump submodule"
 ```
 
-### Lokale Konfiguration (Config.h)
-`Config.h` liegt im Submodule. Aendere sie im Submodule und committe sie dort:
+### Local configuration (Config.h)
+`Config.h` lives inside the submodule. Edit and commit it there:
 ```
 cd src
 git add Config.h
