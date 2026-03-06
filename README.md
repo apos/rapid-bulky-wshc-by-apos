@@ -259,6 +259,11 @@ This is work in progress (see issues). Have to wait until hardware arrives.
  
 ### OLED
 Please consider wleding **right angled pins** (7pin header or 4  header) onto the board (facing inwards) which could give you more space e. g. later on for a battery pack. The even ones delivered with them are not very good for the building into the housing. 
+
+    GND	GND
+    VCC	3V3
+    SDA	D21 (Standard SDA GPIO)
+    SCL	D22 (Standard SCL GPIO)
  
 Use the correct 3d model  (2,4) for the OLD housing.</br>
 <img src="https://user-images.githubusercontent.com/456034/235375646-2a392b96-23dd-4ae4-afb2-1ef1a50baf26.png" width=300> <img src="https://user-images.githubusercontent.com/456034/235221460-2df23ae3-cc37-4036-960e-92521f07b0b4.png" width="300">
