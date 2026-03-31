@@ -3,6 +3,9 @@
 German locale for the [SmartHandController](https://github.com/hjd1964/SmartHandController)
 (OnStep telescope mount controller).
 
+**Kompatibel mit SHC Firmware 4.03a**
+(`FirmwareVersionMajor 4`, `FirmwareVersionMinor 03`, `FirmwareVersionPatch a`)
+
 ---
 
 ## Installation
